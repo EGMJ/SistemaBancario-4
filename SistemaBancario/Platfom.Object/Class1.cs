@@ -8,5 +8,8 @@ namespace Platfom.Object
 {
     public class Class1
     {
+        
+        public Class1(){
+        }
     }
 }
