@@ -7,8 +7,8 @@
     <ProjectGuid>{1E7A8BE3-8A88-4231-A598-46E38A928CEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Platfom.Object</RootNamespace>
-    <AssemblyName>Platfom.Object</AssemblyName>
+    <RootNamespace>Platform.Object</RootNamespace>
+    <AssemblyName>Platform.Object</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,6 +44,7 @@
     <Compile Include="model\Cargo.cs" />
     <Compile Include="model\Ciudad.cs" />
     <Compile Include="model\Cliente.cs" />
+    <Compile Include="model\ClsConexion.cs" />
     <Compile Include="model\Costo.cs" />
     <Compile Include="model\Cuenta.cs" />
     <Compile Include="model\Departamento.cs" />
@@ -56,6 +58,9 @@
     <Compile Include="model\TipoUsuario.cs" />
     <Compile Include="model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

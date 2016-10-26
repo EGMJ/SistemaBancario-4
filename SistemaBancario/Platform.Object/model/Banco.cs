@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platfom.Object.model
+namespace Platform.Object.model
 {
-    class Cliente
+    public class Banco
     {
+       
         private Int32 id { get; set; }
+        private String nit { get; set; }
         private String nombre { get; set; }
-        private String apellido { get; set; }
-        private String cedula { get; set; }
-        private DateTime fechaNacimiento { get; set; }
+        private String descripcion { get; set; }
 
-        public Cliente()
+        public Banco()
         {
 
         }

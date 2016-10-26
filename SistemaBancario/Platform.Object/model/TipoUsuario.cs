@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platfom.Object.model
+namespace Platform.Object.model
 {
-    class TipoCuenta
+    public class TipoUsuario
     {
-
         private Int32 id { get; set; }
         private String nombre { get; set; }
-        public TipoCuenta()
+
+        public TipoUsuario()
         {
 
         }

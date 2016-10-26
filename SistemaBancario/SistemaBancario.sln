@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Comunication", "Pl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Service", "Platform.Service\Platform.Service.csproj", "{A584825A-C9FD-4B5A-A830-47BF0DA36587}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platfom.Object", "Platfom.Object\Platfom.Object.csproj", "{1E7A8BE3-8A88-4231-A598-46E38A928CEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Object", "Platform.Object\Platform.Object.csproj", "{1E7A8BE3-8A88-4231-A598-46E38A928CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

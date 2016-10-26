@@ -94,9 +94,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Platfom.Object\Platfom.Object.csproj">
+    <ProjectReference Include="..\Platform.Object\Platform.Object.csproj">
       <Project>{1e7a8be3-8a88-4231-a598-46e38a928cef}</Project>
-      <Name>Platfom.Object</Name>
+      <Name>Platform.Object</Name>
     </ProjectReference>
     <ProjectReference Include="..\Platform.Comunication\Platform.Comunication.csproj">
       <Project>{9c4d2d05-21c9-401c-b6c5-e693b772a189}</Project>

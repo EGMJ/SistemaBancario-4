@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platfom.Object.model
+namespace Platform.Object.model
 {
-    class Banco
+    public class Costo
     {
-       
         private Int32 id { get; set; }
-        private String nit { get; set; }
         private String nombre { get; set; }
-        private String descripcion { get; set; }
-
-        public Banco()
+        private float monto { get; set; }
+        public Costo()
         {
 
         }

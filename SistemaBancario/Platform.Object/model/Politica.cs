@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platfom.Object.model
+namespace Platform.Object.model
 {
-    class TipoCuentaCosto
+    public class Politica
     {
         private Int32 id { get; set; }
-        private Int32 tipoCuentaId { get; set; }
-        private Int32 costoId { get; set; }
-        public TipoCuentaCosto()
+        private String mision { get; set; }
+        private String vision { get; set; }
+
+        public Politica()
         {
 
         }

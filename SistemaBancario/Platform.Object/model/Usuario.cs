@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platfom.Object.model
+namespace Platform.Object.model
 {
-    class Usuario
+    public  class Usuario
     {
         private Int32 id { get; set; }
         private String cuenta { get; set; }
@@ -16,5 +16,7 @@ namespace Platfom.Object.model
         public Usuario() { 
         
         }
+
+
     }
 }

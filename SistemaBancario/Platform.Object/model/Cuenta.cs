@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platfom.Object.model
+namespace Platform.Object.model
 {
-    class Cuenta
+    public class Cuenta
     {
         private Int32 id { get; set; }
         private Int32 numero { get; set; }
