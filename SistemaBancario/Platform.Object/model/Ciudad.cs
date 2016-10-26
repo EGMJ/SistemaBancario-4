@@ -8,14 +8,50 @@ namespace Platform.Object.model
 {
     public class Ciudad
     {
-        private Int32 id { get; set; }
-        private String nombre { get; set; }
-        private String descripcion { get; set; }
-        private Int32 departamentoId { get; set; }
+        private Int32 id;
+        private String nombre;
+        private String descripcion;
+        private Int32 departamentoId;
 
         public Ciudad()
         {
 
+        }
+
+        public Int32 getId()
+        {
+            return this.id;
+        }
+
+        public void setId(Int32 id)
+        {
+            this.id = id;
+        }
+
+        public String getNombre()
+        {
+            return this.nombre;
+        }
+
+        public void setNombre(String nombre)
+        {
+            this.nombre = nombre;
+        }
+        public String getDescripcion()
+        {
+            return this.descripcion;
+        }
+        public void setDescripcion(String desc)
+        {
+            this.descripcion = desc;
+        }
+        public Int32 getIdDepartamento()
+        {
+            return this.departamentoId;
+        }
+        public void setIdDepartamento(Int32 idDepto)
+        {
+            this.departamentoId = idDepto;
         }
     }
 }

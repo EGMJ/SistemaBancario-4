@@ -8,12 +8,28 @@ namespace Platform.Object.model
 {
     public class TipoUsuario
     {
-        private Int32 id { get; set; }
-        private String nombre { get; set; }
+        private Int32 id;
+        private String nombre;
 
         public TipoUsuario()
         {
 
+        }
+        public Int32 getId()
+        {
+            return this.id;
+        }
+        public void setId(Int32 id)
+        {
+            this.id = id;
+        }
+        public String getNombre()
+        {
+            return this.nombre;
+        }
+        public void setNombre(String nombre)
+        {
+            this.nombre = nombre;
         }
     }
 }

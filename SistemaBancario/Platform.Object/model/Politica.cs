@@ -8,13 +8,39 @@ namespace Platform.Object.model
 {
     public class Politica
     {
-        private Int32 id { get; set; }
-        private String mision { get; set; }
-        private String vision { get; set; }
+        private Int32 id;
+        private String mision;
+        private String vision;
 
         public Politica()
         {
 
+        }
+        public Int32 getId()
+        {
+            return this.id;
+        }
+        public void setId(Int32 id)
+        {
+            this.id = id;
+        }
+
+        public String getMision()
+        {
+            return this.mision;
+        }
+        public void setMision(String mision)
+        {
+            this.mision = mision;
+        }
+
+        public String getVision()
+        {
+            return this.vision;
+        }
+        public void setVision(String vision)
+        {
+            this.vision = vision;
         }
     }
 }

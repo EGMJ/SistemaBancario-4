@@ -21,10 +21,10 @@ namespace Platform.Service.services
             }
             else
             {
-             usuario.clave =
+            // usuario. = dataset.Tables[0].Rows[0]["cuenta"].ToString();
              
              }
-            return 
+            return  usuario;
         }
     }
 }

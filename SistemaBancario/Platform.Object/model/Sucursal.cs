@@ -8,16 +8,66 @@ namespace Platform.Object.model
 {
     public class Sucursal
     {
-        private Int32 id { get; set; }
-        private String nombre { get; set; }
-        private Int32 bancoId { get; set; }
-        private Int32 ciudadId { get; set; }
-        private Int32 gerenteId { get; set; }
-        private String direccion { get; set; }
+        private Int32 id;
+        private String nombre;
+        private Int32 bancoId;
+        private Int32 ciudadId;
+        private Int32 gerenteId;
+        private String direccion;
 
         public Sucursal()
         {
 
+        }
+        public Int32 getId()
+        {
+            return this.id;
+        }
+        public void setId(Int32 id)
+        {
+            this.id = id;
+        }
+        public String getNombre()
+        {
+            return this.nombre;
+        }
+        public void setNombre(String nombre) 
+        {
+            this.nombre = nombre;
+        }
+        public Int32 getBancoId()
+        {
+            return this.bancoId;
+        }
+        public void setBancoId(Int32 id)
+        {
+            this.bancoId = id;
+        }
+
+        public Int32 getCiudadId()
+        {
+            return this.ciudadId;
+        }
+        public void setCiudadId(Int32 id)
+        {
+            this.ciudadId = id;
+        }
+        public Int32 getGerenteId()
+        {
+            return this.gerenteId;
+        }
+        public void setGerenteId(Int32 id)
+        {
+            this.gerenteId = id;
+        }
+
+        public String getDireccion()
+        {
+            return this.direccion;
+        }
+        public void setDireccion(String direcc)
+        {
+            this.direccion = direcc;
         }
     }
 }

@@ -8,15 +8,73 @@ namespace Platform.Object.model
 {
     public class Cargo
     {
-        private Int32 id { get; set; }
-        private float salario { get; set; }
-        private String nombre { get; set; }
-        private Int32 cantidadHoras { get; set; }
-        private String descripcion { get; set; }
+        private Int32 id;
+        private float salario;
+        private String nombre;
+        private Int32 cantidadHoras;
+        private String descripcion;
 
         public Cargo()
         {
 
         }
+
+        public Cargo(Int32 id, float salario, String nombre, Int32 cantidadHoras, String descr)
+        {
+            this.id = id;
+            this.salario = salario;
+            this.nombre = nombre;
+            this.cantidadHoras = cantidadHoras;
+            this.descripcion = descr;
+        }
+
+        public Int32 getId()
+        {
+            return this.id;
+        }
+
+        public void setId(Int32 id)
+        {
+            this.id = id;
+        }
+
+        public float getSalario()
+        {
+            return this.salario;
+        }
+
+        public void setSalario(float salario)
+        {
+            this.salario = salario;
+        }
+
+        public String getNombre()
+        {
+            return this.nombre;
+        }
+
+        public void setNombre(String nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        public Int32 getCantidadHoras()
+        {
+            return this.cantidadHoras;
+        }
+        public void setCantidadHoras(Int32 cantHor)
+        {
+            this.cantidadHoras = cantHor;
+        }
+
+        public String getDescripcion()
+        {
+            return this.descripcion;
+        }
+        public void setDescripcion(String desc)
+        {
+            this.descripcion = desc;
+        }
+
     }
 }
