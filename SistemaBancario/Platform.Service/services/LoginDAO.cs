@@ -14,7 +14,7 @@ namespace Platform.Service.services
         public Usuario loginUsuario(String cuenta, String clave )
         {
          String consulta = "exec buscarUsuario '"+cuenta+"' , '"+ clave+"';";
-  ejecutarRetorno(consulta);
+            ejecutarRetorno(consulta);
              if (dataset.Tables[0].Rows.Count == 0)
             {
                 dataset.Dispose();                
