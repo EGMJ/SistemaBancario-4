@@ -7,9 +7,16 @@ using System.Threading.Tasks;
 
 namespace Platform.Service.services
 {
-    class LoginDAO : ClsConexion 
+    public class LoginDAO : ClsConexion 
     {
         Usuario usuario = new Usuario();
+        private string cuenta;
+        private string clave;
+
+        public LoginDAO()
+        {
+            
+        }
 
         public Usuario loginUsuario(String cuenta, String clave )
         {
@@ -21,7 +28,10 @@ namespace Platform.Service.services
             }
             else
             {
-            // usuario. = dataset.Tables[0].Rows[0]["cuenta"].ToString();
+                usuario.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
+                usuario.setClave(dataset.Tables[0].Rows[0]["clave"].ToString());
+                usuario.setCuenta(dataset.Tables[0].Rows[0]["cuenta"].ToString());
+                usuario.setTipoUsuario(Convert.ToInt32(dataset.Tables[0].Rows[0]["tipo_usuario_id"].ToString()));
              
              }
             return  usuario;

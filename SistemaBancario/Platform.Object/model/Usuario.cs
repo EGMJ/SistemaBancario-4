@@ -45,9 +45,9 @@ namespace Platform.Object.model
         {
             return this.tipoUsuario;
         }
-        public void setTipoUsuario(Int32 id)
+        public void setTipoUsuario(Int32 tipoUsuario)
         {
-            this.tipoUsuario = id;
+            this.tipoUsuario = tipoUsuario;
         }
     }
 }

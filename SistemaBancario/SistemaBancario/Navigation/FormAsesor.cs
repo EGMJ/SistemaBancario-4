@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaBancario
+namespace SistemaBancario.Navigation
 {
-    public partial class Login : Form
+    public partial class FormAsesor : Form
     {
-        public Login()
+        public FormAsesor()
         {
             InitializeComponent();
         }
-
-        
     }
 }

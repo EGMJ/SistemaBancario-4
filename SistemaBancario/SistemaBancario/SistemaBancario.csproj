@@ -49,15 +49,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBanco.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Navigation\FormAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Navigation\FormAdministrador.Designer.cs">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormAsesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormAsesor.Designer.cs">
+      <DependentUpon>FormAsesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormCajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormCajero.Designer.cs">
+      <DependentUpon>FormCajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGerente.Designer.cs">
+      <DependentUpon>FormGerente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Navigation\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
