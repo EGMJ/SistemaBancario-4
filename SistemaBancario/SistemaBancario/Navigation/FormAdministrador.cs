@@ -16,5 +16,10 @@ namespace SistemaBancario.Navigation
         {
             InitializeComponent();
         }
+
+        private void gestionEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
