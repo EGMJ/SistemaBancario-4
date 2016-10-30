@@ -67,14 +67,14 @@
             this.tBusuario.Location = new System.Drawing.Point(124, 49);
             this.tBusuario.Name = "tBusuario";
             this.tBusuario.Size = new System.Drawing.Size(162, 20);
-            this.tBusuario.TabIndex = 3;
+            this.tBusuario.TabIndex = 1;
             // 
             // btnIngresar
             // 
             this.btnIngresar.Location = new System.Drawing.Point(68, 149);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 4;
+            this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -84,7 +84,7 @@
             this.btnSalir.Location = new System.Drawing.Point(180, 149);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(341, 206);
+            this.ClientSize = new System.Drawing.Size(453, 305);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.tBusuario);

@@ -14,6 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modelo", "modelo", "{99F7A786-A701-4997-BDB2-4556A5308DBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "recursos", "recursos", "{BD4788C8-394C-4D42-9559-259F315394A3}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Fondo.jpg = ..\..\Fondo.jpg
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Comunication", "Platform.Comunication\Platform.Comunication.csproj", "{9C4D2D05-21C9-401C-B6C5-E693B772A189}"
 EndProject
