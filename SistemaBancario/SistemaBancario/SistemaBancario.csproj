@@ -79,6 +79,54 @@
     <Compile Include="Navigation\FormGerente.Designer.cs">
       <DependentUpon>FormGerente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navigation\FormGestionBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionBanco.Designer.cs">
+      <DependentUpon>FormGestionBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionCargo.Designer.cs">
+      <DependentUpon>FormGestionCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionDepartamento.Designer.cs">
+      <DependentUpon>FormGestionDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionEmpleado.Designer.cs">
+      <DependentUpon>FormGestionEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionJunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionJunta.Designer.cs">
+      <DependentUpon>FormGestionJunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionPais.Designer.cs">
+      <DependentUpon>FormGestionPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionSucursal.Designer.cs">
+      <DependentUpon>FormGestionSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\FormGestionTipoCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionTipoCuenta.Designer.cs">
+      <DependentUpon>FormGestionTipoCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Navigation\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,7 +172,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Platform.Object\Platform.Object.csproj">

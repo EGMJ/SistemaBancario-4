@@ -70,7 +70,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // bancoToolStripMenuItem
@@ -88,18 +88,21 @@
             this.gestionarBancoToolStripMenuItem.Name = "gestionarBancoToolStripMenuItem";
             this.gestionarBancoToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.gestionarBancoToolStripMenuItem.Text = "Gestionar Banco";
+            this.gestionarBancoToolStripMenuItem.Click += new System.EventHandler(this.gestionarBancoToolStripMenuItem_Click);
             // 
             // gestionarSucursalToolStripMenuItem
             // 
             this.gestionarSucursalToolStripMenuItem.Name = "gestionarSucursalToolStripMenuItem";
             this.gestionarSucursalToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.gestionarSucursalToolStripMenuItem.Text = "Gestionar Sucursal";
+            this.gestionarSucursalToolStripMenuItem.Click += new System.EventHandler(this.gestionarSucursalToolStripMenuItem_Click);
             // 
             // gestionJuntaDirectivaToolStripMenuItem
             // 
             this.gestionJuntaDirectivaToolStripMenuItem.Name = "gestionJuntaDirectivaToolStripMenuItem";
             this.gestionJuntaDirectivaToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.gestionJuntaDirectivaToolStripMenuItem.Text = "Gestion Junta Directiva";
+            this.gestionJuntaDirectivaToolStripMenuItem.Click += new System.EventHandler(this.gestionJuntaDirectivaToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -139,24 +142,28 @@
             this.gestionCargoToolStripMenuItem.Name = "gestionCargoToolStripMenuItem";
             this.gestionCargoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.gestionCargoToolStripMenuItem.Text = "Gestionar Cargo";
+            this.gestionCargoToolStripMenuItem.Click += new System.EventHandler(this.gestionCargoToolStripMenuItem_Click);
             // 
             // gestionTipoCuentaToolStripMenuItem
             // 
             this.gestionTipoCuentaToolStripMenuItem.Name = "gestionTipoCuentaToolStripMenuItem";
             this.gestionTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.gestionTipoCuentaToolStripMenuItem.Text = "Gestionar Tipo Cuenta";
+            this.gestionTipoCuentaToolStripMenuItem.Click += new System.EventHandler(this.gestionTipoCuentaToolStripMenuItem_Click);
             // 
             // gestionPaísToolStripMenuItem
             // 
             this.gestionPaísToolStripMenuItem.Name = "gestionPaísToolStripMenuItem";
             this.gestionPaísToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.gestionPaísToolStripMenuItem.Text = "Gestionar País";
+            this.gestionPaísToolStripMenuItem.Click += new System.EventHandler(this.gestionPaísToolStripMenuItem_Click);
             // 
             // gestionDepartamentoToolStripMenuItem
             // 
             this.gestionDepartamentoToolStripMenuItem.Name = "gestionDepartamentoToolStripMenuItem";
             this.gestionDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.gestionDepartamentoToolStripMenuItem.Text = "Gestionar Departamento";
+            this.gestionDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.gestionDepartamentoToolStripMenuItem_Click);
             // 
             // FormAdministrador
             // 
@@ -164,6 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 356);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.Name = "FormAdministrador";
             this.Text = "FormAdministrador";
             this.menuStrip1.ResumeLayout(false);
