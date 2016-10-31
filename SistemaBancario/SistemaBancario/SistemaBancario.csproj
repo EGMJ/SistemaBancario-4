@@ -141,6 +141,9 @@
     <EmbeddedResource Include="Navigation\FormGestionPais.resx">
       <DependentUpon>FormGestionPais.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\FormGestionSucursal.resx">
+      <DependentUpon>FormGestionSucursal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DataSetBanco.xsc">
       <DependentUpon>DataSetBanco.xsd</DependentUpon>
@@ -188,6 +192,12 @@
       <Project>{9c4d2d05-21c9-401c-b6c5-e693b772a189}</Project>
       <Name>Platform.Comunication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

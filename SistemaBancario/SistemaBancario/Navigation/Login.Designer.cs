@@ -28,82 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tBClave = new System.Windows.Forms.TextBox();
             this.tBusuario = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 49);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 101);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña:";
             // 
             // tBClave
             // 
-            this.tBClave.Location = new System.Drawing.Point(124, 101);
+            resources.ApplyResources(this.tBClave, "tBClave");
             this.tBClave.Name = "tBClave";
-            this.tBClave.PasswordChar = '*';
-            this.tBClave.Size = new System.Drawing.Size(162, 20);
-            this.tBClave.TabIndex = 2;
+            this.tBClave.TextChanged += new System.EventHandler(this.tBClave_TextChanged);
             // 
             // tBusuario
             // 
-            this.tBusuario.Location = new System.Drawing.Point(124, 49);
+            resources.ApplyResources(this.tBusuario, "tBusuario");
             this.tBusuario.Name = "tBusuario";
-            this.tBusuario.Size = new System.Drawing.Size(162, 20);
-            this.tBusuario.TabIndex = 1;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(68, 149);
+            resources.ApplyResources(this.btnIngresar, "btnIngresar");
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 3;
-            this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(180, 149);
+            resources.ApplyResources(this.btnSalir, "btnSalir");
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Controls.Add(this.tBusuario);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnIngresar);
+            this.groupBox1.Controls.Add(this.tBClave);
+            this.groupBox1.Controls.Add(this.label2);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Image = global::SistemaBancario.Properties.Resources.candado1;
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            resources.ApplyResources(this.imageList1, "imageList1");
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(453, 305);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.tBusuario);
-            this.Controls.Add(this.tBClave);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = global::SistemaBancario.Properties.Resources.Fondo1;
+            this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
-            this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -115,6 +128,9 @@
         private System.Windows.Forms.TextBox tBusuario;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ImageList imageList1;
 
     }
 }

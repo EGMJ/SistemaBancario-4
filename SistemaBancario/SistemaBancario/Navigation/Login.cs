@@ -98,5 +98,15 @@ namespace SistemaBancario
             menu.ShowDialog();
         }
 
+        private void tBClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
