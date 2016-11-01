@@ -1,5 +1,6 @@
 ﻿using Platform.Comunication.controller;
 using Platform.Object.model;
+using SistemaBancario.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,11 +20,11 @@ namespace SistemaBancario.Navigation
         {
             InitializeComponent();
         }
-        
+
 
         private void FormGestionSucursal_Load(object sender, EventArgs e)
         {
-           
+
             this.departamentoTableAdapter.Fill(this.dataSetBanco.departamento);
             cargarPais();
         }
@@ -38,19 +39,37 @@ namespace SistemaBancario.Navigation
             this.paisTableAdapter.Fill(this.dataSetBanco.pais);
         }
 
+        
+       
+
+
         private void cBPais_SelectedIndexChanged(object sender, EventArgs e)
         {
-           Int32 idPais = (int)cBPais.SelectedValue;
-           LinkedList<Departamento> lista = deptoController.solicitudListaDeptosPorPais(idPais);
-           for (int i = 0; i < lista.Count;i++ )
-           {
-               cBDepartamento.SelectedItem = (lista.ElementAt(i)).getNombre();
-               //String nombre = lista.ElementAt(i)).getNombre();
-               cBDepartamento.SelectedValue = (lista.ElementAt(i)).getId();
-               MessageBox.Show((lista.ElementAt(i)).getNombre() + "");
-           }
+            Int32 idPais = (int)cBPais.SelectedValue;
+            LinkedList<Departamento> lista = deptoController.solicitudListaDeptosPorPais(idPais);
+            BindingList<Item> deptos = new BindingList<Item>();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                deptos.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
+                
+            }
             
-           
+            cBDepartamento.DisplayMember = "Name";
+            cBDepartamento.ValueMember = "Value";
+            cBDepartamento.DataSource = deptos;
+
+
+
         }
+
+        private void cBDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Item itm = (Item) cBDepartamento.SelectedItem;
+            Console.WriteLine("{0}, {1}", itm.Name, itm.Value);
+
+            
+        }
+
+
     }
 }

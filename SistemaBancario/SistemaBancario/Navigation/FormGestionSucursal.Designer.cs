@@ -179,6 +179,7 @@
             this.cBDepartamento.Name = "cBDepartamento";
             this.cBDepartamento.Size = new System.Drawing.Size(191, 23);
             this.cBDepartamento.TabIndex = 10;
+            this.cBDepartamento.SelectedIndexChanged += new System.EventHandler(this.cBDepartamento_SelectedIndexChanged);
             // 
             // cBCiudad
             // 

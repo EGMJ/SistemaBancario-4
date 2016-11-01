@@ -8,7 +8,7 @@ namespace Platform.Object.model
 {
     public class Departamento
     {
-        private Int32 id;
+        private int id;
         private String nombre;
         private String descripcion;
         private Int32 paisId;
@@ -18,7 +18,7 @@ namespace Platform.Object.model
 
         }
 
-        public Int32 getId()
+        public int getId()
         {
             return this.id;
         }
