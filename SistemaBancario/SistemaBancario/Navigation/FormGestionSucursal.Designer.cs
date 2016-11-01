@@ -39,23 +39,26 @@
             this.tBNombre = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cBPais = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.cBDepartamento = new System.Windows.Forms.ComboBox();
             this.cBCiudad = new System.Windows.Forms.ComboBox();
             this.cBGerente = new System.Windows.Forms.ComboBox();
             this.tBDireccion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
-            this.dataSetBanco = new SistemaBancario.DataSetBanco();
-            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.paisTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter();
+            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departamentoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.departamentoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -156,6 +159,17 @@
             this.cBPais.Size = new System.Drawing.Size(191, 23);
             this.cBPais.TabIndex = 9;
             this.cBPais.ValueMember = "id";
+            this.cBPais.SelectedIndexChanged += new System.EventHandler(this.cBPais_SelectedIndexChanged);
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataMember = "pais";
+            this.paisBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // dataSetBanco
+            // 
+            this.dataSetBanco.DataSetName = "DataSetBanco";
+            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cBDepartamento
             // 
@@ -230,25 +244,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones";
             // 
-            // btnGuardar
+            // btnListar
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(56, 19);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 31);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(174, 19);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 31);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListar.Location = new System.Drawing.Point(388, 19);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 31);
+            this.btnListar.TabIndex = 3;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
@@ -260,29 +264,39 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // btnListar
+            // btnEditar
             // 
-            this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(388, 19);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 31);
-            this.btnListar.TabIndex = 3;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(174, 19);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 31);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // dataSetBanco
+            // btnGuardar
             // 
-            this.dataSetBanco.DataSetName = "DataSetBanco";
-            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // paisBindingSource
-            // 
-            this.paisBindingSource.DataMember = "pais";
-            this.paisBindingSource.DataSource = this.dataSetBanco;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(56, 19);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 31);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // paisTableAdapter
             // 
             this.paisTableAdapter.ClearBeforeFill = true;
+            // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataMember = "departamento";
+            this.departamentoBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // departamentoTableAdapter
+            // 
+            this.departamentoTableAdapter.ClearBeforeFill = true;
             // 
             // FormGestionSucursal
             // 
@@ -294,11 +308,12 @@
             this.Name = "FormGestionSucursal";
             this.Text = "FormGestionSucursal";
             this.Load += new System.EventHandler(this.FormGestionSucursal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +343,7 @@
         private DataSetBanco dataSetBanco;
         private System.Windows.Forms.BindingSource paisBindingSource;
         private DataSetBancoTableAdapters.paisTableAdapter paisTableAdapter;
+        private System.Windows.Forms.BindingSource departamentoBindingSource;
+        private DataSetBancoTableAdapters.departamentoTableAdapter departamentoTableAdapter;
     }
 }

@@ -25,48 +25,70 @@ namespace SistemaBancario
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
             String clave = tBClave.Text;
             String usuario = tBusuario.Text;
-
-            if (login.solicitudLogin(usuario, clave))
+            if (!usuario.Equals(""))
             {
-                Int32 tipo = login.getIdTipo();
-                Thread hiloInterfaz;
-                switch (tipo)
+                if (!clave.Equals(""))
                 {
-                    case 1:
-                        hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirAdministrador));
-                        this.Close();
-                        hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
-                        hiloInterfaz.Start();
-                        break;
-                    case 2:
-                        hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGerente));
-                        this.Close();
-                        hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
-                        hiloInterfaz.Start();
-                        break;
-                    case 3:
-                        hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirAsesor));
-                        this.Close();
-                        hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
-                        hiloInterfaz.Start();
-                        break;
-                    case 4:
-                        hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirCajero));
-                        this.Close();
-                        hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
-                        hiloInterfaz.Start();
-                        break;
-                    default:
-                        hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirCliente));
-                        this.Close();
-                        hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
-                        hiloInterfaz.Start();
-                        break;
+                    if (login.solicitudLogin(usuario, clave))
+                    {
+                        Int32 tipo = login.getIdTipo();
+                        Thread hiloInterfaz;
+                        switch (tipo)
+                        {
+                            case 1:
+                                hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirAdministrador));
+                                this.Close();
+                                hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+                                hiloInterfaz.Start();
+                                break;
+                            case 2:
+                                hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirGerente));
+                                this.Close();
+                                hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+                                hiloInterfaz.Start();
+                                break;
+                            case 3:
+                                hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirAsesor));
+                                this.Close();
+                                hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+                                hiloInterfaz.Start();
+                                break;
+                            case 4:
+                                hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirCajero));
+                                this.Close();
+                                hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+                                hiloInterfaz.Start();
+                                break;
+                            case 5:
+                                hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirCliente));
+                                this.Close();
+                                hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+                                hiloInterfaz.Start();
+                                break;
+                            default:
+                                MessageBox.Show("El usuario y la contraseña son incorrectos");
+                                limpiarCampos();
+                                break;
+                        }
+                    }
                 }
+                else
+                    MessageBox.Show("Ingrese por favor clave");
             }
+            else
+                MessageBox.Show("Ingrese por fovor su nombre de usuario");
 
+
+
+        }
+
+        public void limpiarCampos()
+        {
+            tBClave.Text = "";
+            tBusuario.Text = "";
         }
 
         public void abrirAdministrador()
