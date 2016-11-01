@@ -25,7 +25,7 @@ namespace Platform.Service.services
 
                 for (int j = 0; j < dataset.Tables[0].Rows.Count; j++)
                 {
-                    ciudad = new Departamento();
+                    ciudad = new Ciudad();
 
                     ciudad.setId(Convert.ToInt32(dataset.Tables[0].Rows[j]["id"].ToString()));
                     ciudad.setNombre(dataset.Tables[0].Rows[j]["nombre"].ToString());
