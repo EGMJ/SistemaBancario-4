@@ -16,5 +16,18 @@ namespace SistemaBancario.Navigation
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String nit = txtNit.Text;
+            String nombre = txtNombreBanco.Text;
+            String descripcion = txtDescrpcion.Text;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
