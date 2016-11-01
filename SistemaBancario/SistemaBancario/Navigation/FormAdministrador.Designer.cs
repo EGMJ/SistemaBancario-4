@@ -43,6 +43,7 @@
             this.gestionTipoCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionPaísToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarCiudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -133,7 +134,8 @@
             this.gestionCargoToolStripMenuItem,
             this.gestionTipoCuentaToolStripMenuItem,
             this.gestionPaísToolStripMenuItem,
-            this.gestionDepartamentoToolStripMenuItem});
+            this.gestionDepartamentoToolStripMenuItem,
+            this.gestionarCiudadToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.administraciónToolStripMenuItem.Text = "Administración";
@@ -165,6 +167,13 @@
             this.gestionDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.gestionDepartamentoToolStripMenuItem.Text = "Gestionar Departamento";
             this.gestionDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.gestionDepartamentoToolStripMenuItem_Click);
+            // 
+            // gestionarCiudadToolStripMenuItem
+            // 
+            this.gestionarCiudadToolStripMenuItem.Name = "gestionarCiudadToolStripMenuItem";
+            this.gestionarCiudadToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.gestionarCiudadToolStripMenuItem.Text = "Gestionar Ciudad";
+            this.gestionarCiudadToolStripMenuItem.Click += new System.EventHandler(this.gestionarCiudadToolStripMenuItem_Click);
             // 
             // FormAdministrador
             // 
@@ -200,5 +209,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionTipoCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionPaísToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDepartamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarCiudadToolStripMenuItem;
     }
 }

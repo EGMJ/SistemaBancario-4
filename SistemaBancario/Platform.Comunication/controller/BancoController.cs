@@ -21,7 +21,7 @@ namespace Platform.Comunication.controller
         public Banco SolicitudBuscarBanco(String nit)
         {
             BancoDAO banDAO = new BancoDAO();
-            return banDAO.buscarEstudiante(nit);
+            return banDAO.buscarBanco(nit);
         }
 
         public bool SolicitudModificarBanco(String nit, String nombre, String descripcion)

@@ -79,6 +79,12 @@
     <Compile Include="Navigation\FormGerente.Designer.cs">
       <DependentUpon>FormGerente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navigation\FormGestionarCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Navigation\FormGestionarCiudad.Designer.cs">
+      <DependentUpon>FormGestionarCiudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Navigation\FormGestionBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,8 +145,14 @@
     <EmbeddedResource Include="Navigation\FormAdministrador.resx">
       <DependentUpon>FormAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\FormGestionarCiudad.resx">
+      <DependentUpon>FormGestionarCiudad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation\FormGestionBanco.resx">
       <DependentUpon>FormGestionBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\FormGestionEmpleado.resx">
+      <DependentUpon>FormGestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Navigation\FormGestionPais.resx">
       <DependentUpon>FormGestionPais.cs</DependentUpon>

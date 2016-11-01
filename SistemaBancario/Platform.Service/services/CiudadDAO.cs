@@ -35,5 +35,46 @@ namespace Platform.Service.services
                 }
             return listaMpios;
         }
+
+        public bool guardarCiudad(Ciudad city)
+        {
+            String consulta = "exec guardarCiudad '" + city.getNombre() +
+                "','" + city.getDescripcion() + "';'";
+            return ejecutar(consulta);
+        }
+
+        public Ciudad buscarCiudad(String nombre)
+        {
+            String consulta = "exec buscarCiudad '" + nombre + "';";
+            ejecutarRetorno(consulta);
+
+            if (dataset.Tables[0].Rows.Count == 0)
+            {
+                dataset.Dispose();
+            }
+            else
+            {
+                ciudad.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+                ciudad.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
+                dataset.Dispose();
+            }
+
+
+            return ciudad;
+        }
+
+
+        public bool modificarCiudad(Ciudad city)
+        {
+            String consulta = "exec editarCiudad '" + city.getNombre() +
+                "','" + city.getDescripcion() + "','"+ city.getIdDepartamento() +"';";
+            return ejecutar(consulta);
+        }
+
+        public bool eliminarCiudad(String nombre)
+        {
+            String consulta = "exec borrarCiudad '" + nombre + "';";
+            return ejecutar(consulta);
+        }
     }
 }

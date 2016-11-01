@@ -18,6 +18,13 @@ namespace Platform.Object.model
 
         }
 
+        public Ciudad(String nombre, String descri, Int32 deptoID)
+        {
+            this.nombre = nombre;
+            this.descripcion = descri;
+            this.departamentoId = deptoID;
+        }
+
         public Int32 getId()
         {
             return this.id;

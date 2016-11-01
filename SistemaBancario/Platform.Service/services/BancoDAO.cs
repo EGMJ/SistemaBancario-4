@@ -19,7 +19,7 @@ namespace Platform.Service.services
            return ejecutar(consulta);
        }
 
-       public Banco buscarEstudiante(String nit)
+       public Banco buscarBanco(String nit)
        {
            String consulta = "exec buscarBanco '" + nit + "';";
            ejecutarRetorno(consulta);

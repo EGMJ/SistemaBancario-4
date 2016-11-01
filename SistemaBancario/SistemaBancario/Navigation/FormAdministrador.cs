@@ -25,6 +25,7 @@ namespace SistemaBancario.Navigation
         FormGestionTipoCuenta formTipoCuenta;
         FormGestionPais formPais;
         FormGestionDepartamento formDepto;
+        c formCiudad;
         private void gestionEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formEmpleado == null)
@@ -178,6 +179,24 @@ namespace SistemaBancario.Navigation
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void formCiudad_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formCiudad = null;
+        }
+        private void gestionarCiudadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formCiudad == null)
+            {
+                formCiudad = new c();
+                formCiudad.MdiParent = this;
+                formCiudad.FormClosed += new FormClosedEventHandler(formCiudad_FormClosed);
+
+                formCiudad.Show();
+            }
+            else
+                formCiudad.Activate();
         }
     }
 }
