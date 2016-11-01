@@ -84,6 +84,12 @@ namespace SistemaBancario.Navigation
             
         }
 
+        private void tBNombre_Enter(object sender, EventArgs e)
+        {
+            Console.WriteLine("algo");
+        }
+
+      
 
     }
 }

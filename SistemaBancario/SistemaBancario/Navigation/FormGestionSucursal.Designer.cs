@@ -138,6 +138,7 @@
             this.tBNombre.Name = "tBNombre";
             this.tBNombre.Size = new System.Drawing.Size(191, 21);
             this.tBNombre.TabIndex = 7;
+            this.tBNombre.Enter += new System.EventHandler(this.tBNombre_Enter);
             // 
             // comboBox1
             // 
