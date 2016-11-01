@@ -16,6 +16,7 @@ namespace SistemaBancario.Navigation
     public partial class FormGestionSucursal : Form
     {
         DepartamentoController deptoController = new DepartamentoController();
+        CiudadController ciudadController = new CiudadController();
         public FormGestionSucursal()
         {
             InitializeComponent();
@@ -64,8 +65,21 @@ namespace SistemaBancario.Navigation
 
         private void cBDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Item itm = (Item) cBDepartamento.SelectedItem;
-            Console.WriteLine("{0}, {1}", itm.Name, itm.Value);
+            Item itm = (Item)cBDepartamento.SelectedItem;
+            Int32 idPais = (int)cBPais.SelectedValue;
+            LinkedList<Ciudad> lista = ciudadController.solicitudListaCiudadPorDeptos(itm.Value);
+            BindingList<Item> ciudad = new BindingList<Item>();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                ciudad.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
+
+            }
+
+            cBCiudad.DisplayMember = "Name";
+            cBCiudad.ValueMember = "Value";
+            cBCiudad.DataSource = ciudad;
+
+            
 
             
         }

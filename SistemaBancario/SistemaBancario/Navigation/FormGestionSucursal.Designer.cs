@@ -152,6 +152,7 @@
             // 
             this.cBPais.DataSource = this.paisBindingSource;
             this.cBPais.DisplayMember = "nombre";
+            this.cBPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBPais.FormattingEnabled = true;
             this.cBPais.Location = new System.Drawing.Point(135, 58);
@@ -173,6 +174,7 @@
             // 
             // cBDepartamento
             // 
+            this.cBDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBDepartamento.FormattingEnabled = true;
             this.cBDepartamento.Location = new System.Drawing.Point(453, 58);
@@ -183,6 +185,7 @@
             // 
             // cBCiudad
             // 
+            this.cBCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBCiudad.FormattingEnabled = true;
             this.cBCiudad.Location = new System.Drawing.Point(135, 94);

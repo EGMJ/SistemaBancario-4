@@ -10,10 +10,10 @@ namespace Platform.Service.services
   public  class CiudadDAO : ClsConexion
     {
         Ciudad ciudad;
-        public LinkedList<Ciudad> buscarDeptoPorPais(int idDepto)
+        public LinkedList<Ciudad> buscarCiudadPorDeptos(int idDepto)
         {
             LinkedList<Ciudad> listaMpios = new LinkedList<Ciudad>();
-            String consulta = "exec listarDepartamentosPorPais " + idDepto + ";";
+            String consulta = "exec listarMunicipiosPorDepartamento " + idDepto + ";";
             ejecutarRetorno(consulta);
        
 
