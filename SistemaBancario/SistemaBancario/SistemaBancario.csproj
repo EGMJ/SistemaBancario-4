@@ -138,6 +138,9 @@
     <EmbeddedResource Include="Navigation\FormAdministrador.resx">
       <DependentUpon>FormAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\FormGestionBanco.resx">
+      <DependentUpon>FormGestionBanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation\FormGestionPais.resx">
       <DependentUpon>FormGestionPais.cs</DependentUpon>
     </EmbeddedResource>

@@ -25,6 +25,12 @@ namespace Platform.Object.model
             this.nombre = nombre;
             this.descripcion = descripcion;
         }
+        public Banco(String nit, String nombre, String descripcion)
+        {
+            this.nit = nit;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+        }
 
         public Int32 getId()
         {
