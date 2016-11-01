@@ -8,7 +8,7 @@ using Platform.Object.model;
 using Platform.Service.services;
 namespace Platform.Comunication.controller
 {
-    class BancoController
+    public class BancoController
     {
         //Metodo para recibir datos y enviarlos al dao
         public bool SolicitudGuardarBanco(String nit, String nombre, String desc)
@@ -16,6 +16,25 @@ namespace Platform.Comunication.controller
             Banco banco = new Banco(nit, nombre, desc); 
             BancoDAO banDAO = new BancoDAO();
             return banDAO.guardarBanco(banco);   
+        }
+
+        public Banco SolicitudBuscarBanco(String nit)
+        {
+            BancoDAO banDAO = new BancoDAO();
+            return banDAO.buscarEstudiante(nit);
+        }
+
+        public bool SolicitudModificarBanco(String nit, String nombre, String descripcion)
+        {
+            Banco banco = new Banco(nit, nombre, descripcion);
+            BancoDAO banDAO = new BancoDAO();
+            return banDAO.modificarBanco(banco);
+        }
+
+        public bool solicitudEliminarBanco(String nit)
+        {
+            BancoDAO banDAO = new BancoDAO();
+            return banDAO.eliminarBanco(nit);
         }
 
     }
