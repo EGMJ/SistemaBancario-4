@@ -15,9 +15,7 @@ namespace Platform.Service.services
            LinkedList<Departamento> listaDeptos = new LinkedList<Departamento>();
            String consulta = "exec listarDepartamentosPorPais " + idPais + ";";
            ejecutarRetorno(consulta);
-           int D = dataset.Tables[0].Columns.Count;
-
-           if (dataset.Tables[0].Rows.Count == 0)
+                     if (dataset.Tables[0].Rows.Count == 0)
            {
                dataset.Dispose();
            }
