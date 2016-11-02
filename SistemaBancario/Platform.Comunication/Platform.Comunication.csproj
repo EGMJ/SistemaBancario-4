@@ -43,6 +43,7 @@
     <Compile Include="controller\CiudadController.cs" />
     <Compile Include="controller\DepartamentoController.cs" />
     <Compile Include="controller\LoginController.cs" />
+    <Compile Include="controller\PoliticaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

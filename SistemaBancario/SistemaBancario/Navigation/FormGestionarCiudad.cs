@@ -64,23 +64,21 @@ namespace SistemaBancario.Navigation
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           /**           
-            * String nombre = txtNombreCiudad.Text;
-            * if(nombre == ""){
-            *       MessageBox.Show("Ingrese el nombre de la ciudad que quiere buscar");
-            * }else{
-            *       Ciudad c = ctl.solicitudBuscarCiudad(nombre);
-            *       if(c != null){
-                        txtNombreCiudad.Text = c.getNombre();
-            *           txtDescripcion.Text = c.getDescripcion();
-            *           cbDepto.indiceMeImagino = c.getDepartamento_id();
-            *           btnGuadar.Enable = false;
-            *           txtNombreCiudad.Enable = false;
-            *       }else{
-            *           MessageBox.Show("No se pudo encontrar.");
-            *       }
-            * }
-        **/
+                   
+            String nombre = txtNombreCiudad.Text;
+            if(nombre == ""){
+                  MessageBox.Show("Ingrese el nombre de la ciudad que quiere buscar");
+             }else{
+                 Ciudad c = ctlCiudad.SolicitudBuscarCiudad(nombre);
+                  if(c != null){
+                      //  txtNombreCiudad.Text = c.getNombre();
+                      txtDescripcion.Text = c.getDescripcion();
+                     txtNombreCiudad.Enabled = false;
+                 }else{
+                      MessageBox.Show("No se pudo encontrar.");
+                  }
+             }
+     
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

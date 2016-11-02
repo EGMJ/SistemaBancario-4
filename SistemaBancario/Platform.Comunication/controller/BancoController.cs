@@ -10,31 +10,18 @@ namespace Platform.Comunication.controller
 {
     public class BancoController
     {
-        //Metodo para recibir datos y enviarlos al dao
-        public bool SolicitudGuardarBanco(String nit, String nombre, String desc)
-        {
-            Banco banco = new Banco(nit, nombre, desc); 
-            BancoDAO banDAO = new BancoDAO();
-            return banDAO.guardarBanco(banco);   
-        }
+        BancoDAO banDAO = new BancoDAO();
 
-        public Banco SolicitudBuscarBanco(String nit)
+        public Banco solicitudObtenerBanco()
         {
-            BancoDAO banDAO = new BancoDAO();
-            return banDAO.buscarBanco(nit);
+            Banco b = banDAO.obtenerBanco();
+            return b;
         }
 
         public bool SolicitudModificarBanco(String nit, String nombre, String descripcion)
         {
-            Banco banco = new Banco(nit, nombre, descripcion);
-            BancoDAO banDAO = new BancoDAO();
+            Banco banco = new Banco(nit, nombre, descripcion);            
             return banDAO.modificarBanco(banco);
-        }
-
-        public bool solicitudEliminarBanco(String nit)
-        {
-            BancoDAO banDAO = new BancoDAO();
-            return banDAO.eliminarBanco(nit);
         }
 
     }

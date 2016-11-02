@@ -14,83 +14,25 @@ namespace SistemaBancario.Navigation
     public partial class FormGestionBanco : Form
     {
         BancoController ctlBanco;
+        PoliticaController ctlPolitica;
         public FormGestionBanco()
         {
             InitializeComponent();
             ctlBanco = new BancoController();
-            btnEliminar.Enabled = false;
-            btnModificar.Enabled = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            String nit = txtNit.Text;
-            String nombre = txtNombreBanco.Text;
-            String descripcion = txtDescrpcion.Text;
-            if(nit=="" || nombre == ""){
-                MessageBox.Show("Porfavor complete la informacion.");
-            }
-            else
-            {
-                Banco b = ctlBanco.SolicitudBuscarBanco(nit);
-                if(b != null){
-                    MessageBox.Show("Ya existe un Banco con este NIT");
-                }
-                else
-                {
-                    if (ctlBanco.SolicitudGuardarBanco(nit, nombre, descripcion))
-                    {
-                        MessageBox.Show("Se registro con exito");
-                        limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error--");
-                    }
-                }                
-            }            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            String nit = txtNit.Text;
-            if(nit ==""){
-                MessageBox.Show("Ingrese el NIT para poder buscar");
-            }
-            else
-            {
-                Banco b = ctlBanco.SolicitudBuscarBanco(nit);
-                if(b != null){
-                    MessageBox.Show("Se encontro el Banco.");
-                    txtNit.Enabled = false;
-                    txtNit.Text = b.getNit();
-                    txtNombreBanco.Text = b.getNombre();
-                    txtDescrpcion.Text = b.getDescripcion();
-                    btnModificar.Enabled = true;
-                    btnEliminar.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("No existe el Banco.");
-                }
-            }
-        }
-
-        public void limpiar()
-        {
-            txtDescrpcion.Text = "";
-            txtMision.Text = "";
-            txtNit.Text = "";
-            txtNombreBanco.Text = "";
-            txtVision.Text = "";
-            txtNit.Enabled = true;
-            btnEliminar.Enabled = false;
-            btnModificar.Enabled = false;
-        }
+            ctlPolitica = new PoliticaController();
+            Banco b = new Banco();
+            Politica p = new Politica();
+            p = ctlPolitica.solicitudObtenerPolitica();
+            b = ctlBanco.solicitudObtenerBanco();
+            txtNit.Text = b.getNit();
+            txtNombreBanco.Text = b.getNombre();
+            txtDescrpcion.Text = b.getDescripcion();
+            txtMision.Text = p.getMision();
+            txtVision.Text = p.getVision();
+        } 
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -98,39 +40,24 @@ namespace SistemaBancario.Navigation
             String nit = txtNit.Text;
             String nombre = txtNombreBanco.Text;
             String descripcion = txtDescrpcion.Text;
-            if(nombre ==""){
+            String mision = txtMision.Text;
+            String vision = txtVision.Text;
+            if(nombre =="" || nit == ""){
                 MessageBox.Show("Accion Invalida!");
-                limpiar();
             }
             else
             {
-                if(ctlBanco.SolicitudModificarBanco(nit,nombre,descripcion)){
-                    MessageBox.Show("Se modifico con exito.");
-                    limpiar();
+                if(ctlBanco.SolicitudModificarBanco(nit,nombre,descripcion) &&
+                    ctlPolitica.SolicitudModificarBanco(mision, vision))
+                {                  
+                        MessageBox.Show("Se modifico con exito.");            
                 }
             }
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            String nit = txtNit.Text;
-            if(ctlBanco.solicitudEliminarBanco(nit)){
-                MessageBox.Show("Se elimino satisfactoriamente.");
-                limpiar();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar");
-            }
-        }
-
+     
         private void FormGestionBanco_Load(object sender, EventArgs e)
         {
 
         }
-
-
-
-
     }
 }

@@ -12,47 +12,31 @@ namespace Platform.Service.services
 
        Banco banco = new Banco();
 
-       public bool guardarBanco(Banco banc)
+       //Metodo para obtener la informacion del banco
+       public Banco obtenerBanco()
        {
-           String consulta = "exec guardarBanco '"+ banc.getNit() + 
-               "','" + banc.getNombre() + "','" + banc.getDescripcion() + "';";               
-           return ejecutar(consulta);
-       }
-
-       public Banco buscarBanco(String nit)
-       {
-           String consulta = "exec buscarBanco '" + nit + "';";
+           Banco banc = new Banco();
+           String consulta = "exec obtenerBanco;";
            ejecutarRetorno(consulta);
-
-           if (dataset.Tables[0].Rows.Count == 0)
+           if (dataset.Tables[0].Rows.Count > 0)
            {
+               banc.setNit(dataset.Tables[0].Rows[0]["nit"].ToString());
+               banc.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+               banc.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
                dataset.Dispose();
-           }
-           else
-           {
-               banco.setNit(dataset.Tables[0].Rows[0]["nit"].ToString());
-               banco.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-               banco.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());               
-               dataset.Dispose();
-           }
-
-
-           return banco;
+           }           
+           return banc;
        }
 
-
+       //Metodo para modificar al banco
        public bool modificarBanco(Banco banco)
        {
            String consulta = "exec editarBanco '" + banco.getNit() +
                "','" + banco.getNombre() + "','" + banco.getDescripcion() + "';";
            return ejecutar(consulta);
-       }
+       }    
 
-       public bool eliminarBanco(String nit)
-       {
-           String consulta = "exec borrarBanco '" + nit + "';";
-           return ejecutar(consulta);
-       }
+
 
 
     }

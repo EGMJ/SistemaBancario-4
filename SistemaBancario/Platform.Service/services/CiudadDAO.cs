@@ -45,6 +45,7 @@ namespace Platform.Service.services
 
         public Ciudad buscarCiudad(String nombre)
         {
+            Ciudad ciuda = new Ciudad();
             String consulta = "exec buscarCiudad '" + nombre + "';";
             ejecutarRetorno(consulta);
 
@@ -54,13 +55,13 @@ namespace Platform.Service.services
             }
             else
             {
-                ciudad.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-                ciudad.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
+                ciuda.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+                ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
                 dataset.Dispose();
             }
 
 
-            return ciudad;
+            return ciuda;
         }
 
 

@@ -16,6 +16,12 @@ namespace Platform.Object.model
         {
 
         }
+
+        public Politica(String mision, String vision)
+        {
+            this.mision = mision;
+            this.vision = vision;
+        }
         public Int32 getId()
         {
             return this.id;
