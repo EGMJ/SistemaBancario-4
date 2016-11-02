@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,7 +31,7 @@ namespace SistemaBancario.Navigation
 
         private void FormGestionSucursal_Load(object sender, EventArgs e)
         {
-           
+
             this.bancoTableAdapter.Fill(this.dataSetBanco.banco);
 
             this.departamentoTableAdapter.Fill(this.dataSetBanco.departamento);
@@ -43,7 +44,7 @@ namespace SistemaBancario.Navigation
         {
             this.paisTableAdapter.Fill(this.dataSetBanco.pais);
         }
-        
+
 
         private void cBPais_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -67,27 +68,32 @@ namespace SistemaBancario.Navigation
         private void cBDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             Item itm = (Item)cBDepartamento.SelectedItem;
-            Int32 idPais = (int)cBPais.SelectedValue;
-            LinkedList<Ciudad> lista = ciudadController.solicitudListaCiudadPorDeptos(itm.Value);
-            BindingList<Item> ciudad = new BindingList<Item>();
-            for (int i = 0; i < lista.Count; i++)
+            if (itm != null)
             {
-                ciudad.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
+                Int32 idPais = (int)cBPais.SelectedValue;
+                LinkedList<Ciudad> lista = ciudadController.solicitudListaCiudadPorDeptos(itm.Value);
+                BindingList<Item> ciudad = new BindingList<Item>();
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    ciudad.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
 
+                }
+
+                cBCiudad.DisplayMember = "Name";
+                cBCiudad.ValueMember = "Value";
+                cBCiudad.DataSource = ciudad;
             }
 
-            cBCiudad.DisplayMember = "Name";
-            cBCiudad.ValueMember = "Value";
-            cBCiudad.DataSource = ciudad;
 
         }
 
-     
+
 
         private void tBNombre_Enter(object sender, EventArgs e)
         {
             String nombre = tBNombre.Text;
-            if(nombre.Length!=0){
+            if (nombre.Length != 0)
+            {
                 Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
                 if (s != null)
                 {
@@ -95,15 +101,20 @@ namespace SistemaBancario.Navigation
                     Departamento d = deptoController.solicitudBuscarPorId(c.getIdDepartamento());
                     Pais p = paisControlador.solicitudBuscarPorId(d.getPaisId());
 
-
+                    cBPais.SelectedValue = p.getId();
+                    //cBPais_SelectedIndexChanged(sender, e);
+                    //Thread.Sleep(1000);
+                    //cBDepartamento.;
+                    // Thread.Sleep(1000);
+                    // cBCiudad.SelectedValue = c.getId();
 
                     Console.WriteLine(s.getNombre() + "");
                 }
                 else
                     MessageBox.Show("El usuario no existe");
-                
+
             }
-            
+
         }
 
 

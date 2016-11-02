@@ -13,7 +13,7 @@ namespace Platform.Service.services
       public Pais buscarPaisPorId(int id)
       {
           //LinkedList<Ciudad> listaMpios = new LinkedList<Ciudad>();
-          String consulta = "exec buscarCiudad " + id + ";";
+          String consulta = "exec buscarPais " + id + ";";
           ejecutarRetorno(consulta);
           if (dataset.Tables[0].Rows.Count == 0)
           {
