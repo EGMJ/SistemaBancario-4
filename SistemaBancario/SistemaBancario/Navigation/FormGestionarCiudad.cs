@@ -161,18 +161,6 @@ namespace SistemaBancario.Navigation
         {
 
         }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.departamentoTableAdapter.FillBy(this.dataSetBanco.departamento);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+       
     }
 }
