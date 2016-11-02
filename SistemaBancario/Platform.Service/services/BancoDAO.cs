@@ -20,6 +20,7 @@ namespace Platform.Service.services
            ejecutarRetorno(consulta);
            if (dataset.Tables[0].Rows.Count > 0)
            {
+               banc.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
                banc.setNit(dataset.Tables[0].Rows[0]["nit"].ToString());
                banc.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
                banc.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());

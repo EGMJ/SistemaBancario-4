@@ -12,7 +12,7 @@ namespace Platform.Service.services
       Empleado empleado;
       public LinkedList<Empleado> obtenerGerente()
       {
-          LinkedList<Empleado> listaDeptos = new LinkedList<Empleado>();
+          LinkedList<Empleado> listaGerentes = new LinkedList<Empleado>();
           String consulta = "exec obtenerGerentes;";
           ejecutarRetorno(consulta);
           if (dataset.Tables[0].Rows.Count == 0)
@@ -21,6 +21,7 @@ namespace Platform.Service.services
           }
           else
 
+              listaGerentes.AddFirst(new Empleado(-1, "Seleccione una opción"));
               for (int j = 0; j < dataset.Tables[0].Rows.Count; j++)
               {
                   empleado = new Empleado();
@@ -28,10 +29,10 @@ namespace Platform.Service.services
                   empleado.setId(Convert.ToInt32(dataset.Tables[0].Rows[j]["id"].ToString()));
                   empleado.setNombre(dataset.Tables[0].Rows[j]["nombre"].ToString());
 
-                  listaDeptos.AddFirst(empleado);
+                  listaGerentes.AddLast(empleado);
 
               }
-          return listaDeptos;
+          return listaGerentes;
       }
     }
 }

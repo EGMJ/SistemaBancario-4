@@ -44,7 +44,9 @@
     <Compile Include="controller\DepartamentoController.cs" />
     <Compile Include="controller\EmpleadoController.cs" />
     <Compile Include="controller\LoginController.cs" />
+    <Compile Include="controller\PaisController.cs" />
     <Compile Include="controller\PoliticaController.cs" />
+    <Compile Include="controller\SucursalController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

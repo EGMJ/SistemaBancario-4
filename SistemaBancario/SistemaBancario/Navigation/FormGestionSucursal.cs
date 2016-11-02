@@ -17,34 +17,33 @@ namespace SistemaBancario.Navigation
     {
         DepartamentoController deptoController = new DepartamentoController();
         CiudadController ciudadController = new CiudadController();
+        EmpleadoController empleadoController = new EmpleadoController();
+        BancoController banco = new BancoController();
+        SucursalController sucursalrControlador = new SucursalController();
+        PaisController paisControlador = new PaisController();
         public FormGestionSucursal()
         {
             InitializeComponent();
+            cargarComboGerente();
         }
 
 
         private void FormGestionSucursal_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.banco' Puede moverla o quitarla según sea necesario.
+           
             this.bancoTableAdapter.Fill(this.dataSetBanco.banco);
 
             this.departamentoTableAdapter.Fill(this.dataSetBanco.departamento);
             cargarPais();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
 
-        }
 
         public void cargarPais()
         {
             this.paisTableAdapter.Fill(this.dataSetBanco.pais);
         }
-
         
-       
-
 
         private void cBPais_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,9 +53,9 @@ namespace SistemaBancario.Navigation
             for (int i = 0; i < lista.Count; i++)
             {
                 deptos.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
-                
+
             }
-            
+
             cBDepartamento.DisplayMember = "Name";
             cBDepartamento.ValueMember = "Value";
             cBDepartamento.DataSource = deptos;
@@ -80,24 +79,82 @@ namespace SistemaBancario.Navigation
             cBCiudad.DisplayMember = "Name";
             cBCiudad.ValueMember = "Value";
             cBCiudad.DataSource = ciudad;
-            
+
         }
 
-        public void cargarComboGerente() { 
-        
-        }
+     
 
         private void tBNombre_Enter(object sender, EventArgs e)
         {
-            Console.WriteLine("algo");
+            String nombre = tBNombre.Text;
+            if(nombre.Length!=0){
+                Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
+                if (s != null)
+                {
+                    Ciudad c = ciudadController.solicitudBuscarPorId(s.getCiudadId());
+                    Departamento d = deptoController.solicitudBuscarPorId(c.getIdDepartamento());
+                    Pais p = paisControlador.solicitudBuscarPorId(d.getPaisId());
+
+
+
+                    Console.WriteLine(s.getNombre() + "");
+                }
+                else
+                    MessageBox.Show("El usuario no existe");
+                
+            }
+            
         }
 
-        private void tBNombre_TextChanged(object sender, EventArgs e)
+
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
 
+
+            String nombre = tBNombre.Text.ToUpper();
+            Int32 bancoId = (banco.solicitudObtenerBanco()).getId();
+            Int32 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
+            Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
+            String direccion = tBDireccion.Text;
+
+
+            if (sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion))
+            {
+                MessageBox.Show("Exito al guardar");
+            }
+            else
+                MessageBox.Show("");
+
+
+
         }
 
-      
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            String nombre = tBNombre.Text.ToUpper();
+            Int32 bancoId = (banco.solicitudObtenerBanco()).getId();
+            Int32 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
+            Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
+            String direccion = tBDireccion.Text;
 
+
+
+        }
+
+
+        public void cargarComboGerente()
+        {
+            LinkedList<Empleado> lista = empleadoController.solicitudObtenerGerente();
+            BindingList<Item> gerentes = new BindingList<Item>();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                gerentes.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
+
+            }
+
+            cBGerente.DisplayMember = "Name";
+            cBGerente.ValueMember = "Value";
+            cBGerente.DataSource = gerentes;
+        }
     }
 }

@@ -10,11 +10,18 @@ namespace Platform.Comunication.controller
 {
    public class DepartamentoController
     {
+       DepartamentoDAO deptoDAO = new DepartamentoDAO();
        public LinkedList<Departamento> solicitudListaDeptosPorPais(int idPais)
        {
-           DepartamentoDAO deptoDAO = new DepartamentoDAO();
+           
            return deptoDAO.buscarDeptoPorPais(idPais);
 
+       }
+
+
+       public Departamento solicitudBuscarPorId(int id)
+       {
+           return deptoDAO.buscarDepartamentoPorId(id);
        }
     }
 }

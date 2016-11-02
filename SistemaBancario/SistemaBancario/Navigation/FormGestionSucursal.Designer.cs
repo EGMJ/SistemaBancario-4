@@ -129,7 +129,6 @@
             this.tBNombre.Name = "tBNombre";
             this.tBNombre.Size = new System.Drawing.Size(191, 21);
             this.tBNombre.TabIndex = 7;
-            this.tBNombre.TextChanged += new System.EventHandler(this.tBNombre_TextChanged);
             this.tBNombre.Enter += new System.EventHandler(this.tBNombre_Enter);
             // 
             // cBPais
@@ -179,6 +178,7 @@
             // 
             // cBGerente
             // 
+            this.cBGerente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBGerente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBGerente.FormattingEnabled = true;
             this.cBGerente.Location = new System.Drawing.Point(135, 92);
@@ -264,6 +264,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 

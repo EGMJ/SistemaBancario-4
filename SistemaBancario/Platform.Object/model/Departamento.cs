@@ -12,10 +12,18 @@ namespace Platform.Object.model
         private String nombre;
         private String descripcion;
         private Int32 paisId;
+        
 
         public Departamento()
         {
 
+        }
+
+        public Departamento(int id, string nombre)
+        {
+            // TODO: Complete member initialization
+            this.id = id;
+            this.nombre = nombre;
         }
 
         public int getId()

@@ -16,10 +16,18 @@ namespace Platform.Object.model
         private Int32 ciudadNacimiento;
         private Int32 sucursalId;
         private Int32 cargoId;
+       
 
         public Empleado()
         {
 
+        }
+
+        public Empleado(int id, string nombre)
+        {
+            
+            this.id = id;
+            this.nombre = nombre;
         }
 
          public Int32 getId()

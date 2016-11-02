@@ -19,6 +19,17 @@ namespace Platform.Object.model
         {
 
         }
+
+        public Sucursal(int id, string nombre, int bancoId, int ciudadId, int gerenteId, string direccion)
+        {
+            // TODO: Complete member initialization
+            this.id = id;
+            this.nombre = nombre;
+            this.bancoId = bancoId;
+            this.ciudadId = ciudadId;
+            this.gerenteId = gerenteId;
+            this.direccion = direccion;
+        }
         public Int32 getId()
         {
             return this.id;

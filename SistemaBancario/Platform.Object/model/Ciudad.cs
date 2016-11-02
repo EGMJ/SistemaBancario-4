@@ -12,6 +12,7 @@ namespace Platform.Object.model
         private String nombre;
         private String descripcion;
         private Int32 departamentoId;
+       
 
         public Ciudad()
         {
@@ -23,6 +24,13 @@ namespace Platform.Object.model
             this.nombre = nombre;
             this.descripcion = descri;
             this.departamentoId = deptoID;
+        }
+
+        public Ciudad(int id, string nombre)
+        {
+
+            this.id = id;
+            this.nombre = nombre;
         }
 
         public Int32 getId()

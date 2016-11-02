@@ -39,5 +39,10 @@ namespace Platform.Comunication.controller
         {
             return ciudadDAO.eliminarCiudad(nombre);
         }
+
+        public Ciudad solicitudBuscarPorId(int id)
+        {
+            return ciudadDAO.buscarCiudadPorId(id);
+        }
     }
 }

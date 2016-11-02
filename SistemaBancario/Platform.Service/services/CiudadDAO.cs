@@ -15,13 +15,14 @@ namespace Platform.Service.services
             LinkedList<Ciudad> listaMpios = new LinkedList<Ciudad>();
             String consulta = "exec listarMunicipiosPorDepartamento " + idDepto + ";";
             ejecutarRetorno(consulta);
-       
+
 
             if (dataset.Tables[0].Rows.Count == 0)
             {
                 dataset.Dispose();
             }
             else
+                listaMpios.AddFirst(new Ciudad(-1,"Seleccione una opción"));
 
                 for (int j = 0; j < dataset.Tables[0].Rows.Count; j++)
                 {
@@ -30,7 +31,7 @@ namespace Platform.Service.services
                     ciudad.setId(Convert.ToInt32(dataset.Tables[0].Rows[j]["id"].ToString()));
                     ciudad.setNombre(dataset.Tables[0].Rows[j]["nombre"].ToString());
 
-                    listaMpios.AddFirst(ciudad);
+                    listaMpios.AddLast(ciudad);
 
                 }
             return listaMpios;
@@ -77,6 +78,26 @@ namespace Platform.Service.services
         {
             String consulta = "exec borrarCiudad '" + nombre + "';";
             return ejecutar(consulta);
+        }
+
+        public Ciudad buscarCiudadPorId(int id)
+        {
+            //LinkedList<Ciudad> listaMpios = new LinkedList<Ciudad>();
+            String consulta = "exec buscarCiudad " + id + ";";
+            ejecutarRetorno(consulta);
+            if (dataset.Tables[0].Rows.Count == 0)
+            {
+                dataset.Dispose();
+            }
+            else
+                //listaMpios.AddFirst(new Ciudad(-1, "Seleccione una opción"));
+                ciudad = new Ciudad();
+                ciudad.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
+                ciudad.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+                ciudad.setIdDepartamento(Convert.ToInt32(dataset.Tables[0].Rows[0]["departamento_id"].ToString()));
+                                       
+            return ciudad;
+
         }
     }
 }
