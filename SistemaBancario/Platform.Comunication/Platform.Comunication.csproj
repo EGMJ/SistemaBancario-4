@@ -42,6 +42,7 @@
     <Compile Include="controller\BancoController.cs" />
     <Compile Include="controller\CiudadController.cs" />
     <Compile Include="controller\DepartamentoController.cs" />
+    <Compile Include="controller\EmpleadoController.cs" />
     <Compile Include="controller\LoginController.cs" />
     <Compile Include="controller\PoliticaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

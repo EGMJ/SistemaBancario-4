@@ -25,6 +25,8 @@ namespace SistemaBancario.Navigation
 
         private void FormGestionSucursal_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.banco' Puede moverla o quitarla según sea necesario.
+            this.bancoTableAdapter.Fill(this.dataSetBanco.banco);
 
             this.departamentoTableAdapter.Fill(this.dataSetBanco.departamento);
             cargarPais();
@@ -79,6 +81,10 @@ namespace SistemaBancario.Navigation
             cBCiudad.ValueMember = "Value";
             cBCiudad.DataSource = ciudad;
             
+        }
+
+        public void cargarComboGerente() { 
+        
         }
 
         private void tBNombre_Enter(object sender, EventArgs e)
