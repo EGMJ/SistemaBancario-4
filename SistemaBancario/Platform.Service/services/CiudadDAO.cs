@@ -39,7 +39,7 @@ namespace Platform.Service.services
         public bool guardarCiudad(Ciudad city)
         {
             String consulta = "exec guardarCiudad '" + city.getNombre() +
-                "','" + city.getDescripcion() + "';'";
+                "','" + city.getDescripcion() + "', " + city.getIdDepartamento() + ";";
             return ejecutar(consulta);
         }
 
@@ -56,6 +56,7 @@ namespace Platform.Service.services
             else
             {
                 ciuda.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+                ciuda.setIdDepartamento((int)dataset.Tables[0].Rows[0]["departamento_id"]);
                 ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
                 dataset.Dispose();
             }

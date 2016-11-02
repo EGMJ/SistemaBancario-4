@@ -78,15 +78,17 @@ namespace SistemaBancario.Navigation
             cBCiudad.DisplayMember = "Name";
             cBCiudad.ValueMember = "Value";
             cBCiudad.DataSource = ciudad;
-
-            
-
             
         }
 
         private void tBNombre_Enter(object sender, EventArgs e)
         {
             Console.WriteLine("algo");
+        }
+
+        private void tBNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
       

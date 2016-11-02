@@ -28,17 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombreCiudad = new System.Windows.Forms.TextBox();
             this.cbDepto = new System.Windows.Forms.ComboBox();
+            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.departamentoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.departamentoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +85,30 @@
             // 
             // cbDepto
             // 
+            this.cbDepto.DataSource = this.departamentoBindingSource;
+            this.cbDepto.DisplayMember = "nombre";
             this.cbDepto.FormattingEnabled = true;
             this.cbDepto.Location = new System.Drawing.Point(201, 64);
             this.cbDepto.Name = "cbDepto";
             this.cbDepto.Size = new System.Drawing.Size(156, 21);
             this.cbDepto.TabIndex = 4;
+            this.cbDepto.ValueMember = "id";
+            this.cbDepto.SelectedIndexChanged += new System.EventHandler(this.cbDepto_SelectedIndexChanged);
+            // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataMember = "departamento";
+            this.departamentoBindingSource.DataSource = this.dataSetBancoBindingSource;
+            // 
+            // dataSetBancoBindingSource
+            // 
+            this.dataSetBancoBindingSource.DataSource = this.dataSetBanco;
+            this.dataSetBancoBindingSource.Position = 0;
+            // 
+            // dataSetBanco
+            // 
+            this.dataSetBanco.DataSetName = "DataSetBanco";
+            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtDescripcion
             // 
@@ -141,6 +168,10 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // departamentoTableAdapter
+            // 
+            this.departamentoTableAdapter.ClearBeforeFill = true;
+            // 
             // c
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +190,10 @@
             this.Controls.Add(this.label1);
             this.Name = "c";
             this.Text = "FormGestionarCiudad";
+            this.Load += new System.EventHandler(this.c_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +212,9 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.BindingSource dataSetBancoBindingSource;
+        private DataSetBanco dataSetBanco;
+        private System.Windows.Forms.BindingSource departamentoBindingSource;
+        private DataSetBancoTableAdapters.departamentoTableAdapter departamentoTableAdapter;
     }
 }
