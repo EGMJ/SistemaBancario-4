@@ -163,6 +163,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.Name = "FormAdministrador";
             this.menuStrip1.ResumeLayout(false);

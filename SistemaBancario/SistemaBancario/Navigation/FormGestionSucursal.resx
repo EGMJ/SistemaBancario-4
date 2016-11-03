@@ -326,9 +326,6 @@
   <metadata name="paisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
-  <metadata name="dataSetBanco.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="cBPais.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -356,6 +353,15 @@
   <data name="&gt;&gt;cBPais.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <metadata name="paisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>143, 17</value>
+  </metadata>
+  <metadata name="dataSetBanco.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="dataSetBanco.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="cBDepartamento.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -491,6 +497,69 @@
   <metadata name="bancoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>219, 56</value>
   </metadata>
+  <data name="&gt;&gt;btnEliminar.Name" xml:space="preserve">
+    <value>btnEliminar</value>
+  </data>
+  <data name="&gt;&gt;btnEliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEliminar.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnEliminar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnEditar.Name" xml:space="preserve">
+    <value>btnEditar</value>
+  </data>
+  <data name="&gt;&gt;btnEditar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEditar.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnEditar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnGuardar.Name" xml:space="preserve">
+    <value>btnGuardar</value>
+  </data>
+  <data name="&gt;&gt;btnGuardar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGuardar.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnGuardar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 180</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>651, 59</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnEliminar.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -581,33 +650,6 @@
   <data name="&gt;&gt;btnGuardar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 180</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>651, 59</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="paisTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>295, 17</value>
   </metadata>
@@ -673,7 +715,7 @@
     <value>9, 27</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 186</value>
+    <value>642, 228</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
