@@ -94,32 +94,6 @@ namespace SistemaBancario.Navigation
 
 
 
-        private void tBNombre_Enter(object sender, EventArgs e)
-        {
-            String nombre = tBNombre.Text;
-            if (nombre.Length != 0)
-            {
-                Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
-                if (s != null)
-                {
-                                      
-                    cBPais.SelectedValue = s.idPais;
-                    cBDepartamento.SelectedValue = s.idDepartamento;
-                    cBCiudad.SelectedValue = s.getCiudadId();
-                    cBGerente.SelectedValue = s.getGerenteId();
-                    tBDireccion.Text = s.getDireccion();
-                    aux = s.getId();
-
-                  
-                }
-                else
-                    MessageBox.Show("El usuario no existe");
-
-            }
-
-        }
-
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -150,7 +124,12 @@ namespace SistemaBancario.Navigation
             Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
             String direccion = tBDireccion.Text;
 
-            sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion);
+            if (sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion))
+            {
+                MessageBox.Show("La sucursal se modificó correctamente");
+            }
+            else
+                MessageBox.Show("ocurrió un error al modificar");
 
 
 
@@ -170,6 +149,35 @@ namespace SistemaBancario.Navigation
             cBGerente.DisplayMember = "Name";
             cBGerente.ValueMember = "Value";
             cBGerente.DataSource = gerentes;
+        }
+
+       
+
+        private void tBNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                String nombre = tBNombre.Text;
+                if (nombre.Length != 0)
+                {
+                    Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
+                    if (s != null)
+                    {
+
+                        cBPais.SelectedValue = s.idPais;
+                        cBDepartamento.SelectedValue = s.idDepartamento;
+                        cBCiudad.SelectedValue = s.getCiudadId();
+                        cBGerente.SelectedValue = s.getGerenteId();
+                        tBDireccion.Text = s.getDireccion();
+                        aux = s.getId();
+
+
+                    }
+                    else
+                        MessageBox.Show("El usuario no existe");
+
+                }
+            }
         }
     }
 }
