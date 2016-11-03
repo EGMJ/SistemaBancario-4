@@ -49,5 +49,10 @@ namespace Platform.Service.services
 
 
         }
+
+        public bool modificarSucursal()
+        {
+            return true;
+        }
     }
 }

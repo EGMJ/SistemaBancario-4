@@ -22,6 +22,7 @@ namespace SistemaBancario.Navigation
         BancoController banco = new BancoController();
         SucursalController sucursalrControlador = new SucursalController();
         PaisController paisControlador = new PaisController();
+        int aux;
         public FormGestionSucursal()
         {
             InitializeComponent();
@@ -48,18 +49,22 @@ namespace SistemaBancario.Navigation
 
         private void cBPais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Int32 idPais = (int)cBPais.SelectedValue;
-            LinkedList<Departamento> lista = deptoController.solicitudListaDeptosPorPais(idPais);
-            BindingList<Item> deptos = new BindingList<Item>();
-            for (int i = 0; i < lista.Count; i++)
+            if (cBPais.SelectedValue != null)
             {
-                deptos.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
+                Int32 idPais = (int)cBPais.SelectedValue;
+                LinkedList<Departamento> lista = deptoController.solicitudListaDeptosPorPais(idPais);
+                BindingList<Item> deptos = new BindingList<Item>();
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    deptos.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
 
+                }
+
+                cBDepartamento.DisplayMember = "Name";
+                cBDepartamento.ValueMember = "Value";
+                cBDepartamento.DataSource = deptos;
             }
 
-            cBDepartamento.DisplayMember = "Name";
-            cBDepartamento.ValueMember = "Value";
-            cBDepartamento.DataSource = deptos;
 
 
 
@@ -100,13 +105,12 @@ namespace SistemaBancario.Navigation
                     Ciudad c = ciudadController.solicitudBuscarPorId(s.getCiudadId());
                     Departamento d = deptoController.solicitudBuscarPorId(c.getIdDepartamento());
                     Pais p = paisControlador.solicitudBuscarPorId(d.getPaisId());
-
                     cBPais.SelectedValue = p.getId();
-                    //cBPais_SelectedIndexChanged(sender, e);
-                    //Thread.Sleep(1000);
-                    //cBDepartamento.;
-                    // Thread.Sleep(1000);
-                    // cBCiudad.SelectedValue = c.getId();
+                    cBDepartamento.SelectedValue = d.getId();
+                    cBCiudad.SelectedValue = c.getId();
+                    cBGerente.SelectedValue = s.getGerenteId();
+                    tBDireccion.Text = s.getDireccion();
+                    aux = s.getId();
 
                     Console.WriteLine(s.getNombre() + "");
                 }
@@ -147,6 +151,8 @@ namespace SistemaBancario.Navigation
             Int32 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
             Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
             String direccion = tBDireccion.Text;
+
+            sucursalrControlador.
 
 
 

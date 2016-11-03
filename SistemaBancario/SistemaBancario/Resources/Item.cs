@@ -8,8 +8,8 @@ namespace SistemaBancario.Resources
 {
     public class Item
     {
-        public string Name;
-        public int Value;
+        public string Name {get; set;}
+        public int Value { get; set; }
         public Item(string name, int value)
         {
             Name = name; Value = value;
