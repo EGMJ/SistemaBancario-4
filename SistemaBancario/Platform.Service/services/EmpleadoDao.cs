@@ -34,5 +34,52 @@ namespace Platform.Service.services
               }
           return listaGerentes;
       }
+
+      public bool guardarEmpleado(Empleado emp)
+      {
+          String consulta = "exec guardarEmpleado '" + emp.getCedula() +
+              "','" + emp.getNombre() + "','" + emp.getApellido() + "','" +
+              emp.getFechaNacimiento() + "'," + emp.getCiudadNacimiento() +","+
+              emp.getCargoId() + ";";
+          return ejecutar(consulta);
+      }
+
+      //public Empleado buscarEmpleado(String cedula)
+      //{
+      //    Empleado empleado = new Empleado();
+      //    String consulta = "exec buscarEmpleado '" + cedula + "';";
+      //    ejecutarRetorno(consulta);
+
+      //    if (dataset.Tables[0].Rows.Count == 0)
+      //    {
+      //        dataset.Dispose();
+      //    }
+      //    else
+      //    {
+      //        emple.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+      //        ciuda.setIdDepartamento((int)dataset.Tables[0].Rows[0]["departamento_id"]);
+      //        ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
+      //        dataset.Dispose();
+      //    }
+
+
+      //    return empleado;
+      //}
+
+
+      public bool modificarCiudad(Ciudad city)
+      {
+          String consulta = "exec editarCiudad '" + city.getNombre() +
+              "','" + city.getDescripcion() + "','" + city.getIdDepartamento() + "';";
+          return ejecutar(consulta);
+      }
+
+      public bool eliminarCiudad(String nombre)
+      {
+          String consulta = "exec borrarCiudad '" + nombre + "';";
+          return ejecutar(consulta);
+      }
+
+
     }
 }

@@ -151,6 +151,9 @@
     <EmbeddedResource Include="Navigation\FormGestionBanco.resx">
       <DependentUpon>FormGestionBanco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\FormGestionCargo.resx">
+      <DependentUpon>FormGestionCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation\FormGestionEmpleado.resx">
       <DependentUpon>FormGestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
