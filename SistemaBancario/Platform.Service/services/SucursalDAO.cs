@@ -36,6 +36,7 @@ namespace Platform.Service.services
                 sucursal.setDireccion(dataset.Tables[0].Rows[0]["direccion"].ToString());
                 sucursal.setCiudadId(Convert.ToInt32(dataset.Tables[0].Rows[0]["ciudad_id"].ToString()));
                 sucursal.setBancoId(Convert.ToInt32(dataset.Tables[0].Rows[0]["banco_id"].ToString()));
+                //sucursal.
                 
             }
             else

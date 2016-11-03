@@ -152,7 +152,7 @@ namespace SistemaBancario.Navigation
             Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
             String direccion = tBDireccion.Text;
 
-            sucursalrControlador.
+           // sucursalrControlador.
 
 
 
