@@ -102,17 +102,15 @@ namespace SistemaBancario.Navigation
                 Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
                 if (s != null)
                 {
-                    Ciudad c = ciudadController.solicitudBuscarPorId(s.getCiudadId());
-                    Departamento d = deptoController.solicitudBuscarPorId(c.getIdDepartamento());
-                    Pais p = paisControlador.solicitudBuscarPorId(d.getPaisId());
-                    cBPais.SelectedValue = p.getId();
-                    cBDepartamento.SelectedValue = d.getId();
-                    cBCiudad.SelectedValue = c.getId();
+                                      
+                    cBPais.SelectedValue = s.idPais;
+                    cBDepartamento.SelectedValue = s.idDepartamento;
+                    cBCiudad.SelectedValue = s.getCiudadId();
                     cBGerente.SelectedValue = s.getGerenteId();
                     tBDireccion.Text = s.getDireccion();
                     aux = s.getId();
 
-                    Console.WriteLine(s.getNombre() + "");
+                  
                 }
                 else
                     MessageBox.Show("El usuario no existe");
@@ -152,7 +150,7 @@ namespace SistemaBancario.Navigation
             Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
             String direccion = tBDireccion.Text;
 
-           // sucursalrControlador.
+            sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion);
 
 
 

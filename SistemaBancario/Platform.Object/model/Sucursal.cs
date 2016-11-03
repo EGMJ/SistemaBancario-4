@@ -15,8 +15,8 @@ namespace Platform.Object.model
         private Int32 gerenteId;
         private String direccion;
         //auxiliares para busqueda de la sucursal 
-        private Int32 idPais { get; set; }
-        private Int32 idDepartamento { get; set; }
+        public Int32 idPais { get; set; }
+        public Int32 idDepartamento { get; set; }
 
         public Sucursal()
         {

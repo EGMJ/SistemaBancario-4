@@ -10,22 +10,22 @@ namespace Platform.Service.services
     public class SucursalDAO : ClsConexion
     {
 
-        public bool guardarSucursal(Sucursal sucrusal)
+        public bool guardarSucursal(Sucursal entity)
         {
             String consulta = "exec guardarSucursal "
-                + sucrusal.getId() + ",'" + sucrusal.getNombre()
-                + "'," + sucrusal.getBancoId() + "," + sucrusal.getCiudadId()
-                + "," + sucrusal.getGerenteId() + ",'" + sucrusal.getDireccion() + "';";
+                + entity.getId() + ",'" + entity.getNombre()
+                + "'," + entity.getBancoId() + "," + entity.getCiudadId()
+                + "," + entity.getGerenteId() + ",'" + entity.getDireccion() + "';";
             return ejecutarRetorno(consulta);
             //String info = dataset.Tables[0].Rows[0].ToString();
 
             //return info;
         }
 
-        public Sucursal buscarSucursal(String nombre)
+        public Sucursal buscarSucursal(String entity)
         {
             Sucursal sucursal = new Sucursal();
-            String consulta = "exec buscarSucursal '" + nombre + "';";
+            String consulta = "exec buscarSucursal '" + entity + "';";
             ejecutarRetorno(consulta);
             if (dataset != null)
             {
@@ -36,7 +36,8 @@ namespace Platform.Service.services
                 sucursal.setDireccion(dataset.Tables[0].Rows[0]["direccion"].ToString());
                 sucursal.setCiudadId(Convert.ToInt32(dataset.Tables[0].Rows[0]["ciudad_id"].ToString()));
                 sucursal.setBancoId(Convert.ToInt32(dataset.Tables[0].Rows[0]["banco_id"].ToString()));
-                //sucursal.
+                sucursal.idDepartamento = Convert.ToInt32(dataset.Tables[0].Rows[0]["idDepto"].ToString());
+                sucursal.idPais = Convert.ToInt32(dataset.Tables[0].Rows[0]["idPais"].ToString());
                 
             }
             else
@@ -51,9 +52,14 @@ namespace Platform.Service.services
 
         }
 
-        public bool modificarSucursal()
+        public bool modificarSucursal(Sucursal entity)
         {
-            return true;
+            String consulta = "exec guardarSucursal "
+                + entity.getId() + ",'" + entity.getNombre()
+                + "'," + entity.getBancoId() + "," + entity.getCiudadId()
+                + "," + entity.getGerenteId() + ",'" + entity.getDireccion() + "';";
+            return ejecutarRetorno(consulta);
+            
         }
     }
 }
