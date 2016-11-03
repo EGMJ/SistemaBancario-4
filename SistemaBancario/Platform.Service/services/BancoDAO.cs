@@ -37,8 +37,5 @@ namespace Platform.Service.services
            return ejecutar(consulta);
        }    
 
-
-
-
     }
 }

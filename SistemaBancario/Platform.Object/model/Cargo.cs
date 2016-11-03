@@ -9,7 +9,7 @@ namespace Platform.Object.model
     public class Cargo
     {
         private Int32 id;
-        private float salario;
+        private Double salario;
         private String nombre;
         private Int32 cantidadHoras;
         private String descripcion;
@@ -19,11 +19,18 @@ namespace Platform.Object.model
 
         }
 
-        public Cargo(Int32 id, float salario, String nombre, Int32 cantidadHoras, String descr)
+        public Cargo(Int32 id, double salario, String nombre, Int32 cantidadHoras, String descr)
         {
             this.id = id;
             this.salario = salario;
             this.nombre = nombre;
+            this.cantidadHoras = cantidadHoras;
+            this.descripcion = descr;
+        }
+        public Cargo(String nombre, double salario, Int32 cantidadHoras, String descr)
+        {
+            this.nombre = nombre;
+            this.salario = salario;            
             this.cantidadHoras = cantidadHoras;
             this.descripcion = descr;
         }
@@ -38,12 +45,12 @@ namespace Platform.Object.model
             this.id = id;
         }
 
-        public float getSalario()
+        public Double getSalario()
         {
             return this.salario;
         }
 
-        public void setSalario(float salario)
+        public void setSalario(double salario)
         {
             this.salario = salario;
         }

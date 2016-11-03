@@ -12,7 +12,7 @@ namespace Platform.Object.model
         private String nombre;
         private String apellido;
         private String cedula;
-        private DateTime fechaNacimiento;
+        private String fechaNacimiento;
         private Int32 ciudadNacimiento;
         private Int32 sucursalId;
         private Int32 cargoId;
@@ -21,6 +21,18 @@ namespace Platform.Object.model
         public Empleado()
         {
 
+        }
+
+        public Empleado(String nombre,String apellido, String cedula, String fechaNacimiento,
+            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId )
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.cedula = cedula;
+            this.fechaNacimiento = fechaNacimiento;
+            this.ciudadNacimiento = ciudadNacimiento;
+            this.sucursalId = sucursalId;
+            this.cargoId = cargoId;
         }
 
         public Empleado(int id, string nombre)
