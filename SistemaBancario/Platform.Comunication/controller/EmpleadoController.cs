@@ -20,16 +20,16 @@ namespace Platform.Comunication.controller
        }
 
        public bool SolicitudGuardarEmpleado(String nombre, String apellido, String cedula, String fechaNacimiento,
-            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId)
+            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId, Int32 usuarioId)
        {
-           Empleado emp = new Empleado(nombre,apellido,cedula,fechaNacimiento,ciudadNacimiento,sucursalId,cargoId);
+           Empleado emp = new Empleado(nombre,apellido,cedula,fechaNacimiento,ciudadNacimiento,sucursalId,cargoId,usuarioId);
            return empDAO.guardarEmpleado(emp);
        }
 
-       //public Cargo SolicitudBuscarEmpleado(String cedula)
-       //{
-       //    return empDAO.buscarEmpleado(cedula);
-       //}
+       public Empleado SolicitudBuscarEmpleado(String cedula)
+       {
+           return empDAO.buscarEmpleado(cedula);
+       }
 
        //public bool SolicitudModificarCargo(String nombre, double salario, int cantidad, String desc)
        //{

@@ -16,7 +16,7 @@ namespace Platform.Object.model
         private Int32 ciudadNacimiento;
         private Int32 sucursalId;
         private Int32 cargoId;
-       
+        private Int32 usuarioId;
 
         public Empleado()
         {
@@ -24,7 +24,7 @@ namespace Platform.Object.model
         }
 
         public Empleado(String nombre,String apellido, String cedula, String fechaNacimiento,
-            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId )
+            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId, Int32 usuarioId)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -33,6 +33,7 @@ namespace Platform.Object.model
             this.ciudadNacimiento = ciudadNacimiento;
             this.sucursalId = sucursalId;
             this.cargoId = cargoId;
+            this.usuarioId = usuarioId;
         }
 
         public Empleado(int id, string nombre)
@@ -109,6 +110,15 @@ namespace Platform.Object.model
         public void setCargoId(Int32 cargoID)
         {
             this.cargoId = cargoID;
+        }
+
+        public Int32 getUsuarioId()
+        {
+            return this.usuarioId;
+        }
+        public void setUsuarioId(Int32 usuarioID)
+        {
+            this.usuarioId = usuarioID;
         }
     }
 }

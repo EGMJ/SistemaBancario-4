@@ -40,31 +40,35 @@ namespace Platform.Service.services
           String consulta = "exec guardarEmpleado '" + emp.getCedula() +
               "','" + emp.getNombre() + "','" + emp.getApellido() + "','" +
               emp.getFechaNacimiento() + "'," + emp.getCiudadNacimiento() +","+
-              emp.getCargoId() + ";";
+              emp.getCargoId() + ","+ emp.getSucursalId() + "," + emp.getUsuarioId() +";";
           return ejecutar(consulta);
       }
 
-      //public Empleado buscarEmpleado(String cedula)
-      //{
-      //    Empleado empleado = new Empleado();
-      //    String consulta = "exec buscarEmpleado '" + cedula + "';";
-      //    ejecutarRetorno(consulta);
+      public Empleado buscarEmpleado(String cedula)
+      {
+          Empleado emple = new Empleado();
+          String consulta = "exec buscarEmpleado '" + cedula + "';";
+          ejecutarRetorno(consulta);
 
-      //    if (dataset.Tables[0].Rows.Count == 0)
-      //    {
-      //        dataset.Dispose();
-      //    }
-      //    else
-      //    {
-      //        emple.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-      //        ciuda.setIdDepartamento((int)dataset.Tables[0].Rows[0]["departamento_id"]);
-      //        ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
-      //        dataset.Dispose();
-      //    }
+          if (dataset.Tables[0].Rows.Count == 0)
+          {
+              dataset.Dispose();
+          }
+          else
+          {
+              emple.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+              emple.setApellido(dataset.Tables[0].Rows[0]["apellido"].ToString());
+              emple.setFechaNacimiento(dataset.Tables[0].Rows[0]["fecha_nacimiento"].ToString());
+              emple.setCargoId((int)dataset.Tables[0].Rows[0]["cargo_id"]);
+              emple.setCiudadNacimiento((int)dataset.Tables[0].Rows[0]["ciudad_id"]);
+              emple.setSucursalId((int)dataset.Tables[0].Rows[0]["sucursal_id"]);
+              emple.setUsuarioId((int)dataset.Tables[0].Rows[0]["idUsuario"]);
+              dataset.Dispose();
+          }
 
 
-      //    return empleado;
-      //}
+          return emple;
+      }
 
 
       public bool modificarCiudad(Ciudad city)

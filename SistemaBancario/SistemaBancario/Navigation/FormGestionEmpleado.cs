@@ -16,11 +16,13 @@ namespace SistemaBancario.Navigation
     {
 
         EmpleadoController ctlEmp;
+        UsuarioController ctlUsu;
 
         public FormGestionEmpleado()
         {
             InitializeComponent();
             ctlEmp = new EmpleadoController();
+            ctlUsu = new UsuarioController();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -42,9 +44,14 @@ namespace SistemaBancario.Navigation
                 }
             else
             {
-                if(ctlEmp.SolicitudGuardarEmpleado(nombre,apellido,cedula,fecha,idCiudad,idSucursal,idCargo)){
-
-                }
+                if(ctlUsu.SolicitudGuardarUsuario(cuenta,contraseña,idTipoUsu)){
+                }                
+            }
+            Usuario usua = ctlUsu.SolicitudObtenerIdUsuario(cuenta);
+            Int32 idUsu = usua.getId();
+            if (ctlEmp.SolicitudGuardarEmpleado(nombre, apellido, cedula, fecha, idCiudad, idSucursal, idCargo, idUsu))
+            {
+                MessageBox.Show("Exito al registrar al empleado");
             }
 
         }
@@ -62,6 +69,31 @@ namespace SistemaBancario.Navigation
             // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.ciudad' Puede moverla o quitarla según sea necesario.
             this.ciudadTableAdapter.Fill(this.dataSetBanco.ciudad);
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            String cedula = txtCedula.Text;
+            if(cedula == ""){
+                MessageBox.Show("Ingrese una cedula para poder buscar");
+            }
+            else
+            {
+                Empleado em = new Empleado();
+                em = ctlEmp.SolicitudBuscarEmpleado(cedula);
+                if(em != null){
+                    txtApellido.Text = em.getApellido();
+                    txtNombre.Text = em.getNombre();
+                    dtpFechaNacimiento.Text = em.getFechaNacimiento();
+                    cbCiudad.SelectedValue = (int)em.getCiudadNacimiento();
+                    cbCrgo.SelectedValue = (int)em.getCargoId();
+                    cbSucursal.SelectedValue = (int)em.getSucursalId();
+                }
+                else
+                {
+                    MessageBox.Show("Error--");
+                }
+            }
         }
     }
 }

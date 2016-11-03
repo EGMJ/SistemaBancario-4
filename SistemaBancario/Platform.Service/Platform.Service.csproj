@@ -49,6 +49,7 @@
     <Compile Include="services\PaisDAO.cs" />
     <Compile Include="services\PoliticaDAO.cs" />
     <Compile Include="services\SucursalDAO.cs" />
+    <Compile Include="services\UsuarioDAO.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

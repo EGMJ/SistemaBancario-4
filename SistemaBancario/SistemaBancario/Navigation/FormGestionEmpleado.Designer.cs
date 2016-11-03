@@ -43,6 +43,7 @@
             this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.cbCrgo = new System.Windows.Forms.ComboBox();
+            this.cargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -65,15 +66,14 @@
             this.cbSucursal = new System.Windows.Forms.ComboBox();
             this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sucursalTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.sucursalTableAdapter();
-            this.cargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cargoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.cargoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipousuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -190,6 +190,11 @@
             this.cbCrgo.TabIndex = 14;
             this.cbCrgo.ValueMember = "id";
             // 
+            // cargoBindingSource
+            // 
+            this.cargoBindingSource.DataMember = "cargo";
+            this.cargoBindingSource.DataSource = this.dataSetBanco;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(421, 37);
@@ -208,6 +213,7 @@
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnModificar
             // 
@@ -352,11 +358,6 @@
             // 
             this.sucursalTableAdapter.ClearBeforeFill = true;
             // 
-            // cargoBindingSource
-            // 
-            this.cargoBindingSource.DataMember = "cargo";
-            this.cargoBindingSource.DataSource = this.dataSetBanco;
-            // 
             // cargoTableAdapter
             // 
             this.cargoTableAdapter.ClearBeforeFill = true;
@@ -397,11 +398,11 @@
             this.Load += new System.EventHandler(this.FormGestionEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipousuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

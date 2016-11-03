@@ -17,6 +17,13 @@ namespace Platform.Object.model
         
         }
 
+        public Usuario(String cuenta, String clave, Int32 tipoUsuario)
+        {
+            this.cuenta = cuenta;
+            this.clave = clave;
+            this.tipoUsuario = tipoUsuario;
+        }
+
         public Int32 getId()
         {
             return this.id;
