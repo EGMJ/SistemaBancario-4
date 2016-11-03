@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Platform.Service.services;
+
 namespace Platform.Comunication.controller
 {
    public class EmpleadoController
@@ -26,10 +26,10 @@ namespace Platform.Comunication.controller
            return empDAO.guardarEmpleado(emp);
        }
 
-       public Cargo SolicitudBuscarEmpleado(String cedula)
-       {
-           return empDAO.buscarEmpleado(cedula);
-       }
+       //public Cargo SolicitudBuscarEmpleado(String cedula)
+       //{
+       //    return empDAO.buscarEmpleado(cedula);
+       //}
 
        //public bool SolicitudModificarCargo(String nombre, double salario, int cantidad, String desc)
        //{

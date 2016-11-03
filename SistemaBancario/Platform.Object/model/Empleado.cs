@@ -74,11 +74,11 @@ namespace Platform.Object.model
         {
             this.cedula = cedula;
         }
-        public DateTime getFechaNacimiento()
+        public String getFechaNacimiento()
         {
             return this.fechaNacimiento;
         }
-        public void setFechaNacimiento(DateTime fechaNa)
+        public void setFechaNacimiento(String fechaNa)
         {
             this.fechaNacimiento = fechaNa;
         }

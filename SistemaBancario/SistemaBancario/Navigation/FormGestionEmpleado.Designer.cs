@@ -40,6 +40,8 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
+            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.cbCrgo = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -47,9 +49,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtPrueba = new System.Windows.Forms.TextBox();
-            this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.dataSetBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.ciudadTableAdapter();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.usuarioTableAdapter();
@@ -61,11 +61,19 @@
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.tipousuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipo_usuarioTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.tipo_usuarioTableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbSucursal = new System.Windows.Forms.ComboBox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sucursalTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.sucursalTableAdapter();
+            this.cargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cargoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.cargoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipousuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -161,13 +169,26 @@
             this.cbCiudad.TabIndex = 12;
             this.cbCiudad.ValueMember = "id";
             // 
+            // ciudadBindingSource
+            // 
+            this.ciudadBindingSource.DataMember = "ciudad";
+            this.ciudadBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // dataSetBanco
+            // 
+            this.dataSetBanco.DataSetName = "DataSetBanco";
+            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbCrgo
             // 
+            this.cbCrgo.DataSource = this.cargoBindingSource;
+            this.cbCrgo.DisplayMember = "nombre";
             this.cbCrgo.FormattingEnabled = true;
-            this.cbCrgo.Location = new System.Drawing.Point(167, 180);
+            this.cbCrgo.Location = new System.Drawing.Point(166, 178);
             this.cbCrgo.Name = "cbCrgo";
             this.cbCrgo.Size = new System.Drawing.Size(121, 21);
             this.cbCrgo.TabIndex = 14;
+            this.cbCrgo.ValueMember = "id";
             // 
             // btnGuardar
             // 
@@ -223,20 +244,10 @@
             this.txtPrueba.Size = new System.Drawing.Size(10, 20);
             this.txtPrueba.TabIndex = 20;
             // 
-            // dataSetBanco
-            // 
-            this.dataSetBanco.DataSetName = "DataSetBanco";
-            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataSetBancoBindingSource
             // 
             this.dataSetBancoBindingSource.DataSource = this.dataSetBanco;
             this.dataSetBancoBindingSource.Position = 0;
-            // 
-            // ciudadBindingSource
-            // 
-            this.ciudadBindingSource.DataMember = "ciudad";
-            this.ciudadBindingSource.DataSource = this.dataSetBanco;
             // 
             // ciudadTableAdapter
             // 
@@ -254,7 +265,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(88, 211);
+            this.label8.Location = new System.Drawing.Point(88, 234);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 21;
@@ -263,7 +274,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(88, 243);
+            this.label9.Location = new System.Drawing.Point(88, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 22;
@@ -272,7 +283,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(81, 272);
+            this.label10.Location = new System.Drawing.Point(81, 295);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 23;
@@ -280,14 +291,14 @@
             // 
             // txtCuenta
             // 
-            this.txtCuenta.Location = new System.Drawing.Point(167, 211);
+            this.txtCuenta.Location = new System.Drawing.Point(167, 234);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(120, 20);
             this.txtCuenta.TabIndex = 24;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(166, 243);
+            this.txtContraseña.Location = new System.Drawing.Point(166, 266);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(121, 20);
             this.txtContraseña.TabIndex = 25;
@@ -297,7 +308,7 @@
             this.cbTipoUsuario.DataSource = this.tipousuarioBindingSource;
             this.cbTipoUsuario.DisplayMember = "nombre";
             this.cbTipoUsuario.FormattingEnabled = true;
-            this.cbTipoUsuario.Location = new System.Drawing.Point(167, 272);
+            this.cbTipoUsuario.Location = new System.Drawing.Point(167, 295);
             this.cbTipoUsuario.Name = "cbTipoUsuario";
             this.cbTipoUsuario.Size = new System.Drawing.Size(150, 21);
             this.cbTipoUsuario.TabIndex = 26;
@@ -312,11 +323,51 @@
             // 
             this.tipo_usuarioTableAdapter.ClearBeforeFill = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(85, 209);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Sucursal";
+            // 
+            // cbSucursal
+            // 
+            this.cbSucursal.DataSource = this.sucursalBindingSource;
+            this.cbSucursal.DisplayMember = "nombre";
+            this.cbSucursal.FormattingEnabled = true;
+            this.cbSucursal.Location = new System.Drawing.Point(166, 206);
+            this.cbSucursal.Name = "cbSucursal";
+            this.cbSucursal.Size = new System.Drawing.Size(121, 21);
+            this.cbSucursal.TabIndex = 28;
+            this.cbSucursal.ValueMember = "id";
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataMember = "sucursal";
+            this.sucursalBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // sucursalTableAdapter
+            // 
+            this.sucursalTableAdapter.ClearBeforeFill = true;
+            // 
+            // cargoBindingSource
+            // 
+            this.cargoBindingSource.DataMember = "cargo";
+            this.cargoBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // cargoTableAdapter
+            // 
+            this.cargoTableAdapter.ClearBeforeFill = true;
+            // 
             // FormGestionEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 335);
+            this.Controls.Add(this.cbSucursal);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbTipoUsuario);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCuenta);
@@ -344,11 +395,13 @@
             this.Name = "FormGestionEmpleado";
             this.Text = "FormGestionEmpleado";
             this.Load += new System.EventHandler(this.FormGestionEmpleado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipousuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,5 +441,11 @@
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.BindingSource tipousuarioBindingSource;
         private DataSetBancoTableAdapters.tipo_usuarioTableAdapter tipo_usuarioTableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbSucursal;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private DataSetBancoTableAdapters.sucursalTableAdapter sucursalTableAdapter;
+        private System.Windows.Forms.BindingSource cargoBindingSource;
+        private DataSetBancoTableAdapters.cargoTableAdapter cargoTableAdapter;
     }
 }

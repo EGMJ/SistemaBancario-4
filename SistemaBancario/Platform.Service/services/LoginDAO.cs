@@ -10,8 +10,6 @@ namespace Platform.Service.services
     public class LoginDAO : ClsConexion 
     {
         Usuario usuario = new Usuario();
-        private string cuenta;
-        private string clave;
 
         public LoginDAO()
         {
@@ -24,7 +22,7 @@ namespace Platform.Service.services
             ejecutarRetorno(consulta);
              if (dataset.Tables[0].Rows.Count == 0)
             {
-                dataset.Dispose();                
+                dataset.Dispose();     
             }
             else
             {

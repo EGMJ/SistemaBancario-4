@@ -14,9 +14,13 @@ namespace SistemaBancario.Navigation
 {
     public partial class FormGestionEmpleado : Form
     {
+
+        EmpleadoController ctlEmp;
+
         public FormGestionEmpleado()
         {
             InitializeComponent();
+            ctlEmp = new EmpleadoController();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -31,11 +35,26 @@ namespace SistemaBancario.Navigation
             String cuenta = txtCuenta.Text;
             String contraseña = txtContraseña.Text;
             Int32 idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
+            Int32 idSucursal = (Int32)cbSucursal.SelectedValue;
+
+            if(cedula=="" || nombre == "" || apellido==""|| cuenta =="" || contraseña ==""){
+                    MessageBox.Show("Ingrese la infomacion completa");
+                }
+            else
+            {
+                if(ctlEmp.SolicitudGuardarEmpleado(nombre,apellido,cedula,fecha,idCiudad,idSucursal,idCargo)){
+
+                }
+            }
 
         }
 
         private void FormGestionEmpleado_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.cargo' Puede moverla o quitarla según sea necesario.
+            this.cargoTableAdapter.Fill(this.dataSetBanco.cargo);
+            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.sucursal' Puede moverla o quitarla según sea necesario.
+            this.sucursalTableAdapter.Fill(this.dataSetBanco.sucursal);
             // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.tipo_usuario' Puede moverla o quitarla según sea necesario.
             this.tipo_usuarioTableAdapter.Fill(this.dataSetBanco.tipo_usuario);
             // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.usuario' Puede moverla o quitarla según sea necesario.
