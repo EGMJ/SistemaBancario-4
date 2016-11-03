@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -178,7 +179,13 @@ namespace SistemaBancario.Navigation
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Thread hiloInterfaz;
             this.Close();
+            hiloInterfaz = new System.Threading.Thread(new System.Threading.ThreadStart(abrirLogin));
+            this.Close();
+            hiloInterfaz.SetApartmentState(System.Threading.ApartmentState.STA);
+            hiloInterfaz.Start();
+            
         }
 
         private void formCiudad_FormClosed(object sender, FormClosedEventArgs e)
@@ -197,6 +204,11 @@ namespace SistemaBancario.Navigation
             }
             else
                 formCiudad.Activate();
+        }
+        public void abrirLogin()
+        {
+            Login menu = new Login();
+            menu.ShowDialog();
         }
     }
 }

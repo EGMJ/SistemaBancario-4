@@ -22,32 +22,30 @@ namespace Platform.Service.services
             //return info;
         }
 
-        public Sucursal buscarSucursal(String entity)
+        public Sucursal buscarSucursal(String nombre)
         {
-            Sucursal sucursal = new Sucursal();
-            String consulta = "exec buscarSucursal '" + entity + "';";
+            Sucursal entity = null;
+            String consulta = "exec buscarSucursal '" + nombre + "';";
             ejecutarRetorno(consulta);
-            if (dataset != null)
+            if (dataset.Tables[0].Rows.Count == 0)
             {
-                sucursal.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
-                sucursal.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-              // String i = dataset.Tables[0].Rows[0]["gerenteId"].ToString();
-                sucursal.setGerenteId(Convert.ToInt32(dataset.Tables[0].Rows[0]["gerenteId"].ToString()));
-                sucursal.setDireccion(dataset.Tables[0].Rows[0]["direccion"].ToString());
-                sucursal.setCiudadId(Convert.ToInt32(dataset.Tables[0].Rows[0]["ciudad_id"].ToString()));
-                sucursal.setBancoId(Convert.ToInt32(dataset.Tables[0].Rows[0]["banco_id"].ToString()));
-                sucursal.idDepartamento = Convert.ToInt32(dataset.Tables[0].Rows[0]["idDepto"].ToString());
-                sucursal.idPais = Convert.ToInt32(dataset.Tables[0].Rows[0]["idPais"].ToString());
-                
+                dataset.Dispose();
             }
             else
             {
-               // dataset.Dispose();
-                sucursal = null;
+                entity= new Sucursal();
+                entity.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
+                entity.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+                // String i = dataset.Tables[0].Rows[0]["gerenteId"].ToString();
+                entity.setGerenteId(Convert.ToInt32(dataset.Tables[0].Rows[0]["gerenteId"].ToString()));
+                entity.setDireccion(dataset.Tables[0].Rows[0]["direccion"].ToString());
+                entity.setCiudadId(Convert.ToInt32(dataset.Tables[0].Rows[0]["ciudad_id"].ToString()));
+                entity.setBancoId(Convert.ToInt32(dataset.Tables[0].Rows[0]["banco_id"].ToString()));
+                entity.idDepartamento = Convert.ToInt32(dataset.Tables[0].Rows[0]["idDepto"].ToString());
+                entity.idPais = Convert.ToInt32(dataset.Tables[0].Rows[0]["idPais"].ToString());
             }
-
-                
-            return sucursal;
+                         
+            return entity;
 
 
         }
@@ -61,5 +59,14 @@ namespace Platform.Service.services
             return ejecutarRetorno(consulta);
             
         }
+
+        public String eliminarSucursal(int id)
+        {
+            String consulta = "exec borrarSucursal " + id + ";";
+            ejecutarRetorno(consulta);
+            String info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
+            return info;
+        }
     }
+
 }
