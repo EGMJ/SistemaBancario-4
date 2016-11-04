@@ -44,14 +44,12 @@
             this.cBPais = new System.Windows.Forms.ComboBox();
             this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tBNombre = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.paisTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -59,7 +57,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -220,16 +217,6 @@
             this.paisBindingSource.DataMember = "pais";
             this.paisBindingSource.DataSource = this.dataSetBancoBindingSource;
             // 
-            // dataSetBancoBindingSource
-            // 
-            this.dataSetBancoBindingSource.DataSource = this.dataSetBanco;
-            this.dataSetBancoBindingSource.Position = 0;
-            // 
-            // dataSetBanco
-            // 
-            this.dataSetBanco.DataSetName = "DataSetBanco";
-            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,10 +275,7 @@
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // paisTableAdapter
-            // 
-            this.paisTableAdapter.ClearBeforeFill = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tabControl1
             // 
@@ -347,7 +331,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

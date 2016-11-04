@@ -76,5 +76,10 @@ namespace SistemaBancario.Navigation
                 cBCiudad.DataSource = ciudad;
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
