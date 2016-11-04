@@ -21,6 +21,8 @@ namespace SistemaBancario
         public Login()
         {
             InitializeComponent();
+            tBClave.Text = "a";
+            tBusuario.Text = "a";
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

@@ -37,9 +37,9 @@ namespace Platform.Comunication.controller
        //    return caDAO.modificarCargo(cargo);
        //}
 
-       //public bool solicitudEliminarCargo(String nombre)
-       //{
-       //    return caDAO.eliminarCargo(nombre);
-       //}
+       public bool solicitudEliminarEmpleado(String cedula)
+       {
+           return empDAO.eliminarEmpleado(cedula);
+       }
     }
 }

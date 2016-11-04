@@ -56,13 +56,15 @@ namespace Platform.Service.services
           }
           else
           {
+              emple.setCargoId((int)dataset.Tables[0].Rows[0]["cargo"]);
               emple.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
               emple.setApellido(dataset.Tables[0].Rows[0]["apellido"].ToString());
-              emple.setFechaNacimiento(dataset.Tables[0].Rows[0]["fecha_nacimiento"].ToString());
-              emple.setCargoId((int)dataset.Tables[0].Rows[0]["cargo_id"]);
-              emple.setCiudadNacimiento((int)dataset.Tables[0].Rows[0]["ciudad_id"]);
-              emple.setSucursalId((int)dataset.Tables[0].Rows[0]["sucursal_id"]);
-              emple.setUsuarioId((int)dataset.Tables[0].Rows[0]["idUsuario"]);
+              emple.setFechaNacimiento(dataset.Tables[0].Rows[0]["fechaNa"].ToString());              
+              emple.setCiudadNacimiento((int)dataset.Tables[0].Rows[0]["ciudad"]);
+              emple.setSucursalId((int)dataset.Tables[0].Rows[0]["sucursal"]);              
+              emple.cuenta = (dataset.Tables[0].Rows[0]["cuenta"].ToString());
+              emple.nombreTipoUsu = ((int)dataset.Tables[0].Rows[0]["nombreTipoUsu"]);
+              emple.setId((int)dataset.Tables[0].Rows[0]["usu"]);
               dataset.Dispose();
           }
 
@@ -71,16 +73,16 @@ namespace Platform.Service.services
       }
 
 
-      public bool modificarCiudad(Ciudad city)
-      {
-          String consulta = "exec editarCiudad '" + city.getNombre() +
-              "','" + city.getDescripcion() + "','" + city.getIdDepartamento() + "';";
-          return ejecutar(consulta);
-      }
+      //public bool modificarEmpleado(Empleado empl)
+      //{
+      //    String consulta = "exec editarEmpleado '" + city.getNombre() +
+      //        "','" + city.getDescripcion() + "','" + city.getIdDepartamento() + "';";
+      //    return ejecutar(consulta);
+      //}
 
-      public bool eliminarCiudad(String nombre)
+      public bool eliminarEmpleado(String cedula)
       {
-          String consulta = "exec borrarCiudad '" + nombre + "';";
+          String consulta = "exec borrarEmpleado '" + cedula + "';";
           return ejecutar(consulta);
       }
 

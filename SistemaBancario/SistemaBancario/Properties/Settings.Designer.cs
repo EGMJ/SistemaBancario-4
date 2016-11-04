@@ -33,5 +33,16 @@ namespace SistemaBancario.Properties {
                 return ((string)(this["bancodbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EQUIPO-ASUS;Initial Catalog=SistemaBancario;Persist Security Info=Tru" +
+            "e;User ID=sa;Password=AlvaroEAM2016")]
+        public string SistemaBancarioConnectionString {
+            get {
+                return ((string)(this["SistemaBancarioConnectionString"]));
+            }
+        }
     }
 }

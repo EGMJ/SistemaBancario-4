@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Platform.Object.model
 {
+
+    
+
     public class Empleado
     {
         private Int32 id;
@@ -17,6 +20,9 @@ namespace Platform.Object.model
         private Int32 sucursalId;
         private Int32 cargoId;
         private Int32 usuarioId;
+        //Datos auxiliares para la busqueda del empleado
+        public String cuenta { get; set; }
+        public Int32 nombreTipoUsu { get; set; }
 
         public Empleado()
         {

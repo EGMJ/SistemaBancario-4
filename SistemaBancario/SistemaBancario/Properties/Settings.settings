@@ -10,5 +10,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-VIRQCT0;Initial Catalog=bancodb;User ID=sa;Password=JefryEAM2016</Value>
     </Setting>
+    <Setting Name="SistemaBancarioConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=EQUIPO-ASUS;Initial Catalog=SistemaBancario;Persist Security Info=True;User ID=sa;Password=AlvaroEAM2016&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=EQUIPO-ASUS;Initial Catalog=SistemaBancario;Persist Security Info=True;User ID=sa;Password=AlvaroEAM2016</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

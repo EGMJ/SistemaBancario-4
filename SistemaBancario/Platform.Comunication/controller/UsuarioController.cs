@@ -23,5 +23,10 @@ namespace Platform.Comunication.controller
             return usuDAO.obtenerIdUsu(cuenta);
         }
 
+        public bool solicitudEliminarUsuario(Int32 id)
+        {
+            return usuDAO.eliminarUsuario(id);
+        }
+
     }
 }

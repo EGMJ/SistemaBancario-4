@@ -39,5 +39,11 @@ namespace Platform.Service.services
             return usu;
         }
 
+        public bool eliminarUsuario(Int32 id)
+        {
+            String consulta = "exec borrarUsuario " + id + ";";
+            return ejecutar(consulta);
+        }
+
     }
 }

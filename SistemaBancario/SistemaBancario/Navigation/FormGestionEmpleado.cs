@@ -39,13 +39,15 @@ namespace SistemaBancario.Navigation
             Int32 idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
             Int32 idSucursal = (Int32)cbSucursal.SelectedValue;
 
-            if(cedula=="" || nombre == "" || apellido==""|| cuenta =="" || contraseña ==""){
-                    MessageBox.Show("Ingrese la infomacion completa");
-                }
+            if (cedula == "" || nombre == "" || apellido == "" || cuenta == "" || contraseña == "")
+            {
+                MessageBox.Show("Ingrese la infomacion completa");
+            }
             else
             {
-                if(ctlUsu.SolicitudGuardarUsuario(cuenta,contraseña,idTipoUsu)){
-                }                
+                if (ctlUsu.SolicitudGuardarUsuario(cuenta, contraseña, idTipoUsu))
+                {
+                }
             }
             Usuario usua = ctlUsu.SolicitudObtenerIdUsuario(cuenta);
             Int32 idUsu = usua.getId();
@@ -74,24 +76,69 @@ namespace SistemaBancario.Navigation
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             String cedula = txtCedula.Text;
-            if(cedula == ""){
+            if (cedula == "")
+            {
                 MessageBox.Show("Ingrese una cedula para poder buscar");
             }
             else
             {
                 Empleado em = new Empleado();
                 em = ctlEmp.SolicitudBuscarEmpleado(cedula);
-                if(em != null){
+                if (em != null)
+                {
                     txtApellido.Text = em.getApellido();
                     txtNombre.Text = em.getNombre();
                     dtpFechaNacimiento.Text = em.getFechaNacimiento();
                     cbCiudad.SelectedValue = (int)em.getCiudadNacimiento();
                     cbCrgo.SelectedValue = (int)em.getCargoId();
                     cbSucursal.SelectedValue = (int)em.getSucursalId();
+                    cbTipoUsuario.SelectedValue = em.nombreTipoUsu;
+                    txtCuenta.Text = em.cuenta;
                 }
                 else
                 {
                     MessageBox.Show("Error--");
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            String cedula = txtCedula.Text;
+            String nombre = txtNombre.Text;
+            String apellido = txtApellido.Text;
+            txtPrueba.Text = dtpFechaNacimiento.Value.ToString("yyyy-MM-dd");
+            String fecha = txtPrueba.Text;
+            Int32 idCiudad = (Int32)cbCiudad.SelectedValue;
+            Int32 idCargo = (Int32)cbCrgo.SelectedValue;
+            String cuenta = txtCuenta.Text;
+            Int32 idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
+            Int32 idSucursal = (Int32)cbSucursal.SelectedValue;
+
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String cedu = txtCedula.Text;
+            Int32 idAux;
+            if (cedu == "")
+            {
+                MessageBox.Show("Para eliminar, porfavor ingrese la cedula");
+            }
+            else
+            {
+                Empleado emp = new Empleado();
+                emp = ctlEmp.SolicitudBuscarEmpleado(cedu);
+                idAux = emp.getId();
+                if (ctlEmp.solicitudEliminarEmpleado(cedu))
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                }
+                if(ctlUsu.solicitudEliminarUsuario(idAux)){
+                    MessageBox.Show("usu elimi");
                 }
             }
         }
