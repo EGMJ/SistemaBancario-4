@@ -32,14 +32,14 @@ namespace SistemaBancario.Navigation
 
         private void FormGestionSucursal_Load(object sender, EventArgs e)
         {
-
-            this.bancoTableAdapter.Fill(this.dataSetBanco.banco);
-
-            this.departamentoTableAdapter.Fill(this.dataSetBanco.departamento);
+            cargarTabla();
             cargarPais();
         }
 
-
+        public void cargarTabla()
+        {
+            this.listarSucursalTableAdapter.Fill(this.dataSetBanco.listarSucursal);
+        }
 
         public void cargarPais()
         {
@@ -94,32 +94,6 @@ namespace SistemaBancario.Navigation
 
 
 
-        private void tBNombre_Enter(object sender, EventArgs e)
-        {
-            String nombre = tBNombre.Text;
-            if (nombre.Length != 0)
-            {
-                Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
-                if (s != null)
-                {
-                                      
-                    cBPais.SelectedValue = s.idPais;
-                    cBDepartamento.SelectedValue = s.idDepartamento;
-                    cBCiudad.SelectedValue = s.getCiudadId();
-                    cBGerente.SelectedValue = s.getGerenteId();
-                    tBDireccion.Text = s.getDireccion();
-                    aux = s.getId();
-
-                  
-                }
-                else
-                    MessageBox.Show("El usuario no existe");
-
-            }
-
-        }
-
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -133,10 +107,14 @@ namespace SistemaBancario.Navigation
 
             if (sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion))
             {
+
                 MessageBox.Show("Exito al guardar");
+                deshabilitarCampos();
+                cargarTabla();
             }
             else
-                MessageBox.Show("");
+                MessageBox.Show("Ocurrió un error al guardar");
+            deshabilitarCampos();
 
 
 
@@ -150,7 +128,16 @@ namespace SistemaBancario.Navigation
             Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
             String direccion = tBDireccion.Text;
 
-            sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion);
+            if (sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion))
+            {
+                MessageBox.Show("La sucursal se modificó correctamente");
+                deshabilitarCampos();
+                cargarTabla();
+                aux = 0;
+            }
+            else
+                MessageBox.Show("ocurrió un error al modificar");
+            deshabilitarCampos();
 
 
 
@@ -170,6 +157,87 @@ namespace SistemaBancario.Navigation
             cBGerente.DisplayMember = "Name";
             cBGerente.ValueMember = "Value";
             cBGerente.DataSource = gerentes;
+        }
+
+
+
+        private void tBNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                String nombre = tBNombre.Text;
+                if (nombre.Length != 0)
+                {
+                    Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
+                    if (s != null)
+                    {
+
+                        cBPais.SelectedValue = s.idPais;
+                        cBDepartamento.SelectedValue = s.idDepartamento;
+                        cBCiudad.SelectedValue = s.getCiudadId();
+                        cBGerente.SelectedValue = s.getGerenteId();
+                        tBDireccion.Text = s.getDireccion();
+                        aux = s.getId();
+                        habilitarCampos();
+                        btnGuardar.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnEliminar.Enabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no existe, por favor adicionalo");
+                        habilitarCampos();
+                        btnGuardar.Enabled = true;
+                        btnEditar.Enabled = false;
+                        btnEliminar.Enabled = false;
+
+                    }
+
+
+                }
+            }
+        }
+
+        public void habilitarCampos()
+        {
+            cBCiudad.Enabled = true;
+            cBDepartamento.Enabled = true;
+            cBPais.Enabled = true;
+            cBGerente.Enabled = true;
+            tBDireccion.ReadOnly = false;
+            tBNombre.ReadOnly = true;
+        }
+
+        public void deshabilitarCampos()
+        {
+            cBCiudad.Enabled = false;
+            cBDepartamento.Enabled = false;
+            cBPais.Enabled = false;
+            cBGerente.Enabled = false;
+            tBDireccion.ReadOnly = true;
+            tBNombre.ReadOnly = false;
+            limpiarCampos();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+        }
+
+        public void limpiarCampos()
+        {
+            tBNombre.Text = "";
+            tBDireccion.Text = "";
+            cBPais.SelectedValue = 1;
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String info = sucursalrControlador.solicutudEliminar(aux);
+            MessageBox.Show(info);
+            deshabilitarCampos();
+            aux = 0;
+            cargarTabla();
         }
     }
 }

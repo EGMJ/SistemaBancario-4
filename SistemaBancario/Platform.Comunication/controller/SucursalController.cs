@@ -30,5 +30,10 @@ namespace Platform.Comunication.controller
             return sucursalDAO.modificarSucursal(entity);
 
         }
+
+        public String solicutudEliminar(int id)
+        {
+            return sucursalDAO.eliminarSucursal(id);
+        }
     }
 }

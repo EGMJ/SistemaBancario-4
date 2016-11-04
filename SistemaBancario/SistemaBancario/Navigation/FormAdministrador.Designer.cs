@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministrador));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,25 +55,20 @@
             this.bancoToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.administraciónToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
+            resources.ApplyResources(this.archivoToolStripMenuItem, "archivoToolStripMenuItem");
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
+            resources.ApplyResources(this.salirToolStripMenuItem, "salirToolStripMenuItem");
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // bancoToolStripMenuItem
@@ -82,28 +78,24 @@
             this.gestionarSucursalToolStripMenuItem,
             this.gestionJuntaDirectivaToolStripMenuItem});
             this.bancoToolStripMenuItem.Name = "bancoToolStripMenuItem";
-            this.bancoToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.bancoToolStripMenuItem.Text = "Banco";
+            resources.ApplyResources(this.bancoToolStripMenuItem, "bancoToolStripMenuItem");
             // 
             // gestionarBancoToolStripMenuItem
             // 
             this.gestionarBancoToolStripMenuItem.Name = "gestionarBancoToolStripMenuItem";
-            this.gestionarBancoToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.gestionarBancoToolStripMenuItem.Text = "Gestionar Banco";
+            resources.ApplyResources(this.gestionarBancoToolStripMenuItem, "gestionarBancoToolStripMenuItem");
             this.gestionarBancoToolStripMenuItem.Click += new System.EventHandler(this.gestionarBancoToolStripMenuItem_Click);
             // 
             // gestionarSucursalToolStripMenuItem
             // 
             this.gestionarSucursalToolStripMenuItem.Name = "gestionarSucursalToolStripMenuItem";
-            this.gestionarSucursalToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.gestionarSucursalToolStripMenuItem.Text = "Gestionar Sucursal";
+            resources.ApplyResources(this.gestionarSucursalToolStripMenuItem, "gestionarSucursalToolStripMenuItem");
             this.gestionarSucursalToolStripMenuItem.Click += new System.EventHandler(this.gestionarSucursalToolStripMenuItem_Click);
             // 
             // gestionJuntaDirectivaToolStripMenuItem
             // 
             this.gestionJuntaDirectivaToolStripMenuItem.Name = "gestionJuntaDirectivaToolStripMenuItem";
-            this.gestionJuntaDirectivaToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.gestionJuntaDirectivaToolStripMenuItem.Text = "Gestion Junta Directiva";
+            resources.ApplyResources(this.gestionJuntaDirectivaToolStripMenuItem, "gestionJuntaDirectivaToolStripMenuItem");
             this.gestionJuntaDirectivaToolStripMenuItem.Click += new System.EventHandler(this.gestionJuntaDirectivaToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
@@ -112,21 +104,18 @@
             this.gestionEmpleadoToolStripMenuItem,
             this.gestionClienteToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            resources.ApplyResources(this.usuariosToolStripMenuItem, "usuariosToolStripMenuItem");
             // 
             // gestionEmpleadoToolStripMenuItem
             // 
             this.gestionEmpleadoToolStripMenuItem.Name = "gestionEmpleadoToolStripMenuItem";
-            this.gestionEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionEmpleadoToolStripMenuItem.Text = "Gestionar Empleado";
+            resources.ApplyResources(this.gestionEmpleadoToolStripMenuItem, "gestionEmpleadoToolStripMenuItem");
             this.gestionEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.gestionEmpleadoToolStripMenuItem_Click);
             // 
             // gestionClienteToolStripMenuItem
             // 
             this.gestionClienteToolStripMenuItem.Name = "gestionClienteToolStripMenuItem";
-            this.gestionClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionClienteToolStripMenuItem.Text = "Gestionar Cliente";
+            resources.ApplyResources(this.gestionClienteToolStripMenuItem, "gestionClienteToolStripMenuItem");
             // 
             // administraciónToolStripMenuItem
             // 
@@ -137,54 +126,46 @@
             this.gestionDepartamentoToolStripMenuItem,
             this.gestionarCiudadToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.administraciónToolStripMenuItem.Text = "Administración";
+            resources.ApplyResources(this.administraciónToolStripMenuItem, "administraciónToolStripMenuItem");
             // 
             // gestionCargoToolStripMenuItem
             // 
             this.gestionCargoToolStripMenuItem.Name = "gestionCargoToolStripMenuItem";
-            this.gestionCargoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.gestionCargoToolStripMenuItem.Text = "Gestionar Cargo";
+            resources.ApplyResources(this.gestionCargoToolStripMenuItem, "gestionCargoToolStripMenuItem");
             this.gestionCargoToolStripMenuItem.Click += new System.EventHandler(this.gestionCargoToolStripMenuItem_Click);
             // 
             // gestionTipoCuentaToolStripMenuItem
             // 
             this.gestionTipoCuentaToolStripMenuItem.Name = "gestionTipoCuentaToolStripMenuItem";
-            this.gestionTipoCuentaToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.gestionTipoCuentaToolStripMenuItem.Text = "Gestionar Tipo Cuenta";
+            resources.ApplyResources(this.gestionTipoCuentaToolStripMenuItem, "gestionTipoCuentaToolStripMenuItem");
             this.gestionTipoCuentaToolStripMenuItem.Click += new System.EventHandler(this.gestionTipoCuentaToolStripMenuItem_Click);
             // 
             // gestionPaísToolStripMenuItem
             // 
             this.gestionPaísToolStripMenuItem.Name = "gestionPaísToolStripMenuItem";
-            this.gestionPaísToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.gestionPaísToolStripMenuItem.Text = "Gestionar País";
+            resources.ApplyResources(this.gestionPaísToolStripMenuItem, "gestionPaísToolStripMenuItem");
             this.gestionPaísToolStripMenuItem.Click += new System.EventHandler(this.gestionPaísToolStripMenuItem_Click);
             // 
             // gestionDepartamentoToolStripMenuItem
             // 
             this.gestionDepartamentoToolStripMenuItem.Name = "gestionDepartamentoToolStripMenuItem";
-            this.gestionDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.gestionDepartamentoToolStripMenuItem.Text = "Gestionar Departamento";
+            resources.ApplyResources(this.gestionDepartamentoToolStripMenuItem, "gestionDepartamentoToolStripMenuItem");
             this.gestionDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.gestionDepartamentoToolStripMenuItem_Click);
             // 
             // gestionarCiudadToolStripMenuItem
             // 
             this.gestionarCiudadToolStripMenuItem.Name = "gestionarCiudadToolStripMenuItem";
-            this.gestionarCiudadToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.gestionarCiudadToolStripMenuItem.Text = "Gestionar Ciudad";
+            resources.ApplyResources(this.gestionarCiudadToolStripMenuItem, "gestionarCiudadToolStripMenuItem");
             this.gestionarCiudadToolStripMenuItem.Click += new System.EventHandler(this.gestionarCiudadToolStripMenuItem_Click);
             // 
             // FormAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 361);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.Name = "FormAdministrador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormAdministrador";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
