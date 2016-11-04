@@ -31,11 +31,15 @@ namespace Platform.Comunication.controller
            return empDAO.buscarEmpleado(cedula);
        }
 
-       //public bool SolicitudModificarCargo(String nombre, double salario, int cantidad, String desc)
-       //{
-       //    Cargo cargo = new Cargo(nombre, salario, cantidad, desc);
-       //    return caDAO.modificarCargo(cargo);
-       //}
+       public bool SolicitudModificarEmpleado(String cedula, String nombre, String apellido, String fecha,
+           Int32 ciudadId,Int32 cargoId,Int32 sucursalId, String cuenta, String contraseña,
+           Int32 idUsu,Int32 idTipoUsu)
+       {
+           Empleado empl = new Empleado(nombre, apellido, cedula, fecha,
+            ciudadId, sucursalId, cargoId, idUsu);
+           Usuario usu = new Usuario( cuenta,  contraseña,  idTipoUsu);
+           return empDAO.modificarEmpleado(empl,usu);
+       }
 
        public bool solicitudEliminarEmpleado(String cedula)
        {

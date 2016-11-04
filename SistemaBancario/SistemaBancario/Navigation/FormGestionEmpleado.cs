@@ -113,8 +113,20 @@ namespace SistemaBancario.Navigation
             Int32 idCiudad = (Int32)cbCiudad.SelectedValue;
             Int32 idCargo = (Int32)cbCrgo.SelectedValue;
             String cuenta = txtCuenta.Text;
+            String contraseña = txtContraseña.Text;
             Int32 idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
             Int32 idSucursal = (Int32)cbSucursal.SelectedValue;
+
+            Empleado epl = new Empleado();
+            epl = ctlEmp.SolicitudBuscarEmpleado(cedula);
+            Int32 idUsu = epl.getUsuarioId();
+
+            Empleado emp = new Empleado(nombre,apellido,cedula,fecha,idCiudad,idSucursal,idCargo,idUsu);
+            Usuario usu = new Usuario(cuenta,contraseña,idTipoUsu);
+            if(ctlEmp.SolicitudModificarEmpleado( cedula,  nombre,  apellido,  fecha,
+            idCiudad, idCargo, idSucursal,  cuenta,  contraseña, idUsu, idTipoUsu)){
+                MessageBox.Show("Exito");
+            }
 
 
 
@@ -132,13 +144,13 @@ namespace SistemaBancario.Navigation
             {
                 Empleado emp = new Empleado();
                 emp = ctlEmp.SolicitudBuscarEmpleado(cedu);
-                idAux = emp.getId();
+                idAux = emp.getUsuarioId();
                 if (ctlEmp.solicitudEliminarEmpleado(cedu))
                 {
-                    MessageBox.Show("Eliminado correctamente");
+                    MessageBox.Show("Eliminado");
                 }
                 if(ctlUsu.solicitudEliminarUsuario(idAux)){
-                    MessageBox.Show("usu elimi");
+                    MessageBox.Show("Eliminado correctamente");
                 }
             }
         }

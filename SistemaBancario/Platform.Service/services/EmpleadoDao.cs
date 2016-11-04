@@ -62,9 +62,9 @@ namespace Platform.Service.services
               emple.setFechaNacimiento(dataset.Tables[0].Rows[0]["fechaNa"].ToString());              
               emple.setCiudadNacimiento((int)dataset.Tables[0].Rows[0]["ciudad"]);
               emple.setSucursalId((int)dataset.Tables[0].Rows[0]["sucursal"]);              
-              emple.cuenta = (dataset.Tables[0].Rows[0]["cuenta"].ToString());
+              emple.cuenta = (dataset.Tables[0].Rows[0]["cuenta"].ToString());              
               emple.nombreTipoUsu = ((int)dataset.Tables[0].Rows[0]["nombreTipoUsu"]);
-              emple.setId((int)dataset.Tables[0].Rows[0]["usu"]);
+              emple.setUsuarioId((int)dataset.Tables[0].Rows[0]["usu"]);
               dataset.Dispose();
           }
 
@@ -73,12 +73,16 @@ namespace Platform.Service.services
       }
 
 
-      //public bool modificarEmpleado(Empleado empl)
-      //{
-      //    String consulta = "exec editarEmpleado '" + city.getNombre() +
-      //        "','" + city.getDescripcion() + "','" + city.getIdDepartamento() + "';";
-      //    return ejecutar(consulta);
-      //}
+      public bool modificarEmpleado(Empleado empl, Usuario usu)
+      {
+          String consulta = "exec editarEmpleado '" + empl.getCedula() +
+              "','" + empl.getNombre() + "','" + empl.getApellido()+ "','"+
+              empl.getFechaNacimiento() +"',"+ empl.getCargoId() + ","+
+              empl.getCiudadNacimiento() +","+ empl.getSucursalId() +",'"+
+              usu.getCuenta() + "','" + usu.getClave() + "'," + usu.getTipoUsuario() + "," +
+              empl.getUsuarioId()+";";
+          return ejecutar(consulta);
+      }
 
       public bool eliminarEmpleado(String cedula)
       {
