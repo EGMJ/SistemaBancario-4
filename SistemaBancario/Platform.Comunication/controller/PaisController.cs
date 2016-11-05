@@ -17,5 +17,28 @@ namespace Platform.Comunication.controller
         {
             return paisDao.buscarPaisPorId(id);
         }
+
+
+        public bool SolicitudGuardarPais(String nombre, String desc)
+        {
+            Pais pais = new Pais(nombre, desc);
+            return paisDao.guardarPais(pais);
+        }
+
+        public Pais SolicitudBuscarPais(String nombre)
+        {
+            return paisDao.buscarPais(nombre);
+        }
+
+        public bool SolicitudModificarPais(String nombre, String descripcion)
+        {
+            Pais pais = new Pais(nombre, descripcion);
+            return paisDao.modificarPais(pais);
+        }
+
+        public bool solicitudEliminarPais(String nombre)
+        {
+            return paisDao.eliminarPais(nombre);
+        }
     }
 }

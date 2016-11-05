@@ -54,5 +54,49 @@ namespace Platform.Service.services
            return depto;
 
        }
+
+
+       public bool guardarDepartamento(Departamento dep)
+       {
+           String consulta = "exec guardarDepartamento '" + dep.getNombre() +
+               "','" + dep.getDescripcion() + "', " + dep.getPaisId() + ";";
+           return ejecutar(consulta);
+       }
+
+       public Departamento buscarDepartamento(String nombre)
+       {
+           Departamento dep = new Departamento();
+           String consulta = "exec buscarDepartamentoNombre '" + nombre + "';";
+           ejecutarRetorno(consulta);
+
+           if (dataset.Tables[0].Rows.Count == 0)
+           {
+               dataset.Dispose();
+           }
+           else
+           {
+               dep.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+               dep.setPaisId((int)dataset.Tables[0].Rows[0]["pais_id"]);
+               dep.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
+               dataset.Dispose();
+           }
+
+
+           return dep;
+       }
+
+
+       public bool modificarDepartamento(Departamento dep)
+       {
+           String consulta = "exec editarDepartamento '" + dep.getNombre() +
+               "','" + dep.getDescripcion() + "','" + dep.getPaisId() + "';";
+           return ejecutar(consulta);
+       }
+
+       public bool eliminarCiudad(String nombre)
+       {
+           String consulta = "exec borrarDepartamento '" + nombre + "';";
+           return ejecutar(consulta);
+       }
     }
 }

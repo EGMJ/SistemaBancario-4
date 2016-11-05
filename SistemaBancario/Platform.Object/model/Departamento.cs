@@ -26,6 +26,14 @@ namespace Platform.Object.model
             this.nombre = nombre;
         }
 
+        public Departamento(String nombre, string descripcion, Int32 idPais)
+        {
+            // TODO: Complete member initialization
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.paisId = idPais;
+        }
+
         public int getId()
         {
             return this.id;

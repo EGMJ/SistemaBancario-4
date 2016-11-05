@@ -16,6 +16,12 @@ namespace Platform.Object.model
         {
 
         }
+
+        public Pais(String nombre, String descripcion)
+        {
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+        }
         public Int32 getId()
         {
             return this.id;

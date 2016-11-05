@@ -61,8 +61,6 @@ namespace Platform.Service.services
                 ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
                 dataset.Dispose();
             }
-
-
             return ciuda;
         }
 
@@ -70,7 +68,7 @@ namespace Platform.Service.services
         public bool modificarCiudad(Ciudad city)
         {
             String consulta = "exec editarCiudad '" + city.getNombre() +
-                "','" + city.getDescripcion() + "','"+ city.getIdDepartamento() +"';";
+                "','" + city.getDescripcion() + "',"+ city.getIdDepartamento() +";";
             return ejecutar(consulta);
         }
 

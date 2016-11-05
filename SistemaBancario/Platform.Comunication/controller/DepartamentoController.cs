@@ -23,5 +23,27 @@ namespace Platform.Comunication.controller
        {
            return deptoDAO.buscarDepartamentoPorId(id);
        }
+
+       public bool SolicitudGuardarDepartamento(String nombre, String desc, Int32 idPais)
+       {
+           Departamento dep = new Departamento(nombre, desc, idPais);
+           return deptoDAO.guardarDepartamento(dep);
+       }
+
+       public Departamento SolicitudBuscarDepartamento(String nombre)
+       {
+           return deptoDAO.buscarDepartamento(nombre);
+       }
+
+       public bool SolicitudModificarDepartamento(String nombre, String descripcion, Int32 idPais)
+       {
+           Departamento dep = new Departamento(nombre,descripcion,idPais);
+           return deptoDAO.modificarDepartamento(dep);
+       }
+
+       public bool solicitudEliminarPais(String nombre)
+       {
+           return deptoDAO.eliminarCiudad(nombre);
+       }
     }
 }
