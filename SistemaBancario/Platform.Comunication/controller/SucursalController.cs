@@ -12,7 +12,7 @@ namespace Platform.Comunication.controller
     {
 
         SucursalDAO sucursalDAO = new SucursalDAO();
-        public bool solicitudGuardar(Int32 id, String nombre, Int32 bancoId, Int32 ciudadId, Int32 gerenteId, String direccion)
+        public String solicitudGuardar(Int32 id, String nombre, Int32 bancoId, Int32 ciudadId, Int32 gerenteId, String direccion)
         {
             Sucursal entity = new Sucursal(id, nombre, bancoId, ciudadId, gerenteId, direccion);
             return sucursalDAO.guardarSucursal(entity);
@@ -24,10 +24,10 @@ namespace Platform.Comunication.controller
             return sucursalDAO.buscarSucursal(nombre);
         }
 
-        public bool solicitudModificar(Int32 id, String nombre, Int32 bancoId, Int32 ciudadId, Int32 gerenteId, String direccion)
+        public String solicitudModificar(Int32 id, String nombre, Int32 bancoId, Int32 ciudadId, Int32 gerenteId, String direccion)
         {
             Sucursal entity = new Sucursal(id, nombre, bancoId, ciudadId, gerenteId, direccion);
-            return sucursalDAO.modificarSucursal(entity);
+            return sucursalDAO.guardarSucursal(entity);
 
         }
 

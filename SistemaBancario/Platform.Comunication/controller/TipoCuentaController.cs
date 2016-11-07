@@ -22,5 +22,18 @@ namespace Platform.Comunication.controller
            TipoCuenta entity = new TipoCuenta(id, nombre, descripcion);
            return tipoDAO.guardarTipoCuenta(entity);
        }
+
+       public String solicitudEditar(Int32 id, String nombre, String descripcion)
+       {
+           TipoCuenta entity = new TipoCuenta(id, nombre, descripcion);
+           return tipoDAO.guardarTipoCuenta(entity);
+       }
+
+       public String solicutudEliminar(Int32 id)
+        {
+            return tipoDAO.eliminarTipoCuenta(id);
+        }
+
+       }
     }
-}
+

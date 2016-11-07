@@ -21,7 +21,7 @@ namespace SistemaBancario.Navigation
         EmpleadoController empleadoController = new EmpleadoController();
         BancoController banco = new BancoController();
         SucursalController sucursalrControlador = new SucursalController();
-        PaisController paisControlador = new PaisController();
+        
         int aux;
         public FormGestionSucursal()
         {
@@ -64,10 +64,7 @@ namespace SistemaBancario.Navigation
                 cBDepartamento.ValueMember = "Value";
                 cBDepartamento.DataSource = deptos;
             }
-
-
-
-
+            
         }
 
         private void cBDepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,17 +111,12 @@ namespace SistemaBancario.Navigation
                                 Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
                                 String direccion = tBDireccion.Text;
 
-
-                                if (sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion))
-                                {
-
-                                    MessageBox.Show("Exito al guardar");
+                                String info =sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion); 
+                               
+                                    MessageBox.Show(info);
                                     deshabilitarCampos();
                                     cargarTabla();
-                                }
-                                else
-                                    MessageBox.Show("Ocurrió un error al guardar");
-                                deshabilitarCampos();
+                               
                             }
                             else
                                 MessageBox.Show("Por favor ingresa la dirección");
@@ -141,15 +133,10 @@ namespace SistemaBancario.Navigation
             else
                 MessageBox.Show("Por favor ingresa el nombre de la sucursal");
 
-
-
-
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
             Int32 ciudadId;
             if (tBNombre.Text != "")
             {
@@ -166,19 +153,13 @@ namespace SistemaBancario.Navigation
                                 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
                                 Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
                                 String direccion = tBDireccion.Text;
-
-                                if (sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion))
-                                {
-                                    MessageBox.Show("La sucursal se modificó correctamente");
+                                String info = sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion);
+                               
+                                    MessageBox.Show(info);
                                     deshabilitarCampos();
                                     cargarTabla();
                                     aux = 0;
-                                }
-                                else
-                                {
-                                    MessageBox.Show("ocurrió un error al modificar");
-                                    deshabilitarCampos();
-                                }
+                              
                             }
                             else
                                 MessageBox.Show("Por favor ingresa la dirección");

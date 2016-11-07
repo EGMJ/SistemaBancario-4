@@ -9,17 +9,32 @@ namespace Platform.Object.model
     public class MiembroJuntaDirectiva
     {
         private Int32 id;
-        private float acciones;
+        private double acciones;
         private String nombre;
         private String apellido;
         private String cedula;
-        private DateTime fechaNacimiento;
+        private String fechaNacimiento;
         private Int32 ciudadNacimiento;
         private Int32 bancoId;
+        //auxiliares para busqueda de la sucursal 
+        public Int32 idPais { get; set; }
+        public Int32 idDepartamento { get; set; }
 
         public MiembroJuntaDirectiva()
         {
 
+        }
+
+        public MiembroJuntaDirectiva(int id, double acciones, string nombre, string apellido, string cedula, string fechaNacimiento, int ciudadNacimiento, int bancoId)
+        {
+            this.id = id;
+            this.acciones = acciones;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.cedula = cedula;
+            this.fechaNacimiento = fechaNacimiento;
+            this.ciudadNacimiento = ciudadNacimiento;
+            this.bancoId = bancoId;
         }
 
         public Int32 getId()
@@ -31,11 +46,11 @@ namespace Platform.Object.model
             this.id = id;
         }
 
-        public float getAcciones()
+        public double getAcciones()
         {
             return this.acciones;
         }
-        public void setAcciones(float acciones)
+        public void setAcciones(double acciones)
         {
             this.acciones = acciones;
         }
@@ -64,11 +79,11 @@ namespace Platform.Object.model
         {
             this.cedula = cedula;
         }
-        public DateTime getFechaNacimiento()
+        public String getFechaNacimiento()
         {
             return this.fechaNacimiento;
         }
-        public void setFechaNacimiento(DateTime fechaNa)
+        public void setFechaNacimiento(String fechaNa)
         {
             this.fechaNacimiento = fechaNa;
         }

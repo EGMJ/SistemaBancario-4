@@ -49,12 +49,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listarDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listarDepartamentoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.listarDepartamentoTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrePaisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listarDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listarDepartamentoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.listarDepartamentoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -145,10 +145,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(683, 298);
+            this.tabControl1.Size = new System.Drawing.Size(683, 334);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -159,7 +159,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(675, 272);
+            this.tabPage1.Size = new System.Drawing.Size(675, 308);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Guardar";
             // 
@@ -172,7 +172,7 @@
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.cbPais);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(8, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(656, 198);
             this.groupBox1.TabIndex = 7;
@@ -186,7 +186,7 @@
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnEditar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(8, 207);
+            this.groupBox2.Location = new System.Drawing.Point(8, 229);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(651, 59);
             this.groupBox2.TabIndex = 8;
@@ -272,15 +272,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(443, 228);
             this.dataGridView1.TabIndex = 0;
             // 
-            // listarDepartamentoBindingSource
-            // 
-            this.listarDepartamentoBindingSource.DataMember = "listarDepartamento";
-            this.listarDepartamentoBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // listarDepartamentoTableAdapter
-            // 
-            this.listarDepartamentoTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -306,11 +297,20 @@
             this.nombrePaisDataGridViewTextBoxColumn.HeaderText = "Nombre_Pais";
             this.nombrePaisDataGridViewTextBoxColumn.Name = "nombrePaisDataGridViewTextBoxColumn";
             // 
+            // listarDepartamentoBindingSource
+            // 
+            this.listarDepartamentoBindingSource.DataMember = "listarDepartamento";
+            this.listarDepartamentoBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // listarDepartamentoTableAdapter
+            // 
+            this.listarDepartamentoTableAdapter.ClearBeforeFill = true;
+            // 
             // FormGestionDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 347);
+            this.ClientSize = new System.Drawing.Size(708, 369);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormGestionDepartamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

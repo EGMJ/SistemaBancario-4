@@ -76,6 +76,7 @@ namespace Platform.Service.services
            else
            {
                entity = new Departamento();
+               entity.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
                entity.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
                entity.setPaisId((int)dataset.Tables[0].Rows[0]["pais_id"]);
                entity.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
@@ -96,7 +97,7 @@ namespace Platform.Service.services
 
        public bool eliminarCiudad(int id)
        {
-           String consulta = "exec borrarDepartamento '" + id + "';";
+           String consulta = "exec borrarDepartamento " + id + ";";
            return ejecutar(consulta);
        }
     }

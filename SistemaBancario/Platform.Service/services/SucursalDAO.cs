@@ -10,16 +10,16 @@ namespace Platform.Service.services
     public class SucursalDAO : ClsConexion
     {
 
-        public bool guardarSucursal(Sucursal entity)
+        public String guardarSucursal(Sucursal entity)
         {
             String consulta = "exec guardarSucursal "
                 + entity.getId() + ",'" + entity.getNombre()
                 + "'," + entity.getBancoId() + "," + entity.getCiudadId()
                 + "," + entity.getGerenteId() + ",'" + entity.getDireccion() + "';";
-            return ejecutarRetorno(consulta);
-            //String info = dataset.Tables[0].Rows[0].ToString();
+             ejecutarRetorno(consulta);
+            String info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
 
-            //return info;
+            return info;
         }
 
         public Sucursal buscarSucursal(String nombre)
@@ -50,15 +50,6 @@ namespace Platform.Service.services
 
         }
 
-        public bool modificarSucursal(Sucursal entity)
-        {
-            String consulta = "exec guardarSucursal "
-                + entity.getId() + ",'" + entity.getNombre()
-                + "'," + entity.getBancoId() + "," + entity.getCiudadId()
-                + "," + entity.getGerenteId() + ",'" + entity.getDireccion() + "';";
-            return ejecutarRetorno(consulta);
-            
-        }
 
         public String eliminarSucursal(int id)
         {

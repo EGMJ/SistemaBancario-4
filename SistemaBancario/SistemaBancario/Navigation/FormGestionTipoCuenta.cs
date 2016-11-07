@@ -70,7 +70,6 @@ namespace SistemaBancario.Navigation
                 MessageBox.Show(info);
                 deshabilitarCampos();
                 cargarTabla();
-                deshabilitarCampos();
             }
             else
                 MessageBox.Show("Por favor ingresa la descripción");
@@ -107,7 +106,28 @@ namespace SistemaBancario.Navigation
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (tBDescripcion.Text != "")
+            {
+                String nombre = tBNombre.Text.ToUpper();
+                String descripcion = tBDescripcion.Text;
+                String info = tipoCtaControlador.solicitudGuardar(aux, nombre, descripcion);
+                MessageBox.Show(info);
+                deshabilitarCampos();
+                cargarTabla();
+                aux = 0;
+            }
+            else
+                MessageBox.Show("Por favor ingresa la descripción");
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String info = tipoCtaControlador.solicutudEliminar(aux);
+            MessageBox.Show(info);
+            deshabilitarCampos();
+            aux = 0;
+            cargarTabla();
         }
     }
 }

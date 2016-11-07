@@ -41,5 +41,13 @@ namespace Platform.Service.services
             String info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
             return info;
         }
+
+        public String eliminarTipoCuenta(int id)
+        {
+            String consulta = "exec borrarTipoCuenta " + id + ";";
+            ejecutarRetorno(consulta);
+            String info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
+            return info;
+        }
     }
 }

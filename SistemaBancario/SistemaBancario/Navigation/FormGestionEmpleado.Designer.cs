@@ -395,7 +395,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(683, 367);
+            this.tabControl1.Size = new System.Drawing.Size(683, 353);
             this.tabControl1.TabIndex = 29;
             // 
             // tabPage1
@@ -407,7 +407,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(675, 341);
+            this.tabPage1.Size = new System.Drawing.Size(675, 327);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Guardar";
             // 
@@ -419,7 +419,7 @@
             this.groupBox2.Controls.Add(this.btnModificar);
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(10, 259);
+            this.groupBox2.Location = new System.Drawing.Point(10, 248);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(660, 59);
             this.groupBox2.TabIndex = 10;
@@ -451,7 +451,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(660, 238);
+            this.groupBox1.Size = new System.Drawing.Size(660, 228);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -464,7 +464,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(675, 341);
+            this.tabPage2.Size = new System.Drawing.Size(675, 327);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listar";
             // 
@@ -480,7 +480,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 387);
+            this.ClientSize = new System.Drawing.Size(708, 369);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtPrueba);
             this.Name = "FormGestionEmpleado";
