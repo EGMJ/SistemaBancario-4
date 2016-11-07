@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tBDireccion = new System.Windows.Forms.TextBox();
+            this.tBDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cBGerente = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cBCiudad = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cBDepartamento = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cBPais = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tBNombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -50,6 +43,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSetBanco = new SistemaBancario.DataSetBanco();
+            this.tipocuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipo_cuentaTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.tipo_cuentaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -57,6 +56,8 @@
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipocuentaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,16 +84,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tBDireccion);
+            this.groupBox1.Controls.Add(this.tBDescripcion);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cBGerente);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cBCiudad);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cBDepartamento);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cBPais);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.tBNombre);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
@@ -103,14 +96,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // tBDireccion
+            // tBDescripcion
             // 
-            this.tBDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tBDireccion.Location = new System.Drawing.Point(135, 132);
-            this.tBDireccion.Name = "tBDireccion";
-            this.tBDireccion.ReadOnly = true;
-            this.tBDireccion.Size = new System.Drawing.Size(509, 21);
-            this.tBDireccion.TabIndex = 13;
+            this.tBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.tBDescripcion.Location = new System.Drawing.Point(135, 76);
+            this.tBDescripcion.Multiline = true;
+            this.tBDescripcion.Name = "tBDescripcion";
+            this.tBDescripcion.ReadOnly = true;
+            this.tBDescripcion.Size = new System.Drawing.Size(509, 81);
+            this.tBDescripcion.TabIndex = 13;
             // 
             // label1
             // 
@@ -123,96 +117,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
-            // cBGerente
-            // 
-            this.cBGerente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBGerente.Enabled = false;
-            this.cBGerente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.cBGerente.FormattingEnabled = true;
-            this.cBGerente.Location = new System.Drawing.Point(135, 92);
-            this.cBGerente.Name = "cBGerente";
-            this.cBGerente.Size = new System.Drawing.Size(191, 23);
-            this.cBGerente.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(348, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "País:";
-            // 
-            // cBCiudad
-            // 
-            this.cBCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBCiudad.Enabled = false;
-            this.cBCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.cBCiudad.FormattingEnabled = true;
-            this.cBCiudad.Location = new System.Drawing.Point(459, 56);
-            this.cBCiudad.Name = "cBCiudad";
-            this.cBCiudad.Size = new System.Drawing.Size(191, 23);
-            this.cBCiudad.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(24, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Departamento:";
-            // 
-            // cBDepartamento
-            // 
-            this.cBDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBDepartamento.Enabled = false;
-            this.cBDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.cBDepartamento.FormattingEnabled = true;
-            this.cBDepartamento.Location = new System.Drawing.Point(135, 53);
-            this.cBDepartamento.Name = "cBDepartamento";
-            this.cBDepartamento.Size = new System.Drawing.Size(191, 23);
-            this.cBDepartamento.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(348, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ciudad:";
-            // 
-            // cBPais
-            // 
-            this.cBPais.DisplayMember = "nombre";
-            this.cBPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBPais.Enabled = false;
-            this.cBPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.cBPais.FormattingEnabled = true;
-            this.cBPais.Location = new System.Drawing.Point(459, 19);
-            this.cBPais.Name = "cBPais";
-            this.cBPais.Size = new System.Drawing.Size(191, 23);
-            this.cBPais.TabIndex = 9;
-            this.cBPais.ValueMember = "id";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(24, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 16);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Gerente:";
-            // 
             // tBNombre
             // 
             this.tBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -220,13 +124,14 @@
             this.tBNombre.Name = "tBNombre";
             this.tBNombre.Size = new System.Drawing.Size(191, 21);
             this.tBNombre.TabIndex = 7;
+            this.tBNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBNombre_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(24, 132);
+            this.label7.Location = new System.Drawing.Point(24, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 16);
             this.label7.TabIndex = 6;
@@ -268,6 +173,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -280,6 +186,7 @@
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tabPage2
             // 
@@ -303,11 +210,50 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 27);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tipocuentaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(167, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(642, 228);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 216);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // dataSetBanco
+            // 
+            this.dataSetBanco.DataSetName = "DataSetBanco";
+            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipocuentaBindingSource
+            // 
+            this.tipocuentaBindingSource.DataMember = "tipo_cuenta";
+            this.tipocuentaBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // tipo_cuentaTableAdapter
+            // 
+            this.tipo_cuentaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
             // FormGestionTipoCuenta
             // 
@@ -317,6 +263,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormGestionTipoCuenta";
             this.Text = "FormGestionTipoCuenta";
+            this.Load += new System.EventHandler(this.FormGestionTipoCuenta_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -325,6 +272,8 @@
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipocuentaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,16 +283,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tBDireccion;
+        private System.Windows.Forms.TextBox tBDescripcion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cBGerente;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cBCiudad;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cBDepartamento;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cBPais;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tBNombre;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -353,5 +294,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DataSetBanco dataSetBanco;
+        private System.Windows.Forms.BindingSource tipocuentaBindingSource;
+        private DataSetBancoTableAdapters.tipo_cuentaTableAdapter tipo_cuentaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
     }
 }

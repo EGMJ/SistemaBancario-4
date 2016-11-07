@@ -39,7 +39,6 @@
             this.tBNombre = new System.Windows.Forms.TextBox();
             this.cBPais = new System.Windows.Forms.ComboBox();
             this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetBanco = new SistemaBancario.DataSetBanco();
             this.cBDepartamento = new System.Windows.Forms.ComboBox();
             this.cBCiudad = new System.Windows.Forms.ComboBox();
             this.cBGerente = new System.Windows.Forms.ComboBox();
@@ -50,30 +49,17 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.paisTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter();
             this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departamentoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.departamentoTableAdapter();
-            this.bancoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.bancoTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ciudadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gerenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listarSucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sucursalTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.sucursalTableAdapter();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.usuarioTableAdapter();
-            this.listarSucursalTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.listarSucursalTableAdapter();
             this.departamentopaisFKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -139,12 +125,6 @@
             // paisBindingSource
             // 
             this.paisBindingSource.DataMember = "pais";
-            this.paisBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // dataSetBanco
-            // 
-            this.dataSetBanco.DataSetName = "DataSetBanco";
-            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cBDepartamento
             // 
@@ -195,7 +175,6 @@
             // bancoBindingSource
             // 
             this.bancoBindingSource.DataMember = "banco";
-            this.bancoBindingSource.DataSource = this.dataSetBanco;
             // 
             // groupBox2
             // 
@@ -227,22 +206,9 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // paisTableAdapter
-            // 
-            this.paisTableAdapter.ClearBeforeFill = true;
-            // 
             // departamentoBindingSource
             // 
             this.departamentoBindingSource.DataMember = "departamento";
-            this.departamentoBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // departamentoTableAdapter
-            // 
-            this.departamentoTableAdapter.ClearBeforeFill = true;
-            // 
-            // bancoTableAdapter
-            // 
-            this.bancoTableAdapter.ClearBeforeFill = true;
             // 
             // tabControl1
             // 
@@ -278,80 +244,21 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.bancoDataGridViewTextBoxColumn,
-            this.ciudadDataGridViewTextBoxColumn,
-            this.direccionDataGridViewTextBoxColumn,
-            this.gerenteDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.listarSucursalBindingSource;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            resources.ApplyResources(this.nombreDataGridViewTextBoxColumn, "nombreDataGridViewTextBoxColumn");
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // bancoDataGridViewTextBoxColumn
-            // 
-            this.bancoDataGridViewTextBoxColumn.DataPropertyName = "banco";
-            resources.ApplyResources(this.bancoDataGridViewTextBoxColumn, "bancoDataGridViewTextBoxColumn");
-            this.bancoDataGridViewTextBoxColumn.Name = "bancoDataGridViewTextBoxColumn";
-            // 
-            // ciudadDataGridViewTextBoxColumn
-            // 
-            this.ciudadDataGridViewTextBoxColumn.DataPropertyName = "ciudad";
-            resources.ApplyResources(this.ciudadDataGridViewTextBoxColumn, "ciudadDataGridViewTextBoxColumn");
-            this.ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
-            resources.ApplyResources(this.direccionDataGridViewTextBoxColumn, "direccionDataGridViewTextBoxColumn");
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            // 
-            // gerenteDataGridViewTextBoxColumn
-            // 
-            this.gerenteDataGridViewTextBoxColumn.DataPropertyName = "gerente";
-            resources.ApplyResources(this.gerenteDataGridViewTextBoxColumn, "gerenteDataGridViewTextBoxColumn");
-            this.gerenteDataGridViewTextBoxColumn.Name = "gerenteDataGridViewTextBoxColumn";
-            // 
             // listarSucursalBindingSource
             // 
             this.listarSucursalBindingSource.DataMember = "listarSucursal";
-            this.listarSucursalBindingSource.DataSource = this.dataSetBanco;
             // 
             // sucursalBindingSource
             // 
             this.sucursalBindingSource.DataMember = "sucursal";
-            this.sucursalBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // sucursalTableAdapter
-            // 
-            this.sucursalTableAdapter.ClearBeforeFill = true;
             // 
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataMember = "usuario";
-            this.usuarioBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // usuarioTableAdapter
-            // 
-            this.usuarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // listarSucursalTableAdapter
-            // 
-            this.listarSucursalTableAdapter.ClearBeforeFill = true;
             // 
             // departamentopaisFKBindingSource
             // 
@@ -366,7 +273,6 @@
             this.Name = "FormGestionSucursal";
             this.Load += new System.EventHandler(this.FormGestionSucursal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bancoBindingSource)).EndInit();

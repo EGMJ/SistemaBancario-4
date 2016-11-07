@@ -11,9 +11,18 @@ namespace Platform.Object.model
 
         private Int32 id;
         private String nombre;
-        private TipoCuenta()
+        private String descripcion;
+        public TipoCuenta()
         {
 
+        }
+
+        public TipoCuenta(int id, string nombre, string descripcion)
+        {
+            // TODO: Complete member initialization
+            this.id = id;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
         }
         public Int32 getId()
         {
@@ -30,6 +39,14 @@ namespace Platform.Object.model
         public void setNombre(String nombre)
         {
             this.nombre = nombre;
+        }
+        public String getDescripcion()
+        {
+            return this.descripcion;
+        }
+        public void setDescripcion(String descripcion)
+        {
+            this.descripcion = descripcion;
         }
     }
 }
