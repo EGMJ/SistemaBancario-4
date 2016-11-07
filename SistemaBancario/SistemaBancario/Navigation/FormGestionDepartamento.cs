@@ -15,6 +15,7 @@ namespace SistemaBancario.Navigation
     {
 
         DepartamentoController ctlDepto;
+        int aux;
         public FormGestionDepartamento()
         {
             InitializeComponent();
@@ -23,9 +24,19 @@ namespace SistemaBancario.Navigation
 
         private void FormGestionDepartamento_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.pais' Puede moverla o quitarla según sea necesario.
-            this.paisTableAdapter.Fill(this.dataSetBanco.pais);
+            cargarPais();
+            cargarTabla();
 
+        }
+
+        public void cargarPais()
+        {
+            this.paisTableAdapter.Fill(this.dataSetBanco.pais);
+        }
+
+        public void cargarTabla()
+        {
+            this.listarDepartamentoTableAdapter.Fill(this.dataSetBanco.listarDepartamento);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -37,7 +48,7 @@ namespace SistemaBancario.Navigation
         {
             txtDescripcion.Text = "";
             txtNombre.Text = "";
-            cbPais.SelectedValue = 1;            
+            cbPais.SelectedValue = 1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -45,81 +56,159 @@ namespace SistemaBancario.Navigation
             String nombre = txtNombre.Text;
             String descr = txtDescripcion.Text;
             Int32 idPais = (Int32)cbPais.SelectedValue;
-            if(nombre == "" ){
-                MessageBox.Show("De un nombre por favor");
-            }
-            else
+            if (nombre != "")
             {
-                if(ctlDepto.SolicitudGuardarDepartamento(nombre,descr,idPais)){
-                    MessageBox.Show("Exito al registrar");
-                    limpiar();
+                if (descr != "")
+                {
+                    if (idPais != 1)
+                    {
+                        if (ctlDepto.SolicitudGuardarDepartamento(nombre, descr, idPais))
+                        {
+                            MessageBox.Show("Exito al registrar");
+                            deshabilitarCampos();
+                            cargarTabla();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error--");
+                            deshabilitarCampos();
+                        }
+                    }
+                    else
+                        MessageBox.Show("Seleccione el País al que pertenece el Departamento");
                 }
                 else
-                {
-                    MessageBox.Show("Error--");
-                }
+                    MessageBox.Show("Por favor ingrese la descripcion");
             }
+            else
+                MessageBox.Show("De un nombre por favor");
+
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            String nombre = txtNombre.Text;
-            if(nombre == ""){
-                MessageBox.Show("Complete la informacion");
-            }
-            else
-            {
-                Departamento dep = ctlDepto.SolicitudBuscarDepartamento(nombre);
-                if(dep != null){
-                    txtDescripcion.Text = dep.getDescripcion();
-                    cbPais.SelectedValue = dep.getPaisId();
-                }
-                else
-                {
-                    MessageBox.Show("No se encontro");
-                }
-            }
-        }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             String nombre = txtNombre.Text;
             String descr = txtDescripcion.Text;
             Int32 idPais = (Int32)cbPais.SelectedValue;
-            if (nombre == "")
+
+            if (nombre != "")
             {
-                MessageBox.Show("De un nombre por favor");
-            }
-            else
-            {
-                if (ctlDepto.SolicitudModificarDepartamento(nombre,descr,idPais))
+                if (descr != "")
                 {
-                    MessageBox.Show("Exito al editar");
-                    limpiar();
+                    if (idPais != 1)
+                    {
+                        if (ctlDepto.SolicitudModificarDepartamento(nombre, descr, idPais))
+                        {
+                            MessageBox.Show("Exito al editar");
+                            deshabilitarCampos();
+                            cargarTabla();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error--");
+                            deshabilitarCampos();
+                        }
+                    }
+                    else
+                        MessageBox.Show("Seleccione el País al que pertenece el Departamento");
                 }
                 else
-                {
-                    MessageBox.Show("Error--");
-                }
+                    MessageBox.Show("Por favor ingrese la descripcion");
             }
+            else
+                MessageBox.Show("De un nombre por favor");
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            String nombre = txtNombre.Text;
-            if(nombre == ""){
-                MessageBox.Show("Complete la informacion");
+            if (ctlDepto.solicitudEliminarPais(aux))
+            {
+                MessageBox.Show("Eliminado con exito");
+                deshabilitarCampos();
+                aux = 0;
+                cargarTabla();
             }
             else
             {
-                if(ctlDepto.solicitudEliminarPais(nombre)){
-                    MessageBox.Show("Eliminado con exito");
-                    limpiar();
-                }else
+                MessageBox.Show("Error--");
+            }
+
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                String nombre = txtNombre.Text;
+                if (nombre.Length != 0)
                 {
-                    MessageBox.Show("Error--");
+                    Departamento dep = ctlDepto.SolicitudBuscarDepartamento(nombre);
+                    if (dep != null)
+                    {
+
+                        cbPais.SelectedValue = dep.getPaisId();
+                        txtDescripcion.Text = dep.getDescripcion();
+                        aux = dep.getId();
+                        habilitarCampos();
+                        btnGuardar.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnEliminar.Enabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no existe, por favor adicionalo");
+                        habilitarCampos();
+                        btnGuardar.Enabled = true;
+                        btnEditar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                    }
                 }
             }
         }
+
+        public void habilitarCampos()
+        {
+            cbPais.Enabled = true;
+            txtDescripcion.ReadOnly = false;
+            txtNombre.ReadOnly = true;
+        }
+
+        public void deshabilitarCampos()
+        {
+
+            cbPais.Enabled = false;
+
+            txtDescripcion.ReadOnly = true;
+            txtNombre.ReadOnly = false;
+            limpiar();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+        }
+        //private void btnBuscar_Click(object sender, EventArgs e)
+        //{
+        //    String nombre = txtNombre.Text;
+        //    if (nombre == "")
+        //    {
+        //        MessageBox.Show("Complete la informacion");
+        //    }
+        //    else
+        //    {
+        //        Departamento dep = ctlDepto.SolicitudBuscarDepartamento(nombre);
+        //        if (dep != null)
+        //        {
+        //            txtDescripcion.Text = dep.getDescripcion();
+        //            cbPais.SelectedValue = dep.getPaisId();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("No se encontro");
+        //        }
+        //    }
+        //}
     }
 }

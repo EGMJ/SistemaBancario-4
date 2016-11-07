@@ -169,6 +169,9 @@
     <EmbeddedResource Include="Navigation\FormGestionSucursal.resx">
       <DependentUpon>FormGestionSucursal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\FormGestionTipoCuenta.resx">
+      <DependentUpon>FormGestionTipoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

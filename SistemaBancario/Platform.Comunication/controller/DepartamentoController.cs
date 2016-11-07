@@ -41,9 +41,9 @@ namespace Platform.Comunication.controller
            return deptoDAO.modificarDepartamento(dep);
        }
 
-       public bool solicitudEliminarPais(String nombre)
+       public bool solicitudEliminarPais(int id)
        {
-           return deptoDAO.eliminarCiudad(nombre);
+           return deptoDAO.eliminarCiudad(id);
        }
     }
 }

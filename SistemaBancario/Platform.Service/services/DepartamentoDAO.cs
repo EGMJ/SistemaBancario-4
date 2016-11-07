@@ -65,7 +65,7 @@ namespace Platform.Service.services
 
        public Departamento buscarDepartamento(String nombre)
        {
-           Departamento dep = new Departamento();
+           Departamento entity = null;
            String consulta = "exec buscarDepartamentoNombre '" + nombre + "';";
            ejecutarRetorno(consulta);
 
@@ -75,14 +75,15 @@ namespace Platform.Service.services
            }
            else
            {
-               dep.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-               dep.setPaisId((int)dataset.Tables[0].Rows[0]["pais_id"]);
-               dep.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
+               entity = new Departamento();
+               entity.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
+               entity.setPaisId((int)dataset.Tables[0].Rows[0]["pais_id"]);
+               entity.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
                dataset.Dispose();
            }
 
 
-           return dep;
+           return entity;
        }
 
 
@@ -93,9 +94,9 @@ namespace Platform.Service.services
            return ejecutar(consulta);
        }
 
-       public bool eliminarCiudad(String nombre)
+       public bool eliminarCiudad(int id)
        {
-           String consulta = "exec borrarDepartamento '" + nombre + "';";
+           String consulta = "exec borrarDepartamento '" + id + "';";
            return ejecutar(consulta);
        }
     }
