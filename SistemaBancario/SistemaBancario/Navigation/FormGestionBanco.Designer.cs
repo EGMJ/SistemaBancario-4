@@ -151,6 +151,7 @@
             this.Controls.Add(this.txtNombreBanco);
             this.Controls.Add(this.txtNit);
             this.Name = "FormGestionBanco";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGestionBanco";
             this.Load += new System.EventHandler(this.FormGestionBanco_Load);
             this.ResumeLayout(false);

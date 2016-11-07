@@ -189,6 +189,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "c";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGestionarCiudad";
             this.Load += new System.EventHandler(this.c_Load);
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();

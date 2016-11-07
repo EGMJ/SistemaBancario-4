@@ -96,25 +96,41 @@ namespace SistemaBancario.Navigation
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-
-            String nombre = tBNombre.Text.ToUpper();
-            Int32 bancoId = (banco.solicitudObtenerBanco()).getId();
-            Int32 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
-            Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
-            String direccion = tBDireccion.Text;
-
-
-            if (sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion))
+            Int32 ciudadId;
+            if (tBNombre.Text != "")
             {
+                if ((cBCiudad.SelectedItem) != null)
+                {
+                    if (tBDireccion.Text != "")
+                    {
+                        String nombre = tBNombre.Text.ToUpper();
+                        Int32 bancoId = (banco.solicitudObtenerBanco()).getId();
+                        ciudadId = ((Item)cBCiudad.SelectedItem).Value;
+                        Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
+                        String direccion = tBDireccion.Text;
 
-                MessageBox.Show("Exito al guardar");
-                deshabilitarCampos();
-                cargarTabla();
+
+                        if (sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion))
+                        {
+
+                            MessageBox.Show("Exito al guardar");
+                            deshabilitarCampos();
+                            cargarTabla();
+                        }
+                        else
+                            MessageBox.Show("Ocurrió un error al guardar");
+                        deshabilitarCampos();
+                    }
+                    else
+                        MessageBox.Show("Por favor ingresa la dirección");
+                }
+                else
+                    MessageBox.Show("Por favor selecciona la ciudad");
             }
             else
-                MessageBox.Show("Ocurrió un error al guardar");
-            deshabilitarCampos();
+                MessageBox.Show("Por favor ingresa el nombre de la sucursal");
+
+
 
 
 

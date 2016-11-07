@@ -71,6 +71,7 @@
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.usuarioTableAdapter();
             this.listarSucursalTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.listarSucursalTableAdapter();
+            this.departamentopaisFKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listarSucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentopaisFKBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -351,6 +353,11 @@
             // 
             this.listarSucursalTableAdapter.ClearBeforeFill = true;
             // 
+            // departamentopaisFKBindingSource
+            // 
+            this.departamentopaisFKBindingSource.DataMember = "departamento_pais_FK";
+            this.departamentopaisFKBindingSource.DataSource = this.paisBindingSource;
+            // 
             // FormGestionSucursal
             // 
             resources.ApplyResources(this, "$this");
@@ -373,6 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listarSucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentopaisFKBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,5 +428,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ciudadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gerenteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource departamentopaisFKBindingSource;
     }
 }
