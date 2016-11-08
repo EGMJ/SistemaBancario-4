@@ -116,6 +116,7 @@
             // 
             this.gestionClienteToolStripMenuItem.Name = "gestionClienteToolStripMenuItem";
             resources.ApplyResources(this.gestionClienteToolStripMenuItem, "gestionClienteToolStripMenuItem");
+            this.gestionClienteToolStripMenuItem.Click += new System.EventHandler(this.gestionClienteToolStripMenuItem_Click);
             // 
             // administraciónToolStripMenuItem
             // 
@@ -166,6 +167,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.Name = "FormAdministrador";
+            this.Load += new System.EventHandler(this.FormAdministrador_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

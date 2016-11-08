@@ -18,7 +18,8 @@ namespace SistemaBancario.Navigation
             InitializeComponent();
         }
 
-        FormGestionBanco formBanco;
+        FormGestionCliente formGestionCliente;
+        FormGestionBanco formBanco;        
         FormGestionSucursal formSucursal;
         FormGestionJunta formJunta;
         FormGestionEmpleado formEmpleado;
@@ -27,6 +28,8 @@ namespace SistemaBancario.Navigation
         FormGestionPais formPais;
         FormGestionDepartamento formDepto;
         c formCiudad;
+        
+
         private void gestionEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formEmpleado == null)
@@ -192,6 +195,7 @@ namespace SistemaBancario.Navigation
         {
             formCiudad = null;
         }
+        
         private void gestionarCiudadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formCiudad == null)
@@ -209,6 +213,32 @@ namespace SistemaBancario.Navigation
         {
             Login menu = new Login();
             menu.ShowDialog();
+        }
+
+        private void gestionClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(formGestionCliente == null)
+            {
+                formGestionCliente = new FormGestionCliente();
+                formGestionCliente.MdiParent = this;
+                formGestionCliente.FormClosed += new FormClosedEventHandler(formCliente_FormClosed);
+
+                formGestionCliente.Show();
+            }
+            else
+            {
+                formGestionCliente.Activate();
+            }
+        }
+
+        private void formCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formGestionCliente = null;
+        }
+
+        private void FormAdministrador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
