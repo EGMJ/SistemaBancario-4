@@ -41,6 +41,7 @@
             this.txtCuenta = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtPrueba2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -147,12 +148,22 @@
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtPrueba2
+            // 
+            this.txtPrueba2.Location = new System.Drawing.Point(540, 58);
+            this.txtPrueba2.Name = "txtPrueba2";
+            this.txtPrueba2.Size = new System.Drawing.Size(10, 20);
+            this.txtPrueba2.TabIndex = 13;
+            this.txtPrueba2.Visible = false;
             // 
             // FormGestionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 313);
+            this.Controls.Add(this.txtPrueba2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCuenta);
@@ -189,5 +200,6 @@
         private System.Windows.Forms.TextBox txtCuenta;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtPrueba2;
     }
 }

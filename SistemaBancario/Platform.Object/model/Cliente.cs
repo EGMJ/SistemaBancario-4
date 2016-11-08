@@ -12,11 +12,29 @@ namespace Platform.Object.model
         private String nombre;
         private String apellido;
         private String cedula;
-        private DateTime fechaNacimiento;
-
+        private String fechaNacimiento;
+        private Int32 usuarioId;
         public Cliente()
         {
 
+        }
+
+        public Cliente(String cedula,String nombre,String apellido,String fechaNa,Int32 usuId)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.cedula = cedula;
+            this.fechaNacimiento = fechaNa;
+            this.usuarioId = usuId;
+        }
+
+        public Int32 getIdUsuario()
+        {
+            return this.usuarioId;
+        }
+        public void setIdUsuario(Int32 usuId)
+        {
+            this.usuarioId = usuId;
         }
 
         public Int32 getId()
@@ -51,11 +69,11 @@ namespace Platform.Object.model
         {
             this.cedula = cedula;
         }
-        public DateTime getFechaNacimiento()
+        public String getFechaNacimiento()
         {
             return this.fechaNacimiento;
         }
-        public void setFechaNacimiento(DateTime fechaNa)
+        public void setFechaNacimiento(String fechaNa)
         {
             this.fechaNacimiento = fechaNa;
         }
