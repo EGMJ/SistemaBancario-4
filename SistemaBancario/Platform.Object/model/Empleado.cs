@@ -30,7 +30,7 @@ namespace Platform.Object.model
         }
 
         public Empleado(String nombre,String apellido, String cedula, String fechaNacimiento,
-            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId, Int32 usuarioId)
+            Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId, Int32 usuario_id)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -39,7 +39,7 @@ namespace Platform.Object.model
             this.ciudadNacimiento = ciudadNacimiento;
             this.sucursalId = sucursalId;
             this.cargoId = cargoId;
-            this.usuarioId = usuarioId;
+            this.usuarioId = usuario_id;
         }
 
         public Empleado(int id, string nombre)
