@@ -14,6 +14,7 @@ namespace SistemaBancario.Navigation
     public partial class FormGestionCargo : Form
     {
         CargoController ctlCargo;
+        int aux;
         public FormGestionCargo()
         {
             InitializeComponent();
@@ -36,7 +37,9 @@ namespace SistemaBancario.Navigation
             {
                 if(ctlCargo.SolicitudGuardarCargo(nombre,salario,cantidadH,descri)){
                     MessageBox.Show("Se registro el cargo: " + nombre);
-                    limpiar();
+                    deshabilitarCampos();
+                    cargarTabla();
+                    
                 }
                 else
                 {
@@ -45,26 +48,25 @@ namespace SistemaBancario.Navigation
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            String nombre = txtNombreCargo.Text;
-            Cargo c = new Cargo();
-            c = ctlCargo.SolicitudBuscarCargo(nombre);
-            if(c != null){
-                txtIntensidad.Text = Convert.ToString(c.getCantidadHoras());
-                txtSalario.Text = Convert.ToString(c.getSalario());
-                txtDescripcion.Text = c.getDescripcion();
-                btnEliminar.Enabled = true;
-                btnEditar.Enabled = true;
-                txtNombreCargo.Enabled = false;
-                btnGuardar.Enabled = false;
-                btnBuscar.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Error..");
-            }
-        }
+        //private void btnBuscar_Click(object sender, EventArgs e)
+        //{
+        //    String nombre = txtNombreCargo.Text;
+        //    Cargo c = ctlCargo.SolicitudBuscarCargo(nombre);
+        //    if(c != null){
+        //        txtIntensidad.Text = Convert.ToString(c.getCantidadHoras());
+        //        txtSalario.Text = Convert.ToString(c.getSalario());
+        //        txtDescripcion.Text = c.getDescripcion();
+        //        btnEliminar.Enabled = true;
+        //        btnEditar.Enabled = true;
+        //        txtNombreCargo.Enabled = false;
+        //        btnGuardar.Enabled = false;
+        //        btnBuscar.Enabled = false;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Error..");
+        //    }
+        //}
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -83,13 +85,14 @@ namespace SistemaBancario.Navigation
                 if (ctlCargo.SolicitudModificarCargo(nombre, salario, cantidadH, descri))
                 {
                     MessageBox.Show("Se modifico con exito");
-                    limpiar();
-                    btnBuscar.Enabled = true;
-                    btnGuardar.Enabled = true;
+                    deshabilitarCampos();
+                    cargarTabla();
+                                      
                 }
                 else
                 {
                     MessageBox.Show("Erro--");
+                    //deshabilitarCampos();
                 }
             }
         }
@@ -99,9 +102,8 @@ namespace SistemaBancario.Navigation
             String nombre = txtNombreCargo.Text;
             if(ctlCargo.solicitudEliminarCargo(nombre)){
                 MessageBox.Show("Se elimino");
-                limpiar();
-                btnBuscar.Enabled = true;
-                btnGuardar.Enabled = true;
+                deshabilitarCampos();
+                cargarTabla();
             }
             else
             {
@@ -123,6 +125,70 @@ namespace SistemaBancario.Navigation
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void txtNombreCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                String nombre = txtNombreCargo.Text;
+                if (nombre.Length != 0)
+                {                 
+                    Cargo c = ctlCargo.SolicitudBuscarCargo(nombre);
+                    if (c != null)
+                    {
+                        txtIntensidad.Text = Convert.ToString(c.getCantidadHoras());
+                        txtSalario.Text = Convert.ToString(c.getSalario());
+                        txtDescripcion.Text = c.getDescripcion();
+                        aux = c.getId();
+                        habilitarCampos();
+                        btnGuardar.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor ingresa el cargo");
+                        habilitarCampos();
+                        btnGuardar.Enabled = true;
+                        btnEditar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                    }
+                   
+                }
+            }
+        }
+        public void habilitarCampos()
+        {
+            
+            txtDescripcion.ReadOnly = false;
+            txtIntensidad.ReadOnly = false;
+            txtSalario.ReadOnly = false;
+            txtNombreCargo.ReadOnly = true;
+        }
+        public void deshabilitarCampos()
+        {
+
+            txtDescripcion.ReadOnly = true;
+            txtIntensidad.ReadOnly = true;
+            txtSalario.ReadOnly = true;
+            txtNombreCargo.ReadOnly = false;
+            limpiar();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+        }
+
+        private void FormGestionCargo_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.cargo' Puede moverla o quitarla según sea necesario.
+            cargarTabla();
+
+        }
+
+        public void cargarTabla()
+        {
+            this.cargoTableAdapter.Fill(this.dataSetBanco.cargo);
         }
     }
 }

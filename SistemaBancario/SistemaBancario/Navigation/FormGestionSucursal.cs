@@ -270,10 +270,17 @@ namespace SistemaBancario.Navigation
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             String info = sucursalrControlador.solicutudEliminar(aux);
-            MessageBox.Show(info);
-            deshabilitarCampos();
-            aux = 0;
-            cargarTabla();
+            if(info!=null){
+                MessageBox.Show(info);
+                deshabilitarCampos();
+                aux = 0;
+                cargarTabla();
+            }
+            else
+            {
+                MessageBox.Show("No se puede eliminar, dato asociado con otro campo");
+            }
+            
         }
     }
 }

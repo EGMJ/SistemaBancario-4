@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Platform.Object.model
 {
 
-    
+
 
     public class Empleado
     {
@@ -23,13 +23,15 @@ namespace Platform.Object.model
         //Datos auxiliares para la busqueda del empleado
         public String cuenta { get; set; }
         public Int32 nombreTipoUsu { get; set; }
+        public Int32 idPais { get; set; }
+        public Int32 idDepartamento { get; set; }
 
         public Empleado()
         {
 
         }
 
-        public Empleado(String nombre,String apellido, String cedula, String fechaNacimiento,
+        public Empleado(String nombre, String apellido, String cedula, String fechaNacimiento,
             Int32 ciudadNacimiento, Int32 sucursalId, Int32 cargoId, Int32 usuario_id)
         {
             this.nombre = nombre;
@@ -44,12 +46,12 @@ namespace Platform.Object.model
 
         public Empleado(int id, string nombre)
         {
-            
+
             this.id = id;
             this.nombre = nombre;
         }
 
-         public Int32 getId()
+        public Int32 getId()
         {
             return this.id;
         }

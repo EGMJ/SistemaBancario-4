@@ -19,7 +19,7 @@ namespace Platform.Service.services
 
         public Cargo buscarCargo(String nombre)
         {
-            Cargo ca = new Cargo();
+            Cargo ca = null;
             String consulta = "exec buscarCargo '" + nombre + "';";
             ejecutarRetorno(consulta);
 
@@ -29,6 +29,7 @@ namespace Platform.Service.services
             }
             else
             {
+                ca = new Cargo();
                 ca.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
                 ca.setSalario((double)dataset.Tables[0].Rows[0]["salario"]);
                 ca.setCantidadHoras((int)dataset.Tables[0].Rows[0]["cantidad_horas"]);

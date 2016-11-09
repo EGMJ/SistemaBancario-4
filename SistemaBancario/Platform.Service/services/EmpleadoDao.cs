@@ -46,7 +46,7 @@ namespace Platform.Service.services
 
       public Empleado buscarEmpleado(String cedula)
       {
-          Empleado emple = new Empleado();
+          Empleado emple = null;
           String consulta = "exec buscarEmpleado '" + cedula + "';";
           ejecutarRetorno(consulta);
 
@@ -56,6 +56,7 @@ namespace Platform.Service.services
           }
           else
           {
+              emple = new Empleado();
               emple.setCargoId((int)dataset.Tables[0].Rows[0]["cargo"]);
               emple.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
               emple.setApellido(dataset.Tables[0].Rows[0]["apellido"].ToString());
@@ -65,6 +66,8 @@ namespace Platform.Service.services
               emple.cuenta = (dataset.Tables[0].Rows[0]["cuenta"].ToString());              
               emple.nombreTipoUsu = ((int)dataset.Tables[0].Rows[0]["nombreTipoUsu"]);
               emple.setUsuarioId((int)dataset.Tables[0].Rows[0]["usu"]);
+              emple.idPais = (int)dataset.Tables[0].Rows[0]["pais"];
+              emple.idDepartamento = (int)dataset.Tables[0].Rows[0]["departamento"];
               dataset.Dispose();
           }
 

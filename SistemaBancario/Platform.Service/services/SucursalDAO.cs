@@ -52,10 +52,16 @@ namespace Platform.Service.services
 
 
         public String eliminarSucursal(int id)
-        {
-            String consulta = "exec borrarSucursal " + id + ";";
-            ejecutarRetorno(consulta);
-            String info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
+        {String info= null;
+            try
+            {
+                String consulta = "exec borrarSucursal " + id + ";";
+                ejecutarRetorno(consulta);
+                info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
+            }catch(Exception e){
+                return info;
+            }
+            
             return info;
         }
     }
