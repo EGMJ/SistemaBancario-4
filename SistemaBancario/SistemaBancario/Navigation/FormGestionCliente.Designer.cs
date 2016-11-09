@@ -152,7 +152,7 @@
             // 
             // txtPrueba2
             // 
-            this.txtPrueba2.Location = new System.Drawing.Point(540, 58);
+            this.txtPrueba2.Location = new System.Drawing.Point(581, 254);
             this.txtPrueba2.Name = "txtPrueba2";
             this.txtPrueba2.Size = new System.Drawing.Size(10, 20);
             this.txtPrueba2.TabIndex = 13;

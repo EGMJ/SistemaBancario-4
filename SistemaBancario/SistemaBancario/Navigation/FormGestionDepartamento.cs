@@ -26,7 +26,6 @@ namespace SistemaBancario.Navigation
         {
             cargarPais();
             cargarTabla();
-
         }
 
         public void cargarPais()

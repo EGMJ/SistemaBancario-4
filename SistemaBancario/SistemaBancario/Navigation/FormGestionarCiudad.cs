@@ -107,7 +107,7 @@ namespace SistemaBancario.Navigation
             String nombre = txtNombreCiudad.Text;
             String descr = txtDescripcion.Text;
             Int32 id_depto = (int)cbDepto.SelectedValue;
-            if (id_depto == 0)
+            if (id_depto == 0 || nombre =="")
             {
                 MessageBox.Show("Porfavor complete la informacion");
             }

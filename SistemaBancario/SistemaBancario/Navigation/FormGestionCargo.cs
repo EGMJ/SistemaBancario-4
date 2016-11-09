@@ -38,8 +38,7 @@ namespace SistemaBancario.Navigation
                 if(ctlCargo.SolicitudGuardarCargo(nombre,salario,cantidadH,descri)){
                     MessageBox.Show("Se registro el cargo: " + nombre);
                     deshabilitarCampos();
-                    cargarTabla();
-                    
+                    cargarTabla();                    
                 }
                 else
                 {

@@ -30,6 +30,7 @@ namespace SistemaBancario.Navigation
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            bool resp;
             String cedula = txtCedula.Text;
             String nombre = txtNombre.Text;
             String apellido = txtApellido.Text;
@@ -48,17 +49,17 @@ namespace SistemaBancario.Navigation
             }
             else
             {
-                if (ctlUsu.SolicitudGuardarUsuario(cuenta, contraseña, idTipoUsu))
+                resp = ctlUsu.SolicitudGuardarUsuario(cuenta, contraseña, idTipoUsu);
+                Usuario usua = ctlUsu.SolicitudObtenerIdUsuario(cuenta);
+                Int32 idUsu = usua.getId();
+                if (resp = true && ctlEmp.SolicitudGuardarEmpleado(nombre, apellido, cedula,
+                    fecha, idCiudad, idSucursal, idCargo, idUsu))
                 {
+                    MessageBox.Show("Exito al registrar al empleado");
+                    cargarTabla();
                 }
             }
-            Usuario usua = ctlUsu.SolicitudObtenerIdUsuario(cuenta);
-            Int32 idUsu = usua.getId();
-            if (ctlEmp.SolicitudGuardarEmpleado(nombre, apellido, cedula, fecha, idCiudad, idSucursal, idCargo, idUsu))
-            {
-                MessageBox.Show("Exito al registrar al empleado");
-                cargarTabla();
-            }
+
 
         }
 
@@ -100,22 +101,24 @@ namespace SistemaBancario.Navigation
             String contraseña = txtContraseña.Text;
             Int32 idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
             Int32 idSucursal = (Int32)cbSucursal.SelectedValue;
-
-            Empleado epl = new Empleado();
-            epl = ctlEmp.SolicitudBuscarEmpleado(cedula);
-            Int32 idUsu = epl.getUsuarioId();
-
-            Empleado emp = new Empleado(nombre, apellido, cedula, fecha, idCiudad, idSucursal, idCargo, idUsu);
-            Usuario usu = new Usuario(cuenta, contraseña, idTipoUsu);
-            if (ctlEmp.SolicitudModificarEmpleado(cedula, nombre, apellido, fecha,
-            idCiudad, idCargo, idSucursal, cuenta, contraseña, idUsu, idTipoUsu))
+            if (cedula == "" || nombre == "" || apellido == "" ||  cuenta == "" || contraseña == "")
             {
-                MessageBox.Show("Exito");
-                cargarTabla();
+                MessageBox.Show("Complete la informacion por favor.");
             }
-
-
-
+            else
+            {
+                Empleado epl = new Empleado();
+                epl = ctlEmp.SolicitudBuscarEmpleado(cedula);
+                Int32 idUsu = epl.getUsuarioId();
+                Empleado emp = new Empleado(nombre, apellido, cedula, fecha, idCiudad, idSucursal, idCargo, idUsu);
+                Usuario usu = new Usuario(cuenta, contraseña, idTipoUsu);
+                if (ctlEmp.SolicitudModificarEmpleado(cedula, nombre, apellido, fecha,
+                idCiudad, idCargo, idSucursal, cuenta, contraseña, idUsu, idTipoUsu))
+                {
+                    MessageBox.Show("Exito");
+                    cargarTabla();
+                }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
