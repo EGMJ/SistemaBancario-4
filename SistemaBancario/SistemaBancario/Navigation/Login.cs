@@ -122,6 +122,12 @@ namespace SistemaBancario
             menu.ShowDialog();
         }
 
+        public void abrirGestionCliente()
+        {
+            FormGestionCliente menu = new FormGestionCliente();
+            menu.ShowDialog();
+        }
+
         private void tBClave_TextChanged(object sender, EventArgs e)
         {
 
@@ -130,6 +136,11 @@ namespace SistemaBancario
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            abrirGestionCliente();
         }
 
     }
