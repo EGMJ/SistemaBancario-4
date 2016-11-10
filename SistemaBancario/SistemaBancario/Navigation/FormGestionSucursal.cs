@@ -222,7 +222,7 @@ namespace SistemaBancario.Navigation
                     }
                     else
                     {
-                        MessageBox.Show("El usuario no existe, por favor adicionalo");
+                        MessageBox.Show("La ciudad no existe, por favor adicionala");
                         habilitarCampos();
                         btnGuardar.Enabled = true;
                         btnEditar.Enabled = false;

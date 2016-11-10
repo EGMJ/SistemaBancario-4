@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Platform.Comunication.controller;
 using Platform.Object.model;
+using SistemaBancario.Resources;
 namespace SistemaBancario.Navigation
 {
 
     public partial class c : Form
     {
-
+        DepartamentoController deptoController = new DepartamentoController();
         CiudadController ctlCiudad;
+        int aux;
         public c()
         {
             InitializeComponent();
@@ -46,7 +48,9 @@ namespace SistemaBancario.Navigation
                 if (ctlCiudad.SolicitudGuardarCiudad(nombre, descripcion, id_depto))
                 {
                     MessageBox.Show("Se registro con exito");
-                    limpiar();
+                    
+                    deshabilitarCampos();
+                    cargarTabla();
                 }
                 else
                 {
@@ -63,9 +67,7 @@ namespace SistemaBancario.Navigation
             txtNombreCiudad.Text = "";
             txtDescripcion.Text = "";
             cbDepto.SelectedIndex = 0;
-            txtNombreCiudad.Enabled = true;
-            btnEliminar.Enabled = false;
-            btnEditar.Enabled = false;
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -107,7 +109,7 @@ namespace SistemaBancario.Navigation
             String nombre = txtNombreCiudad.Text;
             String descr = txtDescripcion.Text;
             Int32 id_depto = (int)cbDepto.SelectedValue;
-            if (id_depto == 0 || nombre =="")
+            if (id_depto == 0 || nombre == "")
             {
                 MessageBox.Show("Porfavor complete la informacion");
             }
@@ -152,6 +154,10 @@ namespace SistemaBancario.Navigation
 
         private void c_Load(object sender, EventArgs e)
         {
+            cargarTabla();
+           
+            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.pais' Puede moverla o quitarla según sea necesario.
+            this.paisTableAdapter.Fill(this.dataSetBanco.pais);
             // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.departamento' Puede moverla o quitarla según sea necesario.
             this.departamentoTableAdapter.Fill(this.dataSetBanco.departamento);
 
@@ -161,6 +167,91 @@ namespace SistemaBancario.Navigation
         {
 
         }
-       
+
+        private void cBPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cBPais.SelectedValue != null)
+            {
+                Int32 idPais = (int)cBPais.SelectedValue;
+                LinkedList<Departamento> lista = deptoController.solicitudListaDeptosPorPais(idPais);
+                BindingList<Item> deptos = new BindingList<Item>();
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    deptos.Add(new Item((lista.ElementAt(i)).getNombre(), (lista.ElementAt(i)).getId()));
+
+                }
+
+                cbDepto.DisplayMember = "Name";
+                cbDepto.ValueMember = "Value";
+                cbDepto.DataSource = deptos;
+            }
+
+        }
+
+        private void txtNombreCiudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                String nombre = txtNombreCiudad.Text;
+                if (nombre.Length != 0)
+                {
+                    Ciudad c = ctlCiudad.SolicitudBuscarCiudad(nombre);
+                    if (c != null)
+                    {
+                        //  txtNombreCiudad.Text = c.getNombre();
+                        txtDescripcion.Text = c.getDescripcion();
+                        cbDepto.SelectedValue = (int)c.getIdDepartamento();
+                        cBPais.SelectedValue = c.idPais;
+                        txtDescripcion.Text = c.getDescripcion();
+                        aux = c.getId();
+                        habilitarCampos();
+                        btnGuardar.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                       
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario no existe, por favor adicionalo");
+                        habilitarCampos();
+                        btnGuardar.Enabled = true;
+                        btnEditar.Enabled = false;
+                        btnEliminar.Enabled = false;
+
+                    }
+
+
+                }
+            }
+        }
+
+        public void habilitarCampos()
+        {
+
+            cbDepto.Enabled = true;
+            cBPais.Enabled = true;
+            txtDescripcion.ReadOnly = false;
+            txtNombreCiudad.ReadOnly = true;
+        }
+        public void deshabilitarCampos()
+        {
+            
+            cbDepto.Enabled = false;
+            cBPais.Enabled = false;
+            
+            txtDescripcion.ReadOnly = true;
+            txtNombreCiudad.ReadOnly = false;
+            limpiar();
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+        }
+
+        public void cargarTabla()
+        {
+            this.ciudadTableAdapter.Fill(this.dataSetBanco.ciudad);
+        }
+
     }
 }
