@@ -27,6 +27,8 @@ namespace SistemaBancario.Navigation
         FormGestionTipoCuenta formTipoCuenta;
         FormGestionPais formPais;
         FormGestionDepartamento formDepto;
+        FormGestionCosto formGestionCosto;
+        FormGestionCostoCuenta formCostCuen;
         c formCiudad;
         
 
@@ -235,10 +237,45 @@ namespace SistemaBancario.Navigation
         {
             formGestionCliente = null;
         }
+        private void formCosto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formGestionCosto = null;
+        }
+
+        private void formCostCuent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formCostCuen = null;
+        }
 
         private void FormAdministrador_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void gestionarCostosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formGestionCosto == null)
+            {
+                formGestionCosto = new FormGestionCosto();
+                formGestionCosto.MdiParent = this;
+                formGestionCosto.FormClosed += new FormClosedEventHandler(formCosto_FormClosed);
+                formGestionCosto.Show();
+            }
+            else
+                formGestionCosto.Activate();
+        }
+
+        private void gestionarCuentaCostoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formCostCuen == null)
+            {
+                formCostCuen = new FormGestionCostoCuenta();
+                formCostCuen.MdiParent = this;
+                formCostCuen.FormClosed += new FormClosedEventHandler(formCostCuent_FormClosed);
+                formCostCuen.Show();
+            }
+            else
+                formCostCuen.Activate();
         }
     }
 }

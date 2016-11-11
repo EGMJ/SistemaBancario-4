@@ -37,14 +37,7 @@ namespace SistemaBancario.Navigation
                 MessageBox.Show("Debe completar la informacion");
             }
             else
-            {
-                //Ciudad city = ctlCiudad.SolicitudBuscarCiudad(nombre);
-                //if (city != null)
-                //{
-                //    MessageBox.Show("Ya existe una ciudad con este nombre");
-                //}
-                //else
-                //{
+            {                
                 if (ctlCiudad.SolicitudGuardarCiudad(nombre, descripcion, id_depto))
                 {
                     MessageBox.Show("Se registro con exito");
@@ -56,7 +49,6 @@ namespace SistemaBancario.Navigation
                 {
                     MessageBox.Show("Erro---");
                 }
-                //}
 
             }
 
@@ -251,6 +243,11 @@ namespace SistemaBancario.Navigation
         public void cargarTabla()
         {
             this.ciudadTableAdapter.Fill(this.dataSetBanco.ciudad);
+        }
+
+        private void txtNombreCiudad_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

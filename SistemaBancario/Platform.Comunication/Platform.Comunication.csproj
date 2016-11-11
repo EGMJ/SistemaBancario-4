@@ -47,6 +47,7 @@
     <Compile Include="controller\EmpleadoController.cs" />
     <Compile Include="controller\JuntaDirectivaController.cs" />
     <Compile Include="controller\LoginController.cs" />
+    <Compile Include="controller\CostoController.cs" />
     <Compile Include="controller\PaisController.cs" />
     <Compile Include="controller\PoliticaController.cs" />
     <Compile Include="controller\SucursalController.cs" />

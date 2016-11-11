@@ -121,42 +121,11 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>734, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="archivoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
   </data>
   <data name="archivoToolStripMenuItem.Text" xml:space="preserve">
     <value>Archivo</value>
-  </data>
-  <data name="salirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 22</value>
-  </data>
-  <data name="salirToolStripMenuItem.Text" xml:space="preserve">
-    <value>Salir</value>
   </data>
   <data name="bancoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -164,47 +133,11 @@
   <data name="bancoToolStripMenuItem.Text" xml:space="preserve">
     <value>Banco</value>
   </data>
-  <data name="gestionarBancoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="gestionarBancoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestionar Banco</value>
-  </data>
-  <data name="gestionarSucursalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="gestionarSucursalToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestionar Sucursal</value>
-  </data>
-  <data name="gestionJuntaDirectivaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="gestionJuntaDirectivaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestion Junta Directiva</value>
-  </data>
   <data name="usuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
   <data name="usuariosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuarios</value>
-  </data>
-  <data name="gestionEmpleadoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="gestionEmpleadoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestionar Empleado</value>
-  </data>
-  <data name="gestionClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="gestionClienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestionar Cliente</value>
-  </data>
-  <data name="administraciónToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="administraciónToolStripMenuItem.Text" xml:space="preserve">
-    <value>Administración</value>
   </data>
   <data name="gestionCargoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -235,6 +168,85 @@
   </data>
   <data name="gestionarCiudadToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestionar Ciudad</value>
+  </data>
+  <data name="gestionarCostosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="gestionarCostosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar Costos</value>
+  </data>
+  <data name="gestionarCuentaCostoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="gestionarCuentaCostoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar Cuenta y Costo</value>
+  </data>
+  <data name="administraciónToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="administraciónToolStripMenuItem.Text" xml:space="preserve">
+    <value>Administración</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>734, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="salirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 22</value>
+  </data>
+  <data name="salirToolStripMenuItem.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="gestionarBancoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="gestionarBancoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar Banco</value>
+  </data>
+  <data name="gestionarSucursalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="gestionarSucursalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar Sucursal</value>
+  </data>
+  <data name="gestionJuntaDirectivaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="gestionJuntaDirectivaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestion Junta Directiva</value>
+  </data>
+  <data name="gestionEmpleadoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="gestionEmpleadoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar Empleado</value>
+  </data>
+  <data name="gestionClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="gestionClienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestionar Cliente</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -340,6 +352,18 @@
     <value>gestionarCiudadToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;gestionarCiudadToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gestionarCostosToolStripMenuItem.Name" xml:space="preserve">
+    <value>gestionarCostosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;gestionarCostosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gestionarCuentaCostoToolStripMenuItem.Name" xml:space="preserve">
+    <value>gestionarCuentaCostoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;gestionarCuentaCostoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

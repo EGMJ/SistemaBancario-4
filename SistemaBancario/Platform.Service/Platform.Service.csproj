@@ -44,6 +44,7 @@
     <Compile Include="services\CargoDAO.cs" />
     <Compile Include="services\CiudadDAO.cs" />
     <Compile Include="services\ClienteDAO.cs" />
+    <Compile Include="services\CostoDAO.cs" />
     <Compile Include="services\DepartamentoDAO.cs" />
     <Compile Include="services\EmpleadoDao.cs" />
     <Compile Include="services\JuntaDirectivaDAO.cs" />

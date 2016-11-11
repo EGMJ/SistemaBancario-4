@@ -10,10 +10,16 @@ namespace Platform.Object.model
     {
         private Int32 id;
         private String nombre;
-        private float monto;
+        private double monto;
         public Costo()
         {
 
+        }
+
+        public Costo(String nombre, double monto)
+        {
+            this.nombre = nombre;
+            this.monto = monto;
         }
 
         public Int32 getId()
@@ -32,11 +38,11 @@ namespace Platform.Object.model
         {
             this.nombre = nombre;
         }
-        public float getMonto()
+        public double getMonto()
         {
             return this.monto;
         }
-        public void setMonto(float monto)
+        public void setMonto(double monto)
         {
             this.monto = monto;
         }

@@ -45,6 +45,8 @@
             this.gestionPaísToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarCiudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarCuentaCostoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +127,9 @@
             this.gestionTipoCuentaToolStripMenuItem,
             this.gestionPaísToolStripMenuItem,
             this.gestionDepartamentoToolStripMenuItem,
-            this.gestionarCiudadToolStripMenuItem});
+            this.gestionarCiudadToolStripMenuItem,
+            this.gestionarCostosToolStripMenuItem,
+            this.gestionarCuentaCostoToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             resources.ApplyResources(this.administraciónToolStripMenuItem, "administraciónToolStripMenuItem");
             // 
@@ -158,6 +162,18 @@
             this.gestionarCiudadToolStripMenuItem.Name = "gestionarCiudadToolStripMenuItem";
             resources.ApplyResources(this.gestionarCiudadToolStripMenuItem, "gestionarCiudadToolStripMenuItem");
             this.gestionarCiudadToolStripMenuItem.Click += new System.EventHandler(this.gestionarCiudadToolStripMenuItem_Click);
+            // 
+            // gestionarCostosToolStripMenuItem
+            // 
+            this.gestionarCostosToolStripMenuItem.Name = "gestionarCostosToolStripMenuItem";
+            resources.ApplyResources(this.gestionarCostosToolStripMenuItem, "gestionarCostosToolStripMenuItem");
+            this.gestionarCostosToolStripMenuItem.Click += new System.EventHandler(this.gestionarCostosToolStripMenuItem_Click);
+            // 
+            // gestionarCuentaCostoToolStripMenuItem
+            // 
+            this.gestionarCuentaCostoToolStripMenuItem.Name = "gestionarCuentaCostoToolStripMenuItem";
+            resources.ApplyResources(this.gestionarCuentaCostoToolStripMenuItem, "gestionarCuentaCostoToolStripMenuItem");
+            this.gestionarCuentaCostoToolStripMenuItem.Click += new System.EventHandler(this.gestionarCuentaCostoToolStripMenuItem_Click);
             // 
             // FormAdministrador
             // 
@@ -193,5 +209,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionPaísToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDepartamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarCiudadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarCostosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarCuentaCostoToolStripMenuItem;
     }
 }

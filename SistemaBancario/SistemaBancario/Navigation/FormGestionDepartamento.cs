@@ -188,26 +188,15 @@ namespace SistemaBancario.Navigation
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = false;
         }
-        //private void btnBuscar_Click(object sender, EventArgs e)
-        //{
-        //    String nombre = txtNombre.Text;
-        //    if (nombre == "")
-        //    {
-        //        MessageBox.Show("Complete la informacion");
-        //    }
-        //    else
-        //    {
-        //        Departamento dep = ctlDepto.SolicitudBuscarDepartamento(nombre);
-        //        if (dep != null)
-        //        {
-        //            txtDescripcion.Text = dep.getDescripcion();
-        //            cbPais.SelectedValue = dep.getPaisId();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("No se encontro");
-        //        }
-        //    }
-        //}
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,31 +46,31 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cBPais = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cBPais = new System.Windows.Forms.ComboBox();
-            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paisTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter();
-            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ciudadTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.ciudadTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paisTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter();
+            this.ciudadTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.ciudadTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@
             this.txtNombreCiudad.Name = "txtNombreCiudad";
             this.txtNombreCiudad.Size = new System.Drawing.Size(191, 21);
             this.txtNombreCiudad.TabIndex = 3;
+            this.txtNombreCiudad.TextChanged += new System.EventHandler(this.txtNombreCiudad_TextChanged);
             this.txtNombreCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCiudad_KeyPress);
             // 
             // cbDepto
@@ -231,6 +232,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // cBPais
+            // 
+            this.cBPais.DataSource = this.paisBindingSource;
+            this.cBPais.DisplayMember = "nombre";
+            this.cBPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBPais.Enabled = false;
+            this.cBPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBPais.FormattingEnabled = true;
+            this.cBPais.Location = new System.Drawing.Point(106, 70);
+            this.cBPais.Name = "cBPais";
+            this.cBPais.Size = new System.Drawing.Size(190, 23);
+            this.cBPais.TabIndex = 7;
+            this.cBPais.ValueMember = "id";
+            this.cBPais.SelectedIndexChanged += new System.EventHandler(this.cBPais_SelectedIndexChanged);
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataMember = "pais";
+            this.paisBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Pais:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnGuardar);
@@ -280,48 +310,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(444, 228);
             this.dataGridView1.TabIndex = 0;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Pais:";
-            // 
-            // cBPais
-            // 
-            this.cBPais.DataSource = this.paisBindingSource;
-            this.cBPais.DisplayMember = "nombre";
-            this.cBPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBPais.Enabled = false;
-            this.cBPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBPais.FormattingEnabled = true;
-            this.cBPais.Location = new System.Drawing.Point(106, 70);
-            this.cBPais.Name = "cBPais";
-            this.cBPais.Size = new System.Drawing.Size(190, 23);
-            this.cBPais.TabIndex = 7;
-            this.cBPais.ValueMember = "id";
-            this.cBPais.SelectedIndexChanged += new System.EventHandler(this.cBPais_SelectedIndexChanged);
-            // 
-            // paisBindingSource
-            // 
-            this.paisBindingSource.DataMember = "pais";
-            this.paisBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // paisTableAdapter
-            // 
-            this.paisTableAdapter.ClearBeforeFill = true;
-            // 
-            // ciudadBindingSource
-            // 
-            this.ciudadBindingSource.DataMember = "ciudad";
-            this.ciudadBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // ciudadTableAdapter
-            // 
-            this.ciudadTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -347,6 +335,19 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
+            // ciudadBindingSource
+            // 
+            this.ciudadBindingSource.DataMember = "ciudad";
+            this.ciudadBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // paisTableAdapter
+            // 
+            this.paisTableAdapter.ClearBeforeFill = true;
+            // 
+            // ciudadTableAdapter
+            // 
+            this.ciudadTableAdapter.ClearBeforeFill = true;
+            // 
             // c
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,11 +365,11 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
             this.ResumeLayout(false);
 
