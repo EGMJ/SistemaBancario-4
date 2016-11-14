@@ -150,8 +150,12 @@ namespace SistemaBancario.Navigation
                                 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
                                 String info = juntaControlador.solicitudGuardar(-1, acciones, nombre, apellido, cedula, fecha, ciudadId, bancoId);
                                 MessageBox.Show(info);
-                                deshabilitarCampos();
-                                cargarTabla();
+                                if (!info.Equals("Las acciones se han sobre pasado"))
+                                {
+                                    deshabilitarCampos();
+                                    cargarTabla();
+                                }
+
 
                             }
                             else
@@ -168,7 +172,7 @@ namespace SistemaBancario.Navigation
             }
             else
                 MessageBox.Show("Por favor ingresa el nombre o apellido del nuevo miembro de la junta directiva");
-       
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -193,8 +197,12 @@ namespace SistemaBancario.Navigation
                                 ciudadId = ((Item)cBCiudad.SelectedItem).Value;
                                 String info = juntaControlador.solicitudGuardar(aux, acciones, nombre, apellido, cedula, fecha, ciudadId, bancoId);
                                 MessageBox.Show(info);
-                                deshabilitarCampos();
-                                cargarTabla();
+                                if (!info.Equals("Las acciones se han sobre pasado"))
+                                {
+                                    deshabilitarCampos();
+                                    cargarTabla();
+                                }
+
 
                             }
                             else
@@ -211,7 +219,7 @@ namespace SistemaBancario.Navigation
             }
             else
                 MessageBox.Show("Por favor ingresa el nombre o apellido del nuevo miembro de la junta directiva");
-       
+
         }
 
 

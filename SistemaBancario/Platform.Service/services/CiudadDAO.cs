@@ -57,10 +57,13 @@ namespace Platform.Service.services
             else
             {
                 ciuda = new Ciudad();
-                ciuda.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-                ciuda.setIdDepartamento((int)dataset.Tables[0].Rows[0]["departamento_id"]);
-                ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
-                dataset.Dispose();
+                ciuda.setNombre(dataset.Tables[0].Rows[0]["nombres"].ToString());
+                ciuda.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
+                
+                ciuda.setIdDepartamento((int)dataset.Tables[0].Rows[0]["departamento_ids"]);
+                ciuda.setDescripcion(dataset.Tables[0].Rows[0]["descripcions"].ToString());
+                ciuda.idPais = Convert.ToInt32(dataset.Tables[0].Rows[0]["paisId"].ToString());
+               
             }
             return ciuda;
         }

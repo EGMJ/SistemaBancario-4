@@ -108,7 +108,6 @@
             this.txtNombreCiudad.Name = "txtNombreCiudad";
             this.txtNombreCiudad.Size = new System.Drawing.Size(191, 21);
             this.txtNombreCiudad.TabIndex = 3;
-            this.txtNombreCiudad.TextChanged += new System.EventHandler(this.txtNombreCiudad_TextChanged);
             this.txtNombreCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCiudad_KeyPress);
             // 
             // cbDepto

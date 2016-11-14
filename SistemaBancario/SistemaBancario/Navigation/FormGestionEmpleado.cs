@@ -36,14 +36,27 @@ namespace SistemaBancario.Navigation
             String apellido = txtApellido.Text;
             txtPrueba.Text = dtpFechaNacimiento.Value.ToString("yyyy-MM-dd");
             String fecha = txtPrueba.Text;
-            Int32 idCiudad = (Int32)cbCiudad.SelectedValue;
-            Int32 idCargo = (Int32)cbCrgo.SelectedValue;
+            Int32 idCiudad=0;
+            Int32 idCargo = 0;
+            Int32 idTipoUsu = 0;
+            Int32 idSucursal = 0;
+            if ((cbCiudad.SelectedItem) != null && (cbCrgo.SelectedItem) != null
+                && (cbTipoUsuario.SelectedItem) != null && (cbSucursal.SelectedItem) != null)
+            {
+                idCiudad = (Int32)cbCiudad.SelectedValue;
+                idCargo = (Int32)cbCrgo.SelectedValue;
+                idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
+                idSucursal = (Int32)cbSucursal.SelectedValue;
+            }
+            
+           
             String cuenta = txtCuenta.Text;
             String contraseña = txtContraseña.Text;
-            Int32 idTipoUsu = (Int32)cbTipoUsuario.SelectedValue;
-            Int32 idSucursal = (Int32)cbSucursal.SelectedValue;
+            
+            
 
-            if (cedula == "" || nombre == "" || apellido == "" || cuenta == "" || contraseña == "")
+            if (cedula == "" || nombre == "" || apellido == "" || cuenta == "" || contraseña == "" || idCiudad<=0
+                || idCargo <= 0 || idTipoUsu <= 0 || idSucursal<=0)
             {
                 MessageBox.Show("Ingrese la infomacion completa");
             }
@@ -56,6 +69,7 @@ namespace SistemaBancario.Navigation
                     fecha, idCiudad, idSucursal, idCargo, idUsu))
                 {
                     MessageBox.Show("Exito al registrar al empleado");
+                    deshabilitarCampos();
                     cargarTabla();
                 }
             }
@@ -116,6 +130,7 @@ namespace SistemaBancario.Navigation
                 idCiudad, idCargo, idSucursal, cuenta, contraseña, idUsu, idTipoUsu))
                 {
                     MessageBox.Show("Exito");
+                    deshabilitarCampos();
                     cargarTabla();
                 }
             }
@@ -307,7 +322,7 @@ namespace SistemaBancario.Navigation
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            deshabilitarCampos();
         }
     }
 }

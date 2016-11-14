@@ -19,6 +19,7 @@ namespace Platform.Service.services
              ejecutarRetorno(consulta);
             String info = dataset.Tables[0].Rows[0]["respuesta"].ToString();
 
+
             return info;
         }
 

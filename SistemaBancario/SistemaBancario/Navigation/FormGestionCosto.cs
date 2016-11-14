@@ -52,7 +52,16 @@ namespace SistemaBancario
             }
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+       
+
+        private void FormGestionCosto_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.costo' Puede moverla o quitarla según sea necesario.
+            this.costoTableAdapter.Fill(this.dataSetBanco.costo);
+
+        }
+
+        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
@@ -80,11 +89,6 @@ namespace SistemaBancario
                     }
                 }
             }
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
