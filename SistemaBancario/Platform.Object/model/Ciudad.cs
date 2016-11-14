@@ -15,8 +15,7 @@ namespace Platform.Object.model
 
         //auxiliares para busqueda de la sucursal 
         public Int32 idPais { get; set; }
-        public Int32 idDepartamento { get; set; }
-       
+             
 
         public Ciudad()
         {

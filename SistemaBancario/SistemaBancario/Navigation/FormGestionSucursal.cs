@@ -21,7 +21,7 @@ namespace SistemaBancario.Navigation
         EmpleadoController empleadoController = new EmpleadoController();
         BancoController banco = new BancoController();
         SucursalController sucursalrControlador = new SucursalController();
-        
+
         int aux;
         public FormGestionSucursal()
         {
@@ -64,7 +64,7 @@ namespace SistemaBancario.Navigation
                 cBDepartamento.ValueMember = "Value";
                 cBDepartamento.DataSource = deptos;
             }
-            
+
         }
 
         private void cBDepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,12 +111,16 @@ namespace SistemaBancario.Navigation
                                 Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
                                 String direccion = tBDireccion.Text;
 
-                                String info =sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion); 
-                               
-                                    MessageBox.Show(info);
+                                String info = sucursalrControlador.solicitudGuardar(-1, nombre, bancoId, ciudadId, gerenteId, direccion);
+
+                                MessageBox.Show(info);
+                                if (!info.Equals("El gerente que va asisgnar ya se encuentra en otra sucursal"))
+                                {
                                     deshabilitarCampos();
                                     cargarTabla();
-                               
+                                }
+
+
                             }
                             else
                                 MessageBox.Show("Por favor ingresa la dirección");
@@ -154,12 +158,16 @@ namespace SistemaBancario.Navigation
                                 Int32 gerenteId = ((Item)cBGerente.SelectedItem).Value;
                                 String direccion = tBDireccion.Text;
                                 String info = sucursalrControlador.solicitudModificar(aux, nombre, bancoId, ciudadId, gerenteId, direccion);
-                               
-                                    MessageBox.Show(info);
+
+                                MessageBox.Show(info);
+                                if (!info.Equals("El gerente que va asisgnar ya se encuentra en otra sucursal"))
+                                {
                                     deshabilitarCampos();
                                     cargarTabla();
                                     aux = 0;
-                              
+                                }
+
+
                             }
                             else
                                 MessageBox.Show("Por favor ingresa la dirección");
@@ -207,7 +215,6 @@ namespace SistemaBancario.Navigation
                     Sucursal s = sucursalrControlador.solicitudBuscar(nombre);
                     if (s != null)
                     {
-
                         cBPais.SelectedValue = s.idPais;
                         cBDepartamento.SelectedValue = s.idDepartamento;
                         cBCiudad.SelectedValue = s.getCiudadId();
@@ -270,7 +277,8 @@ namespace SistemaBancario.Navigation
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             String info = sucursalrControlador.solicutudEliminar(aux);
-            if(info!=null){
+            if (info != null)
+            {
                 MessageBox.Show(info);
                 deshabilitarCampos();
                 aux = 0;
@@ -280,7 +288,7 @@ namespace SistemaBancario.Navigation
             {
                 MessageBox.Show("No se puede eliminar, dato asociado con otro campo");
             }
-            
+
         }
     }
 }

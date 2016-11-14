@@ -37,11 +37,11 @@ namespace SistemaBancario.Navigation
                 MessageBox.Show("Debe completar la informacion");
             }
             else
-            {                
+            {
                 if (ctlCiudad.SolicitudGuardarCiudad(nombre, descripcion, id_depto))
                 {
                     MessageBox.Show("Se registro con exito");
-                    
+
                     deshabilitarCampos();
                     cargarTabla();
                 }
@@ -58,8 +58,8 @@ namespace SistemaBancario.Navigation
         {
             txtNombreCiudad.Text = "";
             txtDescripcion.Text = "";
-            cbDepto.SelectedIndex = 0;
-            
+            cbDepto.SelectedIndex = -1;
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -110,7 +110,8 @@ namespace SistemaBancario.Navigation
                 if (ctlCiudad.SolicitudModificarCiudad(nombre, descr, id_depto))
                 {
                     MessageBox.Show("Se actualizo la ciudad");
-                    limpiar();
+                    deshabilitarCampos();
+                    cargarTabla();
                 }
                 else
                 {
@@ -135,7 +136,8 @@ namespace SistemaBancario.Navigation
                 if (ctlCiudad.solicitudEliminarCiudad(nombre))
                 {
                     MessageBox.Show("Se elimino la ciudad");
-                    limpiar();
+                    deshabilitarCampos();
+                    cargarTabla();
                 }
                 else
                 {
@@ -147,7 +149,7 @@ namespace SistemaBancario.Navigation
         private void c_Load(object sender, EventArgs e)
         {
             cargarTabla();
-           
+
             // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.pais' Puede moverla o quitarla según sea necesario.
             this.paisTableAdapter.Fill(this.dataSetBanco.pais);
             // TODO: esta línea de código carga datos en la tabla 'dataSetBanco.departamento' Puede moverla o quitarla según sea necesario.
@@ -190,17 +192,15 @@ namespace SistemaBancario.Navigation
                     Ciudad c = ctlCiudad.SolicitudBuscarCiudad(nombre);
                     if (c != null)
                     {
-                        //  txtNombreCiudad.Text = c.getNombre();
-                        txtDescripcion.Text = c.getDescripcion();
-                        cbDepto.SelectedValue = (int)c.getIdDepartamento();
                         cBPais.SelectedValue = c.idPais;
+                        cbDepto.SelectedValue = c.getIdDepartamento();
                         txtDescripcion.Text = c.getDescripcion();
                         aux = c.getId();
                         habilitarCampos();
                         btnGuardar.Enabled = false;
                         btnEditar.Enabled = true;
                         btnEliminar.Enabled = true;
-                       
+
 
                     }
                     else
@@ -228,10 +228,10 @@ namespace SistemaBancario.Navigation
         }
         public void deshabilitarCampos()
         {
-            
+
             cbDepto.Enabled = false;
             cBPais.Enabled = false;
-            
+
             txtDescripcion.ReadOnly = true;
             txtNombreCiudad.ReadOnly = false;
             limpiar();

@@ -41,7 +41,7 @@ namespace Platform.Service.services
 
         public Pais buscarPais(String nombre)
         {
-            Pais p = new Pais();
+            Pais p = null;
             String consulta = "exec buscarPaisNombre '" + nombre + "';";
             ejecutarRetorno(consulta);
 
@@ -51,6 +51,7 @@ namespace Platform.Service.services
             }
             else
             {
+                p = new Pais();
                 p.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
                 p.setDescripcion(dataset.Tables[0].Rows[0]["descripcion"].ToString());
                 dataset.Dispose();

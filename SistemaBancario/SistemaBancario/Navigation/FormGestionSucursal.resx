@@ -326,6 +326,9 @@
   <metadata name="paisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>143, 17</value>
   </metadata>
+  <metadata name="dataSetBanco.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="cBPais.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -630,6 +633,57 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="nombreDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="bancoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>banco</value>
+  </data>
+  <data name="ciudadDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>ciudad</value>
+  </data>
+  <data name="direccionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>direccion</value>
+  </data>
+  <data name="gerenteDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>gerente</value>
+  </data>
+  <metadata name="listarSucursalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>442, 17</value>
+  </metadata>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 27</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>642, 228</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>663, 260</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -649,7 +703,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>675, 272</value>
+    <value>675, 298</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -690,96 +744,12 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>663, 260</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="listarSucursalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>442, 17</value>
-  </metadata>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 27</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 228</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="dataSetBanco.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="paisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>143, 17</value>
-  </metadata>
   <metadata name="paisTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>295, 17</value>
-  </metadata>
-  <metadata name="listarSucursalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>442, 17</value>
   </metadata>
   <metadata name="listarSucursalTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>643, 17</value>
   </metadata>
-  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>id</value>
-  </data>
-  <data name="nombreDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>nombre</value>
-  </data>
-  <data name="bancoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>banco</value>
-  </data>
-  <data name="ciudadDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>ciudad</value>
-  </data>
-  <data name="direccionDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>direccion</value>
-  </data>
-  <data name="gerenteDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>gerente</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -801,35 +771,17 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FormGestionSucursal</value>
   </data>
-  <data name="&gt;&gt;dataSetBanco.Name" xml:space="preserve">
-    <value>dataSetBanco</value>
-  </data>
-  <data name="&gt;&gt;dataSetBanco.Type" xml:space="preserve">
-    <value>SistemaBancario.DataSetBanco, DataSetBanco.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;paisBindingSource.Name" xml:space="preserve">
     <value>paisBindingSource</value>
   </data>
   <data name="&gt;&gt;paisBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;paisTableAdapter.Name" xml:space="preserve">
-    <value>paisTableAdapter</value>
+  <data name="&gt;&gt;dataSetBanco.Name" xml:space="preserve">
+    <value>dataSetBanco</value>
   </data>
-  <data name="&gt;&gt;paisTableAdapter.Type" xml:space="preserve">
-    <value>SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter, DataSetBanco.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;listarSucursalBindingSource.Name" xml:space="preserve">
-    <value>listarSucursalBindingSource</value>
-  </data>
-  <data name="&gt;&gt;listarSucursalBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listarSucursalTableAdapter.Name" xml:space="preserve">
-    <value>listarSucursalTableAdapter</value>
-  </data>
-  <data name="&gt;&gt;listarSucursalTableAdapter.Type" xml:space="preserve">
-    <value>SistemaBancario.DataSetBancoTableAdapters.listarSucursalTableAdapter, DataSetBanco.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;dataSetBanco.Type" xml:space="preserve">
+    <value>SistemaBancario.DataSetBanco, DataSetBanco.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>idDataGridViewTextBoxColumn</value>
@@ -866,6 +818,24 @@
   </data>
   <data name="&gt;&gt;gerenteDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listarSucursalBindingSource.Name" xml:space="preserve">
+    <value>listarSucursalBindingSource</value>
+  </data>
+  <data name="&gt;&gt;listarSucursalBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;paisTableAdapter.Name" xml:space="preserve">
+    <value>paisTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;paisTableAdapter.Type" xml:space="preserve">
+    <value>SistemaBancario.DataSetBancoTableAdapters.paisTableAdapter, DataSetBanco.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;listarSucursalTableAdapter.Name" xml:space="preserve">
+    <value>listarSucursalTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;listarSucursalTableAdapter.Type" xml:space="preserve">
+    <value>SistemaBancario.DataSetBancoTableAdapters.listarSucursalTableAdapter, DataSetBanco.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormGestionSucursal</value>

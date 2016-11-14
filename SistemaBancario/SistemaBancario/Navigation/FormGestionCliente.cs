@@ -65,5 +65,10 @@ namespace SistemaBancario.Navigation
             txtCuenta.Text = "";
             txtContraseña.Text = "";
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
     }
 }
