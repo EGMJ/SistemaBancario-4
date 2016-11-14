@@ -43,12 +43,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSetBanco = new SistemaBancario.DataSetBanco();
+            this.costoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.costoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.costoTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetBanco = new SistemaBancario.DataSetBanco();
-            this.costoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.costoTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -56,8 +56,8 @@
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,7 +87,7 @@
             this.txtNombre.Size = new System.Drawing.Size(217, 21);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress_1);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCosto
             // 
@@ -208,6 +208,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(343, 228);
             this.dataGridView1.TabIndex = 0;
             // 
+            // dataSetBanco
+            // 
+            this.dataSetBanco.DataSetName = "DataSetBanco";
+            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // costoBindingSource
+            // 
+            this.costoBindingSource.DataMember = "costo";
+            this.costoBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // costoTableAdapter
+            // 
+            this.costoTableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -227,20 +241,6 @@
             this.montoDataGridViewTextBoxColumn.HeaderText = "monto";
             this.montoDataGridViewTextBoxColumn.Name = "montoDataGridViewTextBoxColumn";
             // 
-            // costoBindingSource
-            // 
-            this.costoBindingSource.DataMember = "costo";
-            this.costoBindingSource.DataSource = this.dataSetBanco;
-            // 
-            // dataSetBanco
-            // 
-            this.dataSetBanco.DataSetName = "DataSetBanco";
-            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // costoTableAdapter
-            // 
-            this.costoTableAdapter.ClearBeforeFill = true;
-            // 
             // FormGestionCosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,8 +259,8 @@
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.costoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
