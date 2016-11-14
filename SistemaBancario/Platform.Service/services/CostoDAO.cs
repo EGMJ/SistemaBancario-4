@@ -33,7 +33,7 @@ namespace Platform.Service.services
                entity = new Costo();
                entity.setId(Convert.ToInt32(dataset.Tables[0].Rows[0]["id"].ToString()));
                entity.setNombre(dataset.Tables[0].Rows[0]["nombre"].ToString());
-               entity.setMonto((float)dataset.Tables[0].Rows[0]["monto"]);
+               entity.setMonto((double)dataset.Tables[0].Rows[0]["monto"]);
                dataset.Dispose();
            }
 
