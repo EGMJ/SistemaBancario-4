@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCuenta = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSetBanco = new SistemaBancario.DataSetBanco();
+            this.dataSetBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipocuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipo_cuentaTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.tipo_cuentaTableAdapter();
+            this.costoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.costoTableAdapter = new SistemaBancario.DataSetBancoTableAdapters.costoTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -49,6 +56,10 @@
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipocuentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,21 +82,28 @@
             // 
             // cbCuenta
             // 
+            this.cbCuenta.DataSource = this.tipocuentaBindingSource;
+            this.cbCuenta.DisplayMember = "nombre";
             this.cbCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCuenta.FormattingEnabled = true;
             this.cbCuenta.Location = new System.Drawing.Point(142, 30);
             this.cbCuenta.Name = "cbCuenta";
             this.cbCuenta.Size = new System.Drawing.Size(203, 23);
             this.cbCuenta.TabIndex = 2;
+            this.cbCuenta.ValueMember = "id";
+            this.cbCuenta.SelectedIndexChanged += new System.EventHandler(this.cbCuenta_SelectedIndexChanged);
             // 
             // cbMonto
             // 
+            this.cbMonto.DataSource = this.costoBindingSource;
+            this.cbMonto.DisplayMember = "nombre";
             this.cbMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMonto.FormattingEnabled = true;
             this.cbMonto.Location = new System.Drawing.Point(140, 75);
             this.cbMonto.Name = "cbMonto";
             this.cbMonto.Size = new System.Drawing.Size(205, 23);
             this.cbMonto.TabIndex = 3;
+            this.cbMonto.ValueMember = "id";
             // 
             // btnGuardar
             // 
@@ -95,6 +113,7 @@
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
@@ -104,6 +123,7 @@
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -113,6 +133,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // tabControl1
             // 
@@ -149,6 +170,7 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -191,6 +213,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(343, 228);
             this.dataGridView1.TabIndex = 0;
             // 
+            // dataSetBanco
+            // 
+            this.dataSetBanco.DataSetName = "DataSetBanco";
+            this.dataSetBanco.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetBancoBindingSource
+            // 
+            this.dataSetBancoBindingSource.DataSource = this.dataSetBanco;
+            this.dataSetBancoBindingSource.Position = 0;
+            // 
+            // tipocuentaBindingSource
+            // 
+            this.tipocuentaBindingSource.DataMember = "tipo_cuenta";
+            this.tipocuentaBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // tipo_cuentaTableAdapter
+            // 
+            this.tipo_cuentaTableAdapter.ClearBeforeFill = true;
+            // 
+            // costoBindingSource
+            // 
+            this.costoBindingSource.DataMember = "costo";
+            this.costoBindingSource.DataSource = this.dataSetBanco;
+            // 
+            // costoTableAdapter
+            // 
+            this.costoTableAdapter.ClearBeforeFill = true;
+            // 
             // FormGestionCostoCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +250,7 @@
             this.Name = "FormGestionCostoCuenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormGestionCostoCuenta";
+            this.Load += new System.EventHandler(this.FormGestionCostoCuenta_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -208,6 +259,10 @@
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBanco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBancoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipocuentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +283,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DataSetBanco dataSetBanco;
+        private System.Windows.Forms.BindingSource dataSetBancoBindingSource;
+        private System.Windows.Forms.BindingSource tipocuentaBindingSource;
+        private DataSetBancoTableAdapters.tipo_cuentaTableAdapter tipo_cuentaTableAdapter;
+        private System.Windows.Forms.BindingSource costoBindingSource;
+        private DataSetBancoTableAdapters.costoTableAdapter costoTableAdapter;
     }
 }

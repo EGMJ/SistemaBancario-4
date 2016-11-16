@@ -52,8 +52,7 @@ namespace Platform.Service.services
         {
             String consulta = "exec borrarCargo '" + nombre + "';";
             return ejecutar(consulta);
-        }
-       
+        }       
 
     }
 }

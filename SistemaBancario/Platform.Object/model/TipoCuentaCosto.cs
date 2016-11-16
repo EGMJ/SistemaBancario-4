@@ -11,10 +11,23 @@ namespace Platform.Object.model
         private Int32 id;
         private Int32 tipoCuentaId;
         private Int32 costoId;
-        private TipoCuentaCosto()
+        public TipoCuentaCosto()
         {
 
         }
+        public TipoCuentaCosto(Int32 cuentaId,Int32 costoID)
+        {
+            this.tipoCuentaId = cuentaId;
+            this.costoId = costoID;
+        }
+
+        public TipoCuentaCosto(Int32 id,Int32 cuentaId, Int32 costoID)
+        {
+            this.id = id;
+            this.tipoCuentaId = cuentaId;
+            this.costoId = costoID;
+        }
+
         public Int32 getId()
         {
             return this.id;

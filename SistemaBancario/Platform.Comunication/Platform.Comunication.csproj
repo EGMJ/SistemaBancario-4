@@ -52,6 +52,7 @@
     <Compile Include="controller\PoliticaController.cs" />
     <Compile Include="controller\SucursalController.cs" />
     <Compile Include="controller\TipoCuentaController.cs" />
+    <Compile Include="controller\TipoCuentaCostoController.cs" />
     <Compile Include="controller\UsuarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
